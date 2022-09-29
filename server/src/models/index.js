@@ -2,7 +2,8 @@ const mongoose = require('mongoose')
 const config = require('../config')
 
 const sessionSchema = new mongoose.Schema({
-    username: {type: String, unique: true}
+    username: {type: String, unique: true},
+    password: {type: String, default: ""},
   })
 
 sessionSchema.set('toJSON', {
@@ -43,6 +44,8 @@ const Conversation = mongoose.model('Conversation', conversationSchema)
 
 const messageSchema = new mongoose.Schema({
     text: String,
+    like: {type: Number, default: 0},   // add like dislike key word
+    dislike: {type: Number, default: 0},
     timestamp: {type: Date, default: Date.now},
     creator: {type: mongoose.Types.ObjectId, ref: 'Session'},
     conversation: {type: mongoose.Types.ObjectId, ref: 'Conversation'}

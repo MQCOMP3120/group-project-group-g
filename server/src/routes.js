@@ -13,6 +13,8 @@ router.post('/auth/register', auth.createSession)
 
 router.get('/auth/', auth.getUser)
 
+router.post('/auth/login', auth.postLogin)
+
 /* GET conversations returns a list of all current conservations */
 router.get('/api/conversations', conv.getConversations)
 
@@ -31,5 +33,7 @@ router.get('/api/conversations/:id/:msgid', messages.getMessage)
 /* DELETE to message URL to delete the message */
 router.delete('/api/conversations/:id/:msgid', messages.deleteMessage)
 
+// like and dislike message 
+router.put('/api/conversations/like/:msgid', messages.likeMessage)
 
 module.exports = router 

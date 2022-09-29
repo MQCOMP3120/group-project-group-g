@@ -3,37 +3,31 @@ const models = require('../models')
 
 
 const createConversation = async (request, response) => {
+    const creator = await auth.validUser(request, response)
+    if (creator === "false")   return 
 
-    const creator = await auth.validUser(request)
+    const title = request.body.title
+    const conversation = new models.Conversation({creator, title})
+    const returned = await conversation.save()
 
-    if (creator) {
-        const title = request.body.title
-        const conversation = new models.Conversation({creator, title})
-        const returned = await conversation.save()
-
-        if (returned) {
-            response.json({status: "success", id: conversation._id, messages: 0})
-        } else {
-            response.json({status: "error"})
-        }
+    if (returned) {
+        response.json({status: "success", id: conversation._id, messages: 0})
     } else {
-        response.sendStatus(401)
+        response.json({status: "error"})
     }
 }
 
 
 const getConversations = async (request, response) => {
+    const user = await auth.validUser(request, response)
+    if (user === "false")   return 
 
-    const user = await auth.validUser(request)
-
-    if (user) {
-        const conversations = await models.Conversation.find({})
-                                          .populate('messages')
+    const conversations = await models.Conversation.find({}).populate('messages')
+    if (conversations) {
         response.json({conversations})
     } else {
-        response.sendStatus(401)
+        response.json({status: "error"})
     }
-
 }
 
 module.exports = { 
