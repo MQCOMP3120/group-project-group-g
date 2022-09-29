@@ -1,60 +1,41 @@
 const bcrypt = require('bcrypt')
 const jwt = require("jsonwebtoken")
-const models = require('../models')
+const models = require('../models/index.js')
 
 /* Create a new session for a user */
-const createSession = async (request, response) => {
+const registerUser = async (request, response) => {
     const hashPassword = await bcrypt.hash(request.body.password, 10)
-    const session = new models.Session({
+    const user = new models.Users({
         username: request.body.username,
-        password: hashPassword
+        password: hashPassword,
+        email: request.body.email,
+        address: request.body.address,
+        phone: request.body.phone,
     })
     try {
-        const returned = await session.save()
+        const returned = await user.save()
             .catch((err) => {
-                return response.json({status: "error username taken"})
+                response.status(401).json({error: "invalid"})
             })
-
-        if (returned && session._id) {
+        if (returned && user._id) {
             const userForToken = {
-                id: session._id,
-                username: session.username          
+                id: user._id,
+                username: user.username
             }
             let token = null
             token = jwt.sign(userForToken, 
                 process.env.SESSION_DB_SECRET, 
-                { expiresIn: 3600 }
+                //{ expiresIn: 3600 }
                 )
             return response.status(200).json({
                 jwt: 'Bearer '+token,
-                status: "success",
-                username: session.username,
-                token: session._id})
+                username: user.username,
+                userId: user._id})
         } 
     } catch (error) {
     
     }
-    response.json({status: "error build token"}) 
-}
-
-
-const getUser = async (request, response) => {
-    const authHeader = request.get('Authorization')
-    if (authHeader && authHeader.toLowerCase().startsWith('basic ')) {
-        const token = authHeader.substring(6)
-        try {
-            // this will throw an error if token isn't of the right format
-            const match = await models.Session.findById(token)
-            if (match) {
-                response.json({
-                    status: "success",
-                    username: match.username,
-                    token: match._id
-                })       
-            }
-        } catch { }
-    }
-    response.json({status: "error"})
+    response.status(401).json({error: "invalid"})
 }
 
 // process post login
@@ -62,52 +43,36 @@ const getUser = async (request, response) => {
 // respone {jwt, status, username, token}
 const postLogin = async (request, response) => {
     try {
-        const match = await models.Session.findOne({username: request.body.username})
+        const match = await models.Users.findOne({username: request.body.username})
         if (match) {
             if (await bcrypt.compare(request.body.password, match.password)) {
                 const userForToken = {
-                    id: match._id,
+                    id: match.id,
                     username: match.username          
                 }
                 let token = null
                 try {
                     token = jwt.sign(userForToken, 
                         process.env.SESSION_DB_SECRET, 
-                        { expiresIn: 3600 }
+                        //{ expiresIn: 3600 }
                         )
                 } 
                 catch (error) {
-                    return response.json({status: "error invalid token"}) 
+                    return response.status(401).json({error: "invalid"})
                 }
                 return response.status(200).json({
                             jwt: 'Bearer '+token,
-                            status: "success",
                             username: match.username,
-                            token: match._id})
+                            userId: match.id,
+                            email: match.email,
+                            address: match.address,
+                            phone: match.phone,
+                        })
             }
         }
     } catch { }
-    response.json({status: "error username or password"})
+    response.status(401).json({error: "invalid"})
 }
-
-
-/* 
- * no avaible any more
-*/
-const validUser1 = async (request) => {
-    
-    const authHeader = request.get('Authorization')
-    if (authHeader && authHeader.toLowerCase().startsWith('basic ')) {
-        const token = authHeader.substring(6)        
-        const match = await models.Session.findOne({_id: token})  
-
-        if (match) {
-            return match._id
-        }
-    } 
-    return false
-}
-
 
 const getTokenFrom = request => {
     const authorization = request.get('authorization') 
@@ -126,16 +91,79 @@ const validUser = async (request, response) => {
     if (token) {
         try {
             const decoded=jwt.verify(token, process.env.SESSION_DB_SECRET)
-            const match = await models.Session.findOne({username: decoded.username})
+            const match = await models.Users.findOne({username: decoded.username})
             if (match) {
                 return match._id
             }
         }catch (error){
-            response.json({status: "error invalid token", ...error})
+            response.status(401).json({error: "error invalid token", ...error})
         }
     }
-    response.json({status: "error invalid token"})
+    response.status(401).json({error: "error invalid token"})
     return "false"
 }
 
-module.exports = { validUser, getUser, createSession, postLogin }
+
+const getUsers = async (request, response) => {
+    const user = await validUser(request, response)
+    if (user === "false")   return
+
+    const match = await models.Users.find({})
+    if (match) {
+        response.status(200).json(match)
+    } else {
+        response.status(401).json({error: "invalid"})
+    }
+}
+
+
+const getUser = async (request, response) => {
+    const user = await validUser(request, response)
+    if (user === "false")   return
+
+    const id = request.params.id
+    const match = await models.Users.findById(id)
+    if (match) {
+        response.status(200).json({
+            username: match.username,
+            userId: match.id,
+            email: match.email,
+            address: match.address,
+            phone: match.phone,
+        })
+    } else {
+        response.status(401).json({error: "invalid"})
+    }
+}
+
+const modUser = async (request, response) => {
+    const user = await validUser(request, response)
+    if (user === "false")   return
+
+    const id = request.params.id
+    const hashPassword = await bcrypt.hash(request.body.password, 10)
+    const newProfile = {...request.body, password: hashPassword}
+    var match = await models.Users.findByIdAndUpdate(id, newProfile, {
+        new: true
+      })
+    if (match) {
+        const userForToken = {
+            id: user._id,
+            username: user.username
+        }
+        let token = null
+        token = jwt.sign(userForToken, 
+            process.env.SESSION_DB_SECRET, 
+            //{ expiresIn: 3600 }
+            )
+        return response.status(200).json({
+            jwt: 'Bearer '+token,
+            username: user.username,
+            userId: user._id})
+    }
+
+    response.status(401).json({error: "invalid"})
+}
+
+module.exports = { validUser, registerUser, postLogin, getUser ,
+getUsers, modUser }

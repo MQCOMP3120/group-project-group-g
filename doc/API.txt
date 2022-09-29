@@ -36,7 +36,7 @@ User:
 
     Get all
         GET /api/users
-        return success: status(200).users[{email, username, address, phone, userId}, ]
+        return success: status(200).[{email, username, address, phone, userId}, ]
         return error: status(401).{error: "invalid"}
 
     Get a single user
@@ -47,7 +47,7 @@ User:
 Products:
     Get all products
         GET /api/products
-        return success: status(200).products[{id, title, price, categoryId, category, description, image}, ]
+        return success: status(200).[{id, title, price, categoryId, category, description, image}, ]
         return error: status(401).{error: "invalid"}
         
     Get a single product
@@ -75,19 +75,19 @@ Products:
 Categories:
     Get all categories
         GET /api/categories
-        return success: status(200).categories[{id, title}, ]
+        return success: status(200).[{id, title}, ]
         return error: status(401).{error: "invalid"}
         
     Get products in a specific category
         GET /api/categories/id
-        return success: status(200).products[{id, title, price, categoryId, category, description, image}, ]
+        return success: status(200).[{id, title, price, categoryId, category, description, image}, ]
         return error: status(401).{error: "invalid"}
     
 Cart:
      
     Get all carts
         GET /api/carts
-        return success: status(200).carts[{id, userId, date, paid, products[{productId,quantity},]}, ]
+        return success: status(200).[{id, userId, date, paid, products[{productId,quantity},]}, ]
         return error: status(401).{error: "invalid"}
         
     Get a specific carts
@@ -97,7 +97,7 @@ Cart:
         
     Get user carts
         GET /api/carts/user/id
-        return success: status(200).carts[{id, userId, date, paid, products[{productId,quantity},]}, ]
+        return success: status(200).[{id, userId, date, paid, products[{productId,quantity},]}, ]
         return error: status(401).{error: "invalid"}
     
     Add a new cart

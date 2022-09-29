@@ -1,24 +1,28 @@
 const mongoose = require('mongoose')
 const config = require('../config')
 
-const sessionSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     username: {type: String, unique: true},
     password: {type: String, default: ""},
+    email: {type: String, default: ""},
+    address: {type: String, default: ""},
+    phone: {type: String, default: ""},
   })
 
-sessionSchema.set('toJSON', {
-  transform: (document, returnedObject) => {
-    returnedObject.id = document._id.toString()
-    delete returnedObject._id
-    delete returnedObject.__v
+userSchema.options.toObject = userSchema.options.toJSON = {
+  transform: function(doc, ret, options) {
+    ret.id = ret._id.toString()
+    delete ret._id
+    delete ret.__v
+    return ret;
   }
-})
+}
 
-const Session = mongoose.model('Session', sessionSchema)
+const Users = mongoose.model('Users', userSchema)
 
 const conversationSchema = new mongoose.Schema({
     title: String,
-    creator: {type: mongoose.Types.ObjectId, ref: 'Session'}
+    creator: {type: mongoose.Types.ObjectId, ref: 'Users'}
   },
   {
     toJSON: {virtuals: true},
@@ -47,7 +51,7 @@ const messageSchema = new mongoose.Schema({
     like: {type: Number, default: 0},   // add like dislike key word
     dislike: {type: Number, default: 0},
     timestamp: {type: Date, default: Date.now},
-    creator: {type: mongoose.Types.ObjectId, ref: 'Session'},
+    creator: {type: mongoose.Types.ObjectId, ref: 'Users'},
     conversation: {type: mongoose.Types.ObjectId, ref: 'Conversation'}
   })
 
@@ -75,4 +79,4 @@ const initDB = async () => {
         })
     }
 
-module.exports = { Session, Conversation, Message, initDB }
+module.exports = { Users, Conversation, Message, initDB }

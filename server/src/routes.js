@@ -9,11 +9,12 @@ router.get('/', (request, response) => {
   response.send('<h1>Hello World!</h1>')
 })
 
-router.post('/auth/register', auth.createSession)
-
-router.get('/auth/', auth.getUser)
-
+router.post('/auth/register', auth.registerUser)
 router.post('/auth/login', auth.postLogin)
+router.get('/api/users', auth.getUsers)
+router.get('/api/users/:id', auth.getUser)
+router.put('/api/users/:id', auth.modUser)
+
 
 /* GET conversations returns a list of all current conservations */
 router.get('/api/conversations', conv.getConversations)
