@@ -1,0 +1,118 @@
+modified data: 220929
+
+User:
+    register a new user
+        POST /auth/register
+            {
+                email:'John@gmail.com',
+                username:'johnd',
+                password:'m38rmF$',
+                address:'kilcoole',
+                phone:'1-570-236-7033'
+            }
+        return success: status(200).{jwt, username, userId}
+        return error: status(401).{error: "invalid"}
+    
+    User login
+        POST /auth/login
+            {
+                username:'johnd',
+                password:'m38rmF$',
+            }
+        return success: status(200).{jwt, email, username, address, phone, userId}
+        return error: status(401).{error: "invalid"}
+    
+    Update a user
+        PUT /api/users/id
+            {
+                email:'John@gmail.com',
+                username:'johnd',
+                password:'m38rmF$',
+                address:'kilcoole',
+                phone:'1-570-236-7033'
+            }
+        return success: status(200).{jwt, email, username, address, phone, userId}
+        return error: status(401).{error: "invalid"}
+
+    Get all
+        GET /api/users
+        return success: status(200).users[{email, username, address, phone, userId}, ]
+        return error: status(401).{error: "invalid"}
+
+    Get a single user
+        GET /api/users/id
+        return success: status(200).{email, username, address, phone, userId}
+        return error: status(401).{error: "invalid"}
+
+Products:
+    Get all products
+        GET /api/products
+        return success: status(200).products[{id, title, price, categoryId, category, description, image}, ]
+        return error: status(401).{error: "invalid"}
+        
+    Get a single product
+        GET /api/products/id
+        return success: status(200).{id, title, price, categoryId, category, description, image}
+        return error: status(401).{error: "invalid"}
+        
+    Add new product
+        POST /api/products
+        {title, price, category, description_id, image}
+        return success: status(200).{id, title, price, categoryId, category, description, image}
+        return error: status(401).{error: "invalid"}
+        
+    Update a product
+        PUT /api/products/id
+        {title, price, category, description_id, image}
+        return success: status(200).{id, title, price, categoryId, category, description, image}
+        return error: status(401).{error: "invalid"}
+
+    Delete a product
+        DELETE /api/products/id
+        return success: status(200).{status: "OK"}
+        return error: status(401).{error: "invalid"}
+
+Categories:
+    Get all categories
+        GET /api/categories
+        return success: status(200).categories[{id, title}, ]
+        return error: status(401).{error: "invalid"}
+        
+    Get products in a specific category
+        GET /api/categories/id
+        return success: status(200).products[{id, title, price, categoryId, category, description, image}, ]
+        return error: status(401).{error: "invalid"}
+    
+Cart:
+     
+    Get all carts
+        GET /api/carts
+        return success: status(200).carts[{id, userId, date, paid, products[{productId,quantity},]}, ]
+        return error: status(401).{error: "invalid"}
+        
+    Get a specific carts
+        GET /api/carts/id
+        return success: status(200).{id, userId, date, paid, products[{productId,quantity},]}
+        return error: status(401).{error: "invalid"}
+        
+    Get user carts
+        GET /api/carts/user/id
+        return success: status(200).carts[{id, userId, date, paid, products[{productId,quantity},]}, ]
+        return error: status(401).{error: "invalid"}
+    
+    Add a new cart
+        POST /api/carts
+        {userId, date, products[{productId,quantity}, ]}
+        return success: status(200).{id, userId, date, products[{productId,quantity},]}
+        return error: status(401).{error: "invalid"}
+        
+    Update a cart
+        PUT /api/carts/id
+        {userId, date, paid, products[{productId,quantity}, ]}
+        return success: status(200).{id, userId, date, paid, products[{productId,quantity},]}
+        return error: status(401).{error: "invalid"}
+        
+    Delete a cart
+        DELETE /api/carts/id
+        return success: status(200).{status: "OK"}
+        return error: status(401).{error: "invalid"}
