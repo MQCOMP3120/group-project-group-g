@@ -2,6 +2,7 @@ const express = require('express')
 const auth = require('./controllers/auth')
 const brands = require('./controllers/brands')
 const products = require('./controllers/products')
+const carts = require('./controllers/carts')
 
 const router = express.Router()
  
@@ -33,9 +34,14 @@ router.get('/api/products/:id', products.getProduct)
 router.put('/api/products/:id', products.modProduct)
 // /* POST to a conversation to create a new message */
 router.post('/api/products', products.createProduct)
-
-
 // /* DELETE to message URL to delete the message */
 router.delete('/api/products/:id', products.deleteProduct)
 
+router.post('/api/carts', carts.createCart)
+router.get('/api/carts', carts.getCarts)
+router.get('/api/carts/:id', carts.getCart)
+router.get('/api/cartsuser', carts.getUserCarts)
+router.put('/api/carts/:id', carts.modCart)
+router.delete('/api/carts/:id', carts.deleteCart)
+router.patch('/api/carts/:id', carts.payCart)
 module.exports = router 

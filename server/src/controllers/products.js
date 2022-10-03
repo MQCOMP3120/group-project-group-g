@@ -33,7 +33,7 @@ const deleteProduct = async (request, response) => {
     const id = request.params.id
     const match = await models.Product.deleteOne({_id: id})
 
-    if (match) {
+    if (match.acknowledged) {
         response.status(200).json({status: "OK"})
     } else {
         response.status(401).json({error: "invalid"})

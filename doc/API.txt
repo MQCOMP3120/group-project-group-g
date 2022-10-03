@@ -75,46 +75,109 @@ Products:
 Brands:
     Get all brands
         GET /api/brands
-        return success: status(200).[{id, title}, ]
+        return success: status(200).[{id, title, product: count()}, ]
         return error: status(401).{error: "invalid"}
         
     Get products in a specific brand
         GET /api/brands/id
         return success: status(200).[{id, title, price, brandId, brand, description, image, timestamp}, ]
         return error: status(401).{error: "invalid"}
-    post
+    Add new brand
+        POST /api/brands
+        {title}
+        return success: status(200).{id, title}
+        return error: status(401).{error: "invalid"}
 
     
 Cart:
-     
     Get all carts
         GET /api/carts
-        return success: status(200).[{id, userId, date, paid, products[{productId,quantity},]}, ]
+        return success: status(200).[{id, userId, timestamp, paid, products:[{productId,quantity},]}, ]
         return error: status(401).{error: "invalid"}
         
-    Get a specific carts
+    Get a specific cart
         GET /api/carts/id
-        return success: status(200).{id, userId, date, paid, products[{productId,quantity},]}
+        return success: status(200).{id, userId, timestamp, paid, products:[{productId,quantity},]}
         return error: status(401).{error: "invalid"}
         
     Get user carts
-        GET /api/carts/user/id
-        return success: status(200).[{id, userId, date, paid, products[{productId,quantity},]}, ]
+        GET /api/cartsuser
+        return success: status(200).[{id, userId, timestamp, paid, products:[{productId,quantity},]}, ]
         return error: status(401).{error: "invalid"}
     
     Add a new cart
         POST /api/carts
-        {userId, date, products[{productId,quantity}, ]}
-        return success: status(200).{id, userId, date, products[{productId,quantity},]}
+        {products:[{productId,quantity}, ]}
+        return success: status(200).{id, userId, timestamp, products[{productId,quantity},]}
         return error: status(401).{error: "invalid"}
         
     Update a cart
         PUT /api/carts/id
-        {userId, date, paid, products[{productId,quantity}, ]}
-        return success: status(200).{id, userId, date, paid, products[{productId,quantity},]}
+        {paid, products:[{productId,quantity}, ]}
+        return success: status(200).{id, userId, timestamp, paid, products[{productId,quantity},]}
         return error: status(401).{error: "invalid"}
         
     Delete a cart
         DELETE /api/carts/id
         return success: status(200).{status: "OK"}
         return error: status(401).{error: "invalid"}
+    Pay a cart
+        PATCH /api/carts/id
+        {paid}
+        return success: status(200).{status: "OK"}
+        return error: status(401).{error: "invalid"}
+        
+        
+        
+[
+    {
+        "title": "NOKIA",
+        "price": 100.99,
+        "brandId": "633a3067b576ef62b7e05dc1",
+        "description": "Iphone14",
+        "image": "http://11",
+        "timestamp": "2022-10-03T04:00:13.631Z",
+        "id": "633a5e4d3a9032503aa74cc8",
+        "brand": "NOKIA"
+    },
+    {
+        "title": "NOKIA1",
+        "price": 100.99,
+        "brandId": "633a3067b576ef62b7e05dc1",
+        "description": "Iphone14",
+        "image": "http://11",
+        "timestamp": "2022-10-03T04:08:23.068Z",
+        "id": "633a6037eee4d44600762a86",
+        "brand": "NOKIA"
+    },
+    {
+        "title": "NOKIA2",
+        "price": 100.99,
+        "brandId": "633a3067b576ef62b7e05dc1",
+        "description": "Iphone14",
+        "image": "http://11",
+        "timestamp": "2022-10-03T04:12:36.611Z",
+        "id": "633a6134fead750725f1d333",
+        "brand": "NOKIA"
+    },
+    {
+        "title": "NOKIA3",
+        "price": 100.99,
+        "brandId": "633a3067b576ef62b7e05dc1",
+        "description": "Iphone14",
+        "image": "http://11",
+        "timestamp": "2022-10-03T04:13:22.305Z",
+        "id": "633a6162681a3d2135d3f235",
+        "brand": "NOKIA"
+    },
+    {
+        "title": "NOKIA4",
+        "price": 100.99,
+        "brandId": "633a3067b576ef62b7e05dc1",
+        "description": "Iphone14",
+        "image": "http://11",
+        "timestamp": "2022-10-03T04:16:22.493Z",
+        "id": "633a62166f0ee6f57dd0b9e3",
+        "brand": "NOKIA"
+    }
+]

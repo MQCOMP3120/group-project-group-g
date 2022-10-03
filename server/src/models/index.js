@@ -62,7 +62,7 @@ const Brand = mongoose.model('Brand', brandSchema)
 
 const productSchema = new mongoose.Schema({
     title: {type: String, unique: true},
-    price: {type: String, default: "0"},
+    price: {type: Number, default: 0},
     brandId: {type: mongoose.Types.ObjectId, ref: 'Brand'},
     description: {type: String, default: ""},
     image: {type: String, default: ""},
@@ -81,20 +81,44 @@ const productSchema = new mongoose.Schema({
     return cObj
   }
 
-// productSchema.options.toObject = productSchema.options.toJSON = {
-//   transform: function(doc, ret, options) {
-//     ret.id = ret._id.toString()
-//     if (ret.brandId) {
-//       ret.brandId = ret.brand._id.toString()
-//       ret.brand = ret.brand.title
-//     }
-//     delete ret._id
-//     delete ret.__v
-//     return ret;
-//   }
-// }
-
 const Product = mongoose.model('Product', productSchema)
+
+//###########################################################
+
+const cartSchema = new mongoose.Schema({
+  userId: {type: mongoose.Types.ObjectId, ref: 'Users'},
+  timestamp: {type: Date, default: Date.now},
+  paid: {type: Boolean, default: false},
+})
+
+cartSchema.methods.toJSON = function () {
+  const cObj = this.toObject()
+  cObj.id = cObj._id.toString()
+  delete cObj._id
+  delete cObj.__v
+  return cObj
+}
+
+const Cart = mongoose.model('Cart', cartSchema)
+
+const cartQSchema = new mongoose.Schema({
+  cartId: {type: mongoose.Types.ObjectId, ref: 'Cart'},
+  productId: {type: mongoose.Types.ObjectId, ref: 'Product'},
+  quantity: {type: Number, default: 0},
+})
+
+cartQSchema.methods.toJSON = function () {
+  const cObj = this.toObject()
+  cObj.id = cObj._id.toString()
+  if (cObj.productId) {
+    cObj.productId = cObj.productId._id.toString()
+  }
+  delete cObj.cartId
+  delete cObj._id
+  delete cObj.__v
+  return cObj
+}
+const CartQ = mongoose.model('CartQ', cartQSchema)
 
 //###########################################################
 const initDB = async () => {
@@ -105,4 +129,6 @@ const initDB = async () => {
         })
     }
 
-module.exports = { Users, Brand, Product, initDB }
+module.exports = { Users, Brand, Product, 
+  Cart, CartQ,
+  initDB }
