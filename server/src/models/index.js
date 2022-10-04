@@ -66,6 +66,7 @@ const productSchema = new mongoose.Schema({
     brandId: {type: mongoose.Types.ObjectId, ref: 'Brand'},
     description: {type: String, default: ""},
     image: {type: String, default: ""},
+    rating: {type: Number, default: 0},
     timestamp: {type: Date, default: Date.now},
   })
 
@@ -121,6 +122,21 @@ cartQSchema.methods.toJSON = function () {
 const CartQ = mongoose.model('CartQ', cartQSchema)
 
 //###########################################################
+const wishListSchema = new mongoose.Schema({
+  userId: {type: mongoose.Types.ObjectId, ref: 'Users'},
+  productId: {type: mongoose.Types.ObjectId, ref: 'Product'},
+})
+
+wishListSchema.methods.toJSON = function () {
+  const cObj = this.toObject()
+  cObj.id = cObj._id.toString()
+  delete cObj._id
+  delete cObj.__v
+  return cObj
+}
+const WishList = mongoose.model('WishList', wishListSchema)
+
+//###########################################################
 const initDB = async () => {
     await mongoose
         .connect(config.mongoDBUrl)
@@ -129,6 +145,7 @@ const initDB = async () => {
         })
     }
 
-module.exports = { Users, Brand, Product, 
-  Cart, CartQ,
+module.exports = {
+  Users, Brand, Product, 
+  Cart, CartQ, WishList,
   initDB }

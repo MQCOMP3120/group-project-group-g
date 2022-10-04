@@ -56,7 +56,6 @@ const createProduct = async (request, response) => {
                 image: request.body.image,
             })
             const returned = await product.save()
-            console.log();
             if (returned) {
                 return response.status(200).json({
                     title: request.body.title,
@@ -88,8 +87,8 @@ const modProduct = async (request, response) => {
                 image: request.body.image,
             }
             const id = request.params.id
-            console.log("id:", id);
-            console.log("product", product);
+            //console.log("id:", id);
+            //console.log("product", product);
             var returned = await models.Product.findByIdAndUpdate(id, product,{new: true})
             if (returned) {
                 return response.status(200).json({
@@ -105,10 +104,66 @@ const modProduct = async (request, response) => {
     }
     response.status(401).json({error: "invalid"})
 }
+
+const createWishList = async (request, response) => {
+    const user = await auth.validUser(request, response)
+    if (user === "false")   return
+
+    const product = new models.WishList({
+        userId: user._id,
+        productId: request.body.productId,
+    })
+    const returned = await product.save()
+    if (returned) {
+        return response.status(200).json({
+            productId: request.body.productId,
+        })
+    }
+    response.status(401).json({error: "invalid"})
+}
+
+const getWishList = async (request, response) => {
+    const user = await auth.validUser(request, response)
+    if (user === "false")   return
+
+    const productList = await models.WishList.find({userId: user._id})
+    if (productList) {
+        let products = []
+        for(temp of productList){
+            products = products.concat({productId: temp.productId})
+        }
+        return response.status(200).json(products)
+    }
+    response.status(401).json({error: "invalid"})                                    
+
+
+}
+
+const deleteWishList = async (request, response) => {
+    const user = await auth.validUser(request, response)
+    if (user === "false")   return
+
+    const id = request.params.id
+    const match = await models.WishList.deleteMany({userId: user._id,
+                                                productId: id,
+                                            })
+    console.log("del wish list:", match);
+    if (match.deletedCount && match.deletedCount != 0) {
+        response.status(200).json({status: "OK"})
+    } else {
+        response.status(401).json({error: "invalid"})
+    }
+}
+
+
+
 module.exports = {
     getProducts, 
     getProduct,
     createProduct,
     deleteProduct, 
     modProduct,
+    createWishList,
+    getWishList,
+    deleteWishList,
 }

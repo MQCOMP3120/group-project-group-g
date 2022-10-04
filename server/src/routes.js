@@ -37,6 +37,10 @@ router.post('/api/products', products.createProduct)
 // /* DELETE to message URL to delete the message */
 router.delete('/api/products/:id', products.deleteProduct)
 
+router.post('/api/wishlists', products.createWishList)
+router.get('/api/wishlists', products.getWishList)
+router.delete('/api/wishlists/:id', products.deleteWishList)
+
 router.post('/api/carts', carts.createCart)
 router.get('/api/carts', carts.getCarts)
 router.get('/api/carts/:id', carts.getCart)

@@ -1,4 +1,5 @@
-modified data: 220929
+wish list
+
 
 User:
     register a new user
@@ -47,24 +48,24 @@ User:
 Products:
     Get all products
         GET /api/products
-        return success: status(200).[{id, title, price, brandId, brand, description, image, timestamp}, ]
+        return success: status(200).[{id, title, price, brandId, brand, description, image, rating, timestamp}, ]
         return error: status(401).{error: "invalid"}
         
     Get a single product
         GET /api/products/id
-        return success: status(200).{id, title, price, brandId, brand, description, image, timestamp}
+        return success: status(200).{id, title, price, brandId, brand, description, image, rating, timestamp}
         return error: status(401).{error: "invalid"}
         
     Add new product
         POST /api/products
-        {title, price, brandId, description, image}
-        return success: status(200).{id, title, price, brandId, brand, description, image, timestamp}
+        {title, price, brandId, description, image, rating}
+        return success: status(200).{id, title, price, brandId, brand, description, image, rating, timestamp}
         return error: status(401).{error: "invalid"}
         
     Update a product
         PUT /api/products/id
-        {title, price, brandId, description, image}
-        return success: status(200).{id, title, price, brandId, brand, description, image, timestamp}
+        {title, price, brandId, description, image, rating}
+        return success: status(200).{id, title, price, brandId, brand, description, image, rating, timestamp}
         return error: status(401).{error: "invalid"}
 
     Delete a product
@@ -80,7 +81,7 @@ Brands:
         
     Get products in a specific brand
         GET /api/brands/id
-        return success: status(200).[{id, title, price, brandId, brand, description, image, timestamp}, ]
+        return success: status(200).[{id, title, price, brandId, brand, description, image, rating, timestamp}, ]
         return error: status(401).{error: "invalid"}
     Add new brand
         POST /api/brands
@@ -127,8 +128,25 @@ Cart:
         return success: status(200).{status: "OK"}
         return error: status(401).{error: "invalid"}
         
-        
-        
+Wish List:
+    Get all wish list products for the current user
+        GET /api/wishlists
+        return success: status(200).{productId},]}
+        return error: status(401).{error: "invalid"}
+    Add a product in wish list
+        POST /api/wishlists
+        {productId}
+        return success: status(200).{productId}
+        return error: status(401).{error: "invalid"}
+    Remote a product from wish list
+        DELETE /api/wishlists/id
+        return success: status(200).{status: "OK"}
+        return error: status(401).{error: "invalid"}
+
+
+
+
+//#########################################################
 [
     {
         "title": "NOKIA",
