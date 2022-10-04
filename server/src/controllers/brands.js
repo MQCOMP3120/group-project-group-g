@@ -7,7 +7,7 @@ const getBrands = async (request, response) => {
     if (user === "false")   return 
 
     const match = await models.Brand.find({}).populate('products')
-    if (match) {
+    if(match && match.length>0) {
         response.status(200).json(match)
     } else {
         response.status(401).json({error: "invalid"})
@@ -39,7 +39,7 @@ const getBrand = async (request, response) => {
     const match = await models.Product.find({brandId: id})
             .populate('brandId')
             .sort('timestamp')
-    if (match) {
+    if(match && match.length>0) {
         response.status(200).json(match)
     } else {
         response.status(401).json({error: "invalid"})

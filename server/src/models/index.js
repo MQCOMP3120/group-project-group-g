@@ -123,9 +123,10 @@ const CartQ = mongoose.model('CartQ', cartQSchema)
 
 //###########################################################
 const wishListSchema = new mongoose.Schema({
-  userId: {type: mongoose.Types.ObjectId, ref: 'Users'},
-  productId: {type: mongoose.Types.ObjectId, ref: 'Product'},
+  userId: {type: mongoose.Types.ObjectId, ref: 'Users', index: true},
+  productId: {type: mongoose.Types.ObjectId, ref: 'Product', index: true},
 })
+wishListSchema.index({ userId: 1, productId: 1 }, { unique: true })
 
 wishListSchema.methods.toJSON = function () {
   const cObj = this.toObject()
@@ -135,6 +136,7 @@ wishListSchema.methods.toJSON = function () {
   return cObj
 }
 const WishList = mongoose.model('WishList', wishListSchema)
+
 
 //###########################################################
 const initDB = async () => {

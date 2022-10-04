@@ -1,5 +1,3 @@
-wish list
-
 
 User:
     register a new user
@@ -90,7 +88,7 @@ Brands:
         return error: status(401).{error: "invalid"}
 
     
-Cart:
+Cart: only allow one unpaid cart, but multiple paid cart as shopping history. 
     Get all carts
         GET /api/carts
         return success: status(200).[{id, userId, timestamp, paid, products:[{productId,quantity},]}, ]

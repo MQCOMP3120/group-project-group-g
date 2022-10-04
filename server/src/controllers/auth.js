@@ -109,7 +109,7 @@ const getUsers = async (request, response) => {
     if (user === "false")   return
 
     const match = await models.Users.find({})
-    if (match) {
+    if(match && match.length>0) {
         response.status(200).json(match)
     } else {
         response.status(401).json({error: "invalid"})

@@ -5,6 +5,9 @@ const createCart = async (request, response) => {
     const user = await auth.validUser(request, response)
     if (user === "false")   return
 
+    const match = await models.Cart.find({userId: user._id, paid:false})
+    if(match && match.length>0) return response.status(401).json({error: "invalid"})
+
     const cart = new models.Cart({userId: user._id, paid:false})
     const cartReturn = await cart.save()
     if(!cartReturn) return response.status(401).json({error: "invalid"})
@@ -36,7 +39,7 @@ const getCarts = async (request, response) => {
     if (user === "false")   return 
 
     const match = await models.Cart.find({})
-    if (match) {
+    if(match && match.length>0) {
         let result=[]
         for (item of match){
             const cartQ = await models.CartQ.find({cartId:item._id})
@@ -86,7 +89,7 @@ const getUserCarts = async (request, response) => {
     if (user === "false")   return 
 
     const match = await models.Cart.find({userId: user._id})
-    if (match) {
+    if(match && match.length>0) {
         let result=[]
         for (item of match){
             const cartQ = await models.CartQ.find({cartId:item._id})

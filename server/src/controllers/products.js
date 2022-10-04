@@ -6,7 +6,7 @@ const getProducts = async (request, response) => {
     if (user === "false")   return 
 
     const match = await models.Product.find({}).populate('brandId')
-    if (match) {
+    if(match && match.length>0) {
         response.status(200).json(match)
     } else {
         response.status(401).json({error: "invalid"})
@@ -126,10 +126,10 @@ const getWishList = async (request, response) => {
     const user = await auth.validUser(request, response)
     if (user === "false")   return
 
-    const productList = await models.WishList.find({userId: user._id})
-    if (productList) {
+    const match = await models.WishList.find({userId: user._id})
+    if(match && match.length>0) {
         let products = []
-        for(temp of productList){
+        for(temp of match){
             products = products.concat({productId: temp.productId})
         }
         return response.status(200).json(products)
