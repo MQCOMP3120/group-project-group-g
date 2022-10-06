@@ -1,10 +1,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar';
+import SearchModal from './components/SearchModal';
 import { Home, Cart, Login, Products, Register, SingleProduct, SingleBrand, UserProfile, WishList, ErrorPage } from './pages'
+import { useSelector } from 'react-redux'
 
 function App() {
+  const { searchModalOpen } = useSelector((store) => store.search)
   return (
     <BrowserRouter>
+      {searchModalOpen && <SearchModal />}
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
