@@ -74,11 +74,11 @@ ul {
   }
 
   .section {
-    padding: 5rem 0;
+    padding: 3rem 0;
   }
 
   .section-center {
-    width: 90vw;
+    width: 95vw;
     margin: 0 auto;
     max-width: 1170px;
   }
@@ -94,4 +94,5 @@ ul {
     left: 0;
     width: 100vw;
     position: absolute;
+    z-index: 1000;
 }

@@ -10,7 +10,7 @@ export default function SearchModal() {
     const dispatch = useDispatch();
     return (
         <Wrapper className='center-items'>
-            <GrClose size={60} className="close-icon" onClick={() => dispatch(closeSearch())} />
+            <GrClose size={60} className="close-icon" color="white" onClick={() => dispatch(closeSearch())} />
             <Form className='d-flex w-50 h20'>
                 <Form.Control type="search" size='lg' placeholder="Search" />
                 <Button className="ms-4"> <BiSearch size={35} /> </Button>
@@ -25,7 +25,7 @@ z-index: 10000;
 width: 100vw;
 height: 100vh;
 position: absolute;
-background-color: rgba(168, 155, 162, 0.64);
+background-color: rgba(120, 120, 120, 0.64);
 
 .close-icon {
  position: absolute;

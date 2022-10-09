@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Container, Nav, NavDropdown, Navbar, Dropdown, Form } from 'react-bootstrap'
 import { openSearch } from '../features/navbar/searchSlice'
 import { useDispatch } from 'react-redux';
+import logo from '../assets/logo.jpg';
 
 export default function NavBar() {
 
@@ -13,7 +14,9 @@ export default function NavBar() {
     return (
         <Navbar className="navbar-expand-md py-4 shadow-sm nav-bar" id="nav-bar" bg="light" expand="xxl">
             <Container>
-                <Navbar.Brand as={Link} to="/"> Logo </Navbar.Brand>
+                <Navbar.Brand as={Link} to="/"> 
+                   <img src={logo} alt="logo" width={"60px"} height={"60px"} />
+                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav

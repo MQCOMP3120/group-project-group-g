@@ -33,7 +33,6 @@ const Wrapper = styled.section`
     line-height: 2;
     max-width: 45em;
     margin-bottom: 2rem;
-    color: var(--clr-grey-5);
     font-size: 1rem;
   }
   @media (min-width: 992px) {
@@ -49,20 +48,20 @@ const Wrapper = styled.section`
     .img-container {
         display: block;
         position: relative;
-        height: 65vh;
-        width: 40vw;
+        height: 100vh;
+        width: 30vw;
+        /* background-color: aqua; */
     }
     .hero-img {
         padding: 10px 0;
-        border-radius: 15px;
     }
     #img-1 {
-        bottom: 0;
+        bottom: 5vh;
         right: 0;
         position: absolute;
-        z-index: 100;
     }
     #img-2 {
+        top: 20vh;
         position: absolute;
     }
 }
