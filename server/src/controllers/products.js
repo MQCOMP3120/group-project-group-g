@@ -155,7 +155,19 @@ const deleteWishList = async (request, response) => {
     }
 }
 
+const deleteWishLists = async (request, response) => {
+    const user = await auth.validUser(request, response)
+    if (user === "false")   return
+    await models.WishList.deleteMany({})
+    response.status(200).json({status: "OK"})
+}
 
+const deleteProducts = async (request, response) => {
+    const user = await auth.validUser(request, response)
+    if (user === "false")   return
+    await models.Product.deleteMany({})
+    response.status(200).json({status: "OK"})
+}
 
 module.exports = {
     getProducts, 
@@ -166,4 +178,6 @@ module.exports = {
     createWishList,
     getWishList,
     deleteWishList,
+    deleteWishLists,
+    deleteProducts,
 }

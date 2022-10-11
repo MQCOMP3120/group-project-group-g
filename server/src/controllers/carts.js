@@ -167,7 +167,13 @@ const payCart = async (request, response) => {
     response.status(200).json({status: "OK"})
 }
 
-
+const deleteCarts = async (request, response) => {
+    const user = await auth.validUser(request, response)
+    if (user === "false")   return
+    await models.CartQ.deleteMany({})
+    await models.Cart.deleteMany({})
+    response.status(200).json({status: "OK"})
+}
 
 module.exports = { 
     createCart,
@@ -176,5 +182,6 @@ module.exports = {
     getUserCarts,
     modCart,
     deleteCart,
+    deleteCarts,
     payCart,
 }

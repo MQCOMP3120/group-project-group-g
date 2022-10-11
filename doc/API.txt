@@ -1,3 +1,6 @@
+https://www.mongodb.com/atlas/database
+npm run devserver
+
 
 User:
     register a new user
@@ -42,6 +45,7 @@ User:
         GET /api/users/id
         return success: status(200).{email, username, address, phone, userId}
         return error: status(401).{error: "invalid"}
+        
 
 Products:
     Get all products
@@ -70,6 +74,11 @@ Products:
         DELETE /api/products/id
         return success: status(200).{status: "OK"}
         return error: status(401).{error: "invalid"}
+        
+    Del products   // only for test
+        DELETE /api/products
+        return success: status(200).{status: "OK"}
+        return error: status(401).{error: "invalid"}
 
 Brands:
     Get all brands
@@ -86,6 +95,12 @@ Brands:
         {title}
         return success: status(200).{id, title}
         return error: status(401).{error: "invalid"}
+        
+    Del brands   // only for test
+        DELETE /api/brands
+        return success: status(200).{status: "OK"}
+        return error: status(401).{error: "invalid"}
+
 
     
 Cart: only allow one unpaid cart, but multiple paid cart as shopping history. 
@@ -125,7 +140,12 @@ Cart: only allow one unpaid cart, but multiple paid cart as shopping history.
         {paid}
         return success: status(200).{status: "OK"}
         return error: status(401).{error: "invalid"}
-        
+
+    Del carts   // only for test
+        DELETE /api/carts
+        return success: status(200).{status: "OK"}
+        return error: status(401).{error: "invalid"}
+
 Wish List:
     Get all wish list products for the current user
         GET /api/wishlists
@@ -138,6 +158,11 @@ Wish List:
         return error: status(401).{error: "invalid"}
     Remote a product from wish list
         DELETE /api/wishlists/id
+        return success: status(200).{status: "OK"}
+        return error: status(401).{error: "invalid"}
+        
+    Del wishlists   // only for test
+        DELETE /api/wishlists
         return success: status(200).{status: "OK"}
         return error: status(401).{error: "invalid"}
 

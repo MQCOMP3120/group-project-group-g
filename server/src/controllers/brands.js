@@ -46,8 +46,17 @@ const getBrand = async (request, response) => {
     }
 }
 
+const deleteBrands = async (request, response) => {
+    const user = await auth.validUser(request, response)
+    if (user === "false")   return
+    await models.Brand.deleteMany({})
+    response.status(200).json({status: "OK"})
+}
+
+
 module.exports = { 
     getBrands, 
     createBrand,
     getBrand,
+    deleteBrands,
 }
