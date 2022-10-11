@@ -1,13 +1,15 @@
-import { useState, useEffect } from 'react'
+import React from 'react'
+import { useState, useEffect, useRef } from 'react'
 import axioserver from './services/axioserver'
-
 import {
   useNavigate,
 } from "react-router-dom"
+import jsonData from'./services/sample.json'
+
 
 function Stage({fn, keyWords}) {
     // values for conversations and new conversation
-    const [brands, setBrands] = useState()
+    const [brands, setBrands] =  useState()
     const [products, setProducts] = useState()
     const [wishLists, setWishLists] = useState()
     const [carts, setCarts] = useState()
@@ -31,39 +33,67 @@ useEffect(() => {
     }
 }, [keyWords])
 
+
+
 //####################################
 
-function httpGetBrands(){
-    if(keyWords.jwt){
-        axioserver.getBrands(keyWords.jwt)
-        .then(response =>
-        {console.log("httpGetBrands res:\n", response)
+async function httpGetBrands(){
+    // if(keyWords.jwt){
+    //     axioserver.getBrands(keyWords.jwt)
+    //     .then(response =>
+    //     {console.log("httpGetBrands res:\n", response)
+    //         if(response.error){
+    //             alert("invalid")
+    //             return
+    //         }
+    //         setBrands(response)
+    //     })
+    //     .catch( (error) =>
+    //         alert(`httpGetConversation respond:${error}`)
+    //     )
+    // }
+    try{
+        if(keyWords.jwt){
+            const response = await axioserver.getBrands(keyWords.jwt)
+            console.log("httpGetBrands res:\n", response)
             if(response.error){
                 alert("invalid")
                 return
             }
             setBrands(response)
-        })
-        .catch( (error) =>
-            alert(`httpGetConversation respond:${error}`)
-        )
+        }
+    } catch(error){
+        alert(`httpGetConversation respond:${error}`)
     }
 }
 
-function httpGetProducts(){
-    if(keyWords.jwt){
-        axioserver.getProducts(keyWords.jwt)
-        .then(response =>
-        {console.log("httpGetProducts res:\n", response)
+async function httpGetProducts(){
+    // if(keyWords.jwt){
+    //     axioserver.getProducts(keyWords.jwt)
+    //     .then(response =>
+    //     {console.log("httpGetProducts res:\n", response)
+    //         if(response.error){
+    //             alert("invalid")
+    //             return
+    //         }
+    //         setProducts(response)
+    //     })
+    //     .catch( (error) =>
+    //         alert(`httpGetConversation respond:${error}`)
+    //     )
+    // }
+    try{
+        if(keyWords.jwt){
+            const response = await axioserver.getProducts(keyWords.jwt)
+            console.log("httpGetProducts res:\n", response)
             if(response.error){
                 alert("invalid")
                 return
             }
             setProducts(response)
-        })
-        .catch( (error) =>
-            alert(`httpGetConversation respond:${error}`)
-        )
+        }
+    } catch(error){
+        alert(`httpGetConversation respond:${error}`)
     }
 }
 
@@ -103,12 +133,47 @@ function httpGetCarts(){
 
 //####################################
     // button components
+    function sleep(ms){
+        return new Promise((resolve)=>
+        setTimeout(resolve, ms)
+        )
+    }
+
     async function delAll(){
         await axioserver.delWishLists(keyWords.jwt)
         await axioserver.delCarts(keyWords.jwt)
         await axioserver.delProducts(keyWords.jwt)
         await axioserver.delBrands(keyWords.jwt)
-     }
+        alert("Del ALL")
+    }
+    async function initBrands(){
+        const rawdata = jsonData
+        //console.log(rawdata);
+
+        rawdata.Brands.map( async brand =>{
+            let response = await axioserver.postBrand(keyWords.jwt, {title : brand.title})
+            //console.log(response);
+        })
+        await sleep(1000)
+        await httpGetBrands()
+    }
+    async function initProducts(){
+        const rawdata = jsonData
+        //console.log(rawdata);
+
+        rawdata.Products.map( async product =>{
+            let brand = brands.find(item => item.title === product.brand)
+            //console.log("brandid:", brand.id, brand.title);
+            let temp ={...product, brandId: brand.id}
+            //delete temp["brand"]
+            //console.log(temp);
+            await axioserver.postProduct(keyWords.jwt, temp)
+        })
+        await sleep(1000)
+        await httpGetProducts()
+    }
+
+
     // logout button
     function logOut(){
         window.localStorage.removeItem('loggedChatAppUserToken')
@@ -163,6 +228,8 @@ function httpGetCarts(){
 
             
             <button onClick={delAll}> Del All </button>
+            <button onClick={initBrands}> Init Brands </button>
+            <button onClick={initProducts}> Init Products </button>
             <button onClick={logOut}> Logout </button>
 
         </div>

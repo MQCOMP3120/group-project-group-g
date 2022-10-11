@@ -308,7 +308,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\r\n        \"title\": \"NOKIA\",\r\n        \"price\": \"100.99\",\r\n        \"brandId\": \"633a3067b576ef62b7e05dc1\",\r\n        \"description\": \"Iphone14\",\r\n        \"image\": \"http://11\"\r\n    }",
+					"raw": "    {\r\n        \"title\": \"NOKIA\",\r\n        \"price\": \"100.99\",\r\n        \"brandId\": \"6344f0dc67bd62717934cb47\",\r\n        \"description\": \"Iphone14\",\r\n        \"image\": \"http://11\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -798,7 +798,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "    {\r\n        \"productId\": \"633a5e4d3a9032503aa74cc8\"\r\n    }",
+					"raw": "    {\r\n        \"productId\": \"6344f35024f2cd7adb4ab8fd\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -876,6 +876,126 @@
 						"api",
 						"wishlists",
 						"633a5e4d3a9032503aa74cc8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "del products",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzU5MTc1MGE1YjIxNDM2YmI5OGYxOCIsInVzZXJuYW1lIjoiYmVuIiwiaWF0IjoxNjY0NDU1MDkwfQ.uX8K85oud9-xqmVjIhJYPR7exgrgMuBqiP64mZEbh04",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8102/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8102",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "del wishlists",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzU5MTc1MGE1YjIxNDM2YmI5OGYxOCIsInVzZXJuYW1lIjoiYmVuIiwiaWF0IjoxNjY0NDU1MDkwfQ.uX8K85oud9-xqmVjIhJYPR7exgrgMuBqiP64mZEbh04",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8102/api/wishlists",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8102",
+					"path": [
+						"api",
+						"wishlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "del carts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzU5MTc1MGE1YjIxNDM2YmI5OGYxOCIsInVzZXJuYW1lIjoiYmVuIiwiaWF0IjoxNjY0NDU1MDkwfQ.uX8K85oud9-xqmVjIhJYPR7exgrgMuBqiP64mZEbh04",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8102/api/carts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8102",
+					"path": [
+						"api",
+						"carts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "del brands",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzU5MTc1MGE1YjIxNDM2YmI5OGYxOCIsInVzZXJuYW1lIjoiYmVuIiwiaWF0IjoxNjY0NDU1MDkwfQ.uX8K85oud9-xqmVjIhJYPR7exgrgMuBqiP64mZEbh04",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8102/api/brands",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8102",
+					"path": [
+						"api",
+						"brands"
 					]
 				}
 			},
