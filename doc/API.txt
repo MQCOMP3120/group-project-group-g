@@ -6,9 +6,9 @@ User:
     register a new user
         POST /auth/register
             {
-                email:'John@gmail.com',
                 username:'johnd',
                 password:'m38rmF$',
+                email:'John@gmail.com',
                 address:'kilcoole',
                 phone:'1-570-236-7033'
             }
@@ -83,7 +83,7 @@ Products:
 Brands:
     Get all brands
         GET /api/brands
-        return success: status(200).[{id, title, product: count()}, ]
+        return success: status(200).[{id, title, products: count()}, ]
         return error: status(401).{error: "invalid"}
         
     Get products in a specific brand
@@ -149,7 +149,7 @@ Cart: only allow one unpaid cart, but multiple paid cart as shopping history.
 Wish List:
     Get all wish list products for the current user
         GET /api/wishlists
-        return success: status(200).{productId},]}
+        return success: status(200).[{productId},]
         return error: status(401).{error: "invalid"}
     Add a product in wish list
         POST /api/wishlists
