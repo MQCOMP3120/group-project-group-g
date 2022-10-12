@@ -22,7 +22,6 @@ export default function Hero() {
 }
 
 const Wrapper = styled.section`
-  min-height: 100vh;
   display: grid;
   place-items: center;
   .img-container {
@@ -36,7 +35,7 @@ const Wrapper = styled.section`
     font-size: 1rem;
   }
   @media (min-width: 992px) {
-    height: calc(100vh - 5rem);
+    height: calc(100vh - 10rem);
     grid-template-columns: 1fr 1fr;
     gap: 8rem;
     h1 {
@@ -48,9 +47,8 @@ const Wrapper = styled.section`
     .img-container {
         display: block;
         position: relative;
-        height: 100vh;
+        height: 75vh;
         width: 30vw;
-        /* background-color: aqua; */
     }
     .hero-img {
         padding: 10px 0;
@@ -61,7 +59,7 @@ const Wrapper = styled.section`
         position: absolute;
     }
     #img-2 {
-        top: 20vh;
+        top: 0;
         position: absolute;
     }
 }

@@ -5,6 +5,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+   
 }
 
 ul {
@@ -44,7 +45,7 @@ ul {
   }
   p {
     margin-bottom: 1.25rem;
-    color: hsl(209, 28%, 39%);;
+    color: hsl(208, 20%, 33%);;
   }
   @media screen and (min-width: 800px) {
     h1 {
@@ -73,8 +74,8 @@ ul {
     }
   }
 
-  .section {
-    padding: 3rem 0;
+  section {
+    min-height: 75vh;
   }
 
   .section-center {
@@ -92,7 +93,6 @@ ul {
 #nav-bar {
     top: 0;
     left: 0;
-    width: 100vw;
-    position: absolute;
+    /* display: block; */
     z-index: 1000;
 }

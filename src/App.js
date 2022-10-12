@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux'
 
 function App() {
   const { searchModalOpen } = useSelector((store) => store.search)
+
   return (
     <BrowserRouter>
       {searchModalOpen && <SearchModal />}
