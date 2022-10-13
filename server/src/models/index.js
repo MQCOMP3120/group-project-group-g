@@ -1,69 +1,144 @@
 const mongoose = require('mongoose')
 const config = require('../config')
 
-const sessionSchema = new mongoose.Schema({
-    username: {type: String, unique: true}
+
+//###########################################################
+const userSchema = new mongoose.Schema({
+    username: {type: String, unique: true},
+    password: {type: String, default: ""},
+    email: {type: String, default: ""},
+    address: {type: String, default: ""},
+    phone: {type: String, default: ""},
   })
 
-sessionSchema.set('toJSON', {
-  transform: (document, returnedObject) => {
-    returnedObject.id = document._id.toString()
-    delete returnedObject._id
-    delete returnedObject.__v
+userSchema.options.toObject = userSchema.options.toJSON = {
+  transform: function(doc, ret, options) {
+    ret.id = ret._id.toString()
+    delete ret._id
+    delete ret.__v
+    return ret;
   }
-})
+}
 
-const Session = mongoose.model('Session', sessionSchema)
+const Users = mongoose.model('Users', userSchema)
 
-const conversationSchema = new mongoose.Schema({
-    title: String,
-    creator: {type: mongoose.Types.ObjectId, ref: 'Session'}
+//###########################################################
+
+const brandSchema = new mongoose.Schema({
+    title: {type: String, unique: true},
   },
   {
     toJSON: {virtuals: true},
     toObject: {virtuals: true}
   })
 
-conversationSchema.virtual('messages', {
-    ref: 'Message', // The model to use
+brandSchema.virtual('products',{
+    ref: 'Product', // The model to use
     localField: '_id', // Find messages where `localField`
-    foreignField: 'conversation', // is equal to `foreignField`
+    foreignField: 'brandId', // is equal to `foreignField`
     count: true // And only get the number of docs
   });
 
-conversationSchema.methods.toJSON = function () {
+// brandSchema.options.toObject = brandSchema.options.toJSON = {
+//   transform: function(doc, ret, options) {
+//     ret.id = ret._id.toString()
+//     delete ret._id
+//     delete ret.__v
+//     return ret;
+//   }
+// }
+
+brandSchema.methods.toJSON = function () {
+  const cObj = this.toObject()
+  cObj.id = cObj._id.toString()
+  delete cObj._id
+  delete cObj.__v
+  return cObj
+}
+
+const Brand = mongoose.model('Brand', brandSchema)
+
+//###########################################################
+
+const productSchema = new mongoose.Schema({
+    title: {type: String, unique: true},
+    price: {type: Number, default: 0},
+    brandId: {type: mongoose.Types.ObjectId, ref: 'Brand'},
+    description: {type: String, default: ""},
+    image: {type: String, default: ""},
+    rating: {type: Number, default: 0},
+    timestamp: {type: Date, default: Date.now},
+  })
+
+  productSchema.methods.toJSON = function () {
     const cObj = this.toObject()
     cObj.id = cObj._id.toString()
+    if (cObj.brandId) {
+      cObj.brand = cObj.brandId.title
+      cObj.brandId = cObj.brandId._id.toString()
+    }
     delete cObj._id
     delete cObj.__v
     return cObj
-}
-
-const Conversation = mongoose.model('Conversation', conversationSchema)
-
-const messageSchema = new mongoose.Schema({
-    text: String,
-    timestamp: {type: Date, default: Date.now},
-    creator: {type: mongoose.Types.ObjectId, ref: 'Session'},
-    conversation: {type: mongoose.Types.ObjectId, ref: 'Conversation'}
-  })
-
-messageSchema.set('toJSON', {
-  transform: (document, returnedObject) => {
-    returnedObject.id = document._id.toString()
-
-    if (document.creator) {
-      returnedObject.creator = document.creator.username
-    }
-
-    delete returnedObject._id
-    delete returnedObject.__v
   }
+
+const Product = mongoose.model('Product', productSchema)
+
+//###########################################################
+
+const cartSchema = new mongoose.Schema({
+  userId: {type: mongoose.Types.ObjectId, ref: 'Users'},
+  timestamp: {type: Date, default: Date.now},
+  paid: {type: Boolean, default: false},
 })
 
+cartSchema.methods.toJSON = function () {
+  const cObj = this.toObject()
+  cObj.id = cObj._id.toString()
+  delete cObj._id
+  delete cObj.__v
+  return cObj
+}
 
-const Message = mongoose.model('Message', messageSchema)
+const Cart = mongoose.model('Cart', cartSchema)
 
+const cartQSchema = new mongoose.Schema({
+  cartId: {type: mongoose.Types.ObjectId, ref: 'Cart'},
+  productId: {type: mongoose.Types.ObjectId, ref: 'Product'},
+  quantity: {type: Number, default: 0},
+})
+
+cartQSchema.methods.toJSON = function () {
+  const cObj = this.toObject()
+  cObj.id = cObj._id.toString()
+  if (cObj.productId) {
+    cObj.productId = cObj.productId._id.toString()
+  }
+  delete cObj.cartId
+  delete cObj._id
+  delete cObj.__v
+  return cObj
+}
+const CartQ = mongoose.model('CartQ', cartQSchema)
+
+//###########################################################
+const wishListSchema = new mongoose.Schema({
+  userId: {type: mongoose.Types.ObjectId, ref: 'Users', index: true},
+  productId: {type: mongoose.Types.ObjectId, ref: 'Product', index: true},
+})
+wishListSchema.index({ userId: 1, productId: 1 }, { unique: true })
+
+wishListSchema.methods.toJSON = function () {
+  const cObj = this.toObject()
+  cObj.id = cObj._id.toString()
+  delete cObj._id
+  delete cObj.__v
+  return cObj
+}
+const WishList = mongoose.model('WishList', wishListSchema)
+
+
+//###########################################################
 const initDB = async () => {
     await mongoose
         .connect(config.mongoDBUrl)
@@ -72,4 +147,7 @@ const initDB = async () => {
         })
     }
 
-module.exports = { Session, Conversation, Message, initDB }
+module.exports = {
+  Users, Brand, Product, 
+  Cart, CartQ, WishList,
+  initDB }

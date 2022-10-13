@@ -1,0 +1,224 @@
+https://www.mongodb.com/atlas/database
+npm run devserver
+
+
+User:
+    register a new user
+        POST /auth/register
+            {
+                username:'johnd',
+                password:'m38rmF$',
+                email:'John@gmail.com',
+                address:'kilcoole',
+                phone:'1-570-236-7033'
+            }
+        return success: status(200).{jwt, username, userId}
+        return error: status(401).{error: "invalid"}
+    
+    User login
+        POST /auth/login
+            {
+                username:'johnd',
+                password:'m38rmF$',
+            }
+        return success: status(200).{jwt, email, username, address, phone, userId}
+        return error: status(401).{error: "invalid"}
+    
+    Update a user
+        PUT /api/users/id
+            {
+                email:'John@gmail.com',
+                username:'johnd',
+                password:'m38rmF$',
+                address:'kilcoole',
+                phone:'1-570-236-7033'
+            }
+        return success: status(200).{jwt, email, username, address, phone, userId}
+        return error: status(401).{error: "invalid"}
+
+    Get all
+        GET /api/users
+        return success: status(200).[{email, username, address, phone, userId}, ]
+        return error: status(401).{error: "invalid"}
+
+    Get a single user
+        GET /api/users/id
+        return success: status(200).{email, username, address, phone, userId}
+        return error: status(401).{error: "invalid"}
+        
+
+Products:
+    Get all products
+        GET /api/products
+        return success: status(200).[{id, title, price, brandId, brand, description, image, rating, timestamp}, ]
+        return error: status(401).{error: "invalid"}
+        
+    Get a single product
+        GET /api/products/id
+        return success: status(200).{id, title, price, brandId, brand, description, image, rating, timestamp}
+        return error: status(401).{error: "invalid"}
+        
+    Add new product
+        POST /api/products
+        {title, price, brandId, description, image, rating}
+        return success: status(200).{id, title, price, brandId, brand, description, image, rating, timestamp}
+        return error: status(401).{error: "invalid"}
+        
+    Update a product
+        PUT /api/products/id
+        {title, price, brandId, description, image, rating}
+        return success: status(200).{id, title, price, brandId, brand, description, image, rating, timestamp}
+        return error: status(401).{error: "invalid"}
+
+    Delete a product
+        DELETE /api/products/id
+        return success: status(200).{status: "OK"}
+        return error: status(401).{error: "invalid"}
+        
+    Del products   // only for test
+        DELETE /api/products
+        return success: status(200).{status: "OK"}
+        return error: status(401).{error: "invalid"}
+
+Brands:
+    Get all brands
+        GET /api/brands
+        return success: status(200).[{id, title, products: count()}, ]
+        return error: status(401).{error: "invalid"}
+        
+    Get products in a specific brand
+        GET /api/brands/id
+        return success: status(200).[{id, title, price, brandId, brand, description, image, rating, timestamp}, ]
+        return error: status(401).{error: "invalid"}
+    Add new brand
+        POST /api/brands
+        {title}
+        return success: status(200).{id, title}
+        return error: status(401).{error: "invalid"}
+        
+    Del brands   // only for test
+        DELETE /api/brands
+        return success: status(200).{status: "OK"}
+        return error: status(401).{error: "invalid"}
+
+
+    
+Cart: only allow one unpaid cart, but multiple paid cart as shopping history. 
+    Get all carts
+        GET /api/carts
+        return success: status(200).[{id, userId, timestamp, paid, products:[{productId,quantity},]}, ]
+        return error: status(401).{error: "invalid"}
+        
+    Get a specific cart
+        GET /api/carts/id
+        return success: status(200).{id, userId, timestamp, paid, products:[{productId,quantity},]}
+        return error: status(401).{error: "invalid"}
+        
+    Get user carts
+        GET /api/cartsuser
+        return success: status(200).[{id, userId, timestamp, paid, products:[{productId,quantity},]}, ]
+        return error: status(401).{error: "invalid"}
+    
+    Add a new cart
+        POST /api/carts
+        {products:[{productId,quantity}, ]}
+        return success: status(200).{id, userId, timestamp, products[{productId,quantity},]}
+        return error: status(401).{error: "invalid"}
+        
+    Update a cart
+        PUT /api/carts/id
+        {paid, products:[{productId,quantity}, ]}
+        return success: status(200).{id, userId, timestamp, paid, products[{productId,quantity},]}
+        return error: status(401).{error: "invalid"}
+        
+    Delete a cart
+        DELETE /api/carts/id
+        return success: status(200).{status: "OK"}
+        return error: status(401).{error: "invalid"}
+    Pay a cart
+        PATCH /api/carts/id
+        {paid}
+        return success: status(200).{status: "OK"}
+        return error: status(401).{error: "invalid"}
+
+    Del carts   // only for test
+        DELETE /api/carts
+        return success: status(200).{status: "OK"}
+        return error: status(401).{error: "invalid"}
+
+Wish List:
+    Get all wish list products for the current user
+        GET /api/wishlists
+        return success: status(200).[{productId},]
+        return error: status(401).{error: "invalid"}
+    Add a product in wish list
+        POST /api/wishlists
+        {productId}
+        return success: status(200).{productId}
+        return error: status(401).{error: "invalid"}
+    Remote a product from wish list
+        DELETE /api/wishlists/id
+        return success: status(200).{status: "OK"}
+        return error: status(401).{error: "invalid"}
+        
+    Del wishlists   // only for test
+        DELETE /api/wishlists
+        return success: status(200).{status: "OK"}
+        return error: status(401).{error: "invalid"}
+
+
+
+
+//#########################################################
+[
+    {
+        "title": "NOKIA",
+        "price": 100.99,
+        "brandId": "633a3067b576ef62b7e05dc1",
+        "description": "Iphone14",
+        "image": "http://11",
+        "timestamp": "2022-10-03T04:00:13.631Z",
+        "id": "633a5e4d3a9032503aa74cc8",
+        "brand": "NOKIA"
+    },
+    {
+        "title": "NOKIA1",
+        "price": 100.99,
+        "brandId": "633a3067b576ef62b7e05dc1",
+        "description": "Iphone14",
+        "image": "http://11",
+        "timestamp": "2022-10-03T04:08:23.068Z",
+        "id": "633a6037eee4d44600762a86",
+        "brand": "NOKIA"
+    },
+    {
+        "title": "NOKIA2",
+        "price": 100.99,
+        "brandId": "633a3067b576ef62b7e05dc1",
+        "description": "Iphone14",
+        "image": "http://11",
+        "timestamp": "2022-10-03T04:12:36.611Z",
+        "id": "633a6134fead750725f1d333",
+        "brand": "NOKIA"
+    },
+    {
+        "title": "NOKIA3",
+        "price": 100.99,
+        "brandId": "633a3067b576ef62b7e05dc1",
+        "description": "Iphone14",
+        "image": "http://11",
+        "timestamp": "2022-10-03T04:13:22.305Z",
+        "id": "633a6162681a3d2135d3f235",
+        "brand": "NOKIA"
+    },
+    {
+        "title": "NOKIA4",
+        "price": 100.99,
+        "brandId": "633a3067b576ef62b7e05dc1",
+        "description": "Iphone14",
+        "image": "http://11",
+        "timestamp": "2022-10-03T04:16:22.493Z",
+        "id": "633a62166f0ee6f57dd0b9e3",
+        "brand": "NOKIA"
+    }
+]
