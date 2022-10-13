@@ -201,7 +201,8 @@ function httpGetCarts(){
                 <div key={product.id} className="brandItem">
                     id:{product.id}--title:{product.title}--price:{product.price}--brandId:{product.brandId}--brand:{product.brand}
                     --rating:{product.rating}--timestamp:{product.timestamp}
-                    --description:{product.description}--image:{product.image}
+                    --description:{product.description}
+                    <img src= {product.image} width="100" height="100"/>
                 </div>)}
             </div>
 
