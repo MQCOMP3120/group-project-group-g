@@ -11,7 +11,7 @@ import { openSearch } from "../features/navbar/searchSlice";
 import { signIn } from "../features/userAuth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import logo from "../assets/logo.jpg";
-import { BiHeart, BiProf } from "react-icons/bi";
+import { BiHeart } from "react-icons/bi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsPersonCircle } from "react-icons/bs";
 
