@@ -1,24 +1,35 @@
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import { Button } from 'react-bootstrap'
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 export default function Hero() {
-    return (
-        <Wrapper className='section-center'>
-            <article className="hero-text">
-                <h1>
-                    Your Ideal Online
-                    Mobile Phone Store
-                </h1>
-                <p>orem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis lorem risus.</p>
-                <Button as={Link} to="/products" size='lg'> Shop Now </Button>
-            </article>
-            <article className='img-container'>
-                <img className="hero-img" id="img-1" src="https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596686-Product-0-I-637982215683748466_300x300.jpg?v=1662701000" />
-                <img className="hero-img" id="img-2" src="https://cdn.shopify.com/s/files/1/0024/9803/5810/products/598448-Product-0-I-637947050615176953_300x300.jpg?v=1664423566" />
-            </article>
-        </Wrapper>
-    )
+  return (
+    <Wrapper className="section-center">
+      <article className="hero-text">
+        <h1>Your Ideal Online Mobile Phone Store</h1>
+        <p>
+          orem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+          lobortis lorem risus.
+        </p>
+        <Button as={Link} to="/products" size="lg">
+          {" "}
+          Shop Now{" "}
+        </Button>
+      </article>
+      <article className="img-container">
+        <img
+          className="hero-img"
+          id="img-1"
+          src="https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596686-Product-0-I-637982215683748466_300x300.jpg?v=1662701000"
+        />
+        <img
+          className="hero-img"
+          id="img-2"
+          src="https://cdn.shopify.com/s/files/1/0024/9803/5810/products/598448-Product-0-I-637947050615176953_300x300.jpg?v=1664423566"
+        />
+      </article>
+    </Wrapper>
+  );
 }
 
 const Wrapper = styled.section`
@@ -45,22 +56,24 @@ const Wrapper = styled.section`
       font-size: 1.25rem;
     }
     .img-container {
-        display: block;
-        position: relative;
-        height: 75vh;
-        width: 30vw;
+      display: block;
+      position: relative;
+      height: 75vh;
+      width: 35vw;
     }
     .hero-img {
-        padding: 10px 0;
+      padding: 10px 0;
     }
     #img-1 {
-        bottom: 5vh;
-        right: 0;
-        position: absolute;
+      bottom: 5vh;
+      right: 0;
+      position: absolute;
+      height: 35vh;
     }
     #img-2 {
-        top: 0;
-        position: absolute;
+      top: 0;
+      position: absolute;
+      height: 35vh;
     }
-}
-`
+  }
+`;

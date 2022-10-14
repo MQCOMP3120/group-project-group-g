@@ -29,7 +29,7 @@ export default function Products() {
         <Dropdown.Toggle variant="secondary-outline">
           {selectedFilterItem}
         </Dropdown.Toggle>
-        <Dropdown.Menu variant="dark">
+        <Dropdown.Menu variant="light">
           {filterItems.map((item, idx) => {
             return (
               <Dropdown.Item
