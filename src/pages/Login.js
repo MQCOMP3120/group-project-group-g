@@ -5,7 +5,7 @@ import { AiOutlineRight } from "react-icons/ai";
 import { GoogleLogin } from "@react-oauth/google";
 import { signIn } from "../features/userAuth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { Breadcrumb } from "react-bootstrap";
+import jwtDecode from "jwt-decode";
 import Home from "./Home";
 
 export default function Login() {
@@ -55,7 +55,9 @@ export default function Login() {
         </p>
         <Form.Group className="d-flex justify-content-center">
           <GoogleLogin
-            onSuccess={(credentialResponse) => {
+            onSuccess={(res) => {
+              // let userObj = jwtDecode(res.credential);
+              // console.log(userObj);
               dispatch(signIn());
             }}
             onError={() => {
