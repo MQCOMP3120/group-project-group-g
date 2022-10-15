@@ -1,21 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './index.css'
-import { store } from './store';
-import { Provider } from 'react-redux';
-import { GoogleOAuthProvider } from '@react-oauth/google';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "react-bootstrap-typeahead/css/Typeahead.css";
+import "./index.css";
+import { store } from "./store";
+import { Provider } from "react-redux";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <GoogleOAuthProvider clientId="375049511032-kv8jmbo5182qd5ojf817ndb7n0dj4tk1.apps.googleusercontent.com">
-     <Provider store={store}>
-      <App />
-    </Provider>
-    </GoogleOAuthProvider>;
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </GoogleOAuthProvider>
+    ;
   </React.StrictMode>
 );
 

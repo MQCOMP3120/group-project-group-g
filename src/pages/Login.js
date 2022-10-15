@@ -72,7 +72,7 @@ export default function Login() {
 
 const Wrapper = styled.section`
   form {
-    height: 50vh;
+    height: 60vh;
     min-width: 30vw;
     padding: 2rem;
     border-radius: 15px;

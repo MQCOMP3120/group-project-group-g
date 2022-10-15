@@ -2,18 +2,47 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Breadcrumb, Dropdown } from "react-bootstrap";
-import { testProductData } from "../util/constants";
+// import { testProductData } from "../util/constants";
 import ProductCard from "../components/ProductCard";
+import {
+  sortByPriceLowHigh,
+  sortByPriceHighLow,
+  sortByRatingHighLow,
+  sortByRatingLowHigh,
+} from "../features/products/filterSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Products() {
+  const dispatch = useDispatch();
   const filterItems = [
+    "Relevance",
     "Price: low - high",
     "Price: high - low",
     "Rating: low - high",
     "Rating: high - low",
-    "Relevance",
   ];
+
   const [selectedFilterItem, setSelectedFilterItem] = useState(filterItems[0]);
+
+  const { sortedProducts } = useSelector((state) => state.filter);
+
+  const filterProducts = (item) => {
+    setSelectedFilterItem(item);
+
+    switch (item) {
+      case "Price: low - high":
+        dispatch(sortByPriceLowHigh());
+        break;
+      case "Price: high - low":
+        dispatch(sortByPriceHighLow());
+        break;
+      case "Rating: low - high":
+        dispatch(sortByRatingLowHigh());
+        break;
+      case "Rating: high - low":
+        dispatch(sortByRatingHighLow());
+    }
+  };
 
   return (
     <Wrapper className="section-center">
@@ -32,10 +61,7 @@ export default function Products() {
         <Dropdown.Menu variant="light">
           {filterItems.map((item, idx) => {
             return (
-              <Dropdown.Item
-                key={idx}
-                onClick={() => setSelectedFilterItem(item)}
-              >
+              <Dropdown.Item key={idx} onClick={() => filterProducts(item)}>
                 {item}
               </Dropdown.Item>
             );
@@ -44,7 +70,7 @@ export default function Products() {
       </Dropdown>
       <hr />
       <div className="products">
-        {testProductData.map((product, idx) => (
+        {sortedProducts.map((product, idx) => (
           <ProductCard
             key={idx}
             name={product.name}
