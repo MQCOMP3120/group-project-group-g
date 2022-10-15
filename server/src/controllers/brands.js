@@ -3,14 +3,14 @@ const models = require('../models')
 
 
 const getBrands = async (request, response) => {
-    const user = await auth.validUser(request, response)
-    if (user === "false")   return 
+    // const user = await auth.validUser(request, response)
+    // if (user === "false")   return 
 
     const match = await models.Brand.find({}).populate('products')
     if(match && match.length>0) {
         response.status(200).json(match)
     } else {
-        response.status(401).json({error: "invalid"})
+        response.status(200).json({error: "invalid"})
     }
 }
 
@@ -32,8 +32,8 @@ const createBrand = async (request, response) => {
 }
 
 const getBrand = async (request, response) => {
-    const user = await auth.validUser(request, response)
-    if (user === "false")   return
+    // const user = await auth.validUser(request, response)
+    // if (user === "false")   return
 
     const id = request.params.id
     const match = await models.Product.find({brandId: id})
@@ -42,13 +42,14 @@ const getBrand = async (request, response) => {
     if(match && match.length>0) {
         response.status(200).json(match)
     } else {
-        response.status(401).json({error: "invalid"})
+        response.status(200).json({error: "invalid"})
     }
 }
 
 const deleteBrands = async (request, response) => {
     const user = await auth.validUser(request, response)
     if (user === "false")   return
+    
     await models.Brand.deleteMany({})
     response.status(200).json({status: "OK"})
 }

@@ -57,7 +57,7 @@ const getCarts = async (request, response) => {
         }
         return response.status(200).json(result)
     }
-    response.status(401).json({error: "invalid"})
+    response.status(200).json({error: "invalid"})
 }
 
 const getCart = async (request, response) => {
@@ -81,7 +81,7 @@ const getCart = async (request, response) => {
         }
         return response.status(200).json(result)
     }
-    response.status(401).json({error: "invalid"})
+    response.status(200).json({error: "invalid"})
 }
 
 const getUserCarts = async (request, response) => {
@@ -107,7 +107,7 @@ const getUserCarts = async (request, response) => {
         }
         return response.status(200).json(result)
     }
-    response.status(401).json({error: "invalid"})
+    response.status(200).json({error: "invalid"})
 }
 
 const modCart = async (request, response) => {
