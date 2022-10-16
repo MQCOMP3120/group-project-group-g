@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Breadcrumb, Dropdown } from "react-bootstrap";
@@ -9,6 +9,7 @@ import {
   sortByPriceHighLow,
   sortByRatingHighLow,
   sortByRatingLowHigh,
+  resetProducts,
 } from "../features/products/filterSlice";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -16,6 +17,7 @@ export default function Products() {
   const dispatch = useDispatch();
   const filterItems = [
     "Relevance",
+    "All Products",
     "Price: low - high",
     "Price: high - low",
     "Rating: low - high",
@@ -24,7 +26,7 @@ export default function Products() {
 
   const [selectedFilterItem, setSelectedFilterItem] = useState(filterItems[0]);
 
-  const { sortedProducts } = useSelector((state) => state.filter);
+  const { sortedProducts, isLoading } = useSelector((state) => state.filter);
 
   const filterProducts = (item) => {
     setSelectedFilterItem(item);
@@ -41,8 +43,14 @@ export default function Products() {
         break;
       case "Rating: high - low":
         dispatch(sortByRatingHighLow());
+      case "All Products":
+        dispatch(resetProducts());
     }
   };
+
+  if (isLoading) {
+    return <h1> Loading ... </h1>;
+  }
 
   return (
     <Wrapper className="section-center">
@@ -73,8 +81,8 @@ export default function Products() {
         {sortedProducts.map((product, idx) => (
           <ProductCard
             key={idx}
-            name={product.name}
-            imgUrl={product.imgUrl}
+            name={product.title}
+            imgUrl={product.image}
             price={product.price}
             rating={product.rating}
             id={product.id}
