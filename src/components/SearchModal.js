@@ -14,13 +14,14 @@ export default function SearchModal() {
 
   const onInputChange = (e) => {
     // setKeyword(e.target.value);
+    e.preventDefault();
     dispatch(sortByRelevance(e.target.value));
   };
 
-  // useEffect(() => {
-  //   console.log(keyword);
-  //   dispatch(sortByRelevance(keyword));
-  // }, [keyword]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("submit");
+  };
 
   return (
     <Wrapper className="center-items">
@@ -30,9 +31,9 @@ export default function SearchModal() {
         color="white"
         onClick={() => dispatch(closeSearch())}
       />
-      <Form onSubmit={() => console.log("submit")}>
+      <Form onSubmit={handleSubmit}>
         <DropDownSearchBar
-          productOptions={sortedProducts}
+          productOptions={sortedProducts.slice(0, 3)}
           onInputChange={onInputChange}
           closeSearch={closeSearch}
         />
@@ -45,7 +46,7 @@ const Wrapper = styled.section`
   position: relative;
   z-index: 10000;
   width: 100vw;
-  height: 100vh;
+  height: 50vh;
   position: absolute;
   background-color: rgba(120, 120, 120, 0.64);
 

@@ -1,17 +1,25 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { testProductData } from "../util/constants";
 import { Breadcrumb, Button } from "react-bootstrap";
 import { BiHeart } from "react-icons/bi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import styled from "styled-components";
 import RatingStars from "../components/RatingStars";
+import { useSelector } from "react-redux";
 
 export default function SingleProduct() {
   const { productId } = useParams();
-  const { id, imgUrl, name, price, rating, description } =
-    testProductData.filter((product) => product.id === productId)[0];
+  const { allProducts, isLoading } = useSelector((state) => state.filter);
 
+  const productInfo = allProducts.filter(
+    (product) => product.id === productId
+  )[0];
+
+  if (isLoading || !productInfo) {
+    return <h1> Loading .... </h1>;
+  }
+
+  const { id, image, title, price, rating, description } = productInfo;
   return (
     <Wrapper className="section-center">
       <Breadcrumb className="my-5">
@@ -21,14 +29,14 @@ export default function SingleProduct() {
         <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/products" }}>
           Products
         </Breadcrumb.Item>
-        <Breadcrumb.Item active> {name} </Breadcrumb.Item>
+        <Breadcrumb.Item active> {title} </Breadcrumb.Item>
       </Breadcrumb>
       <div className="content">
         <div className="img-container center-items">
-          <img src={imgUrl} alt={name} />
+          <img src={image} alt={title} />
         </div>
         <div className="product-info mt-5 px-3">
-          <h3> {name} </h3>
+          <h3> {title} </h3>
           <RatingStars rating={rating} />
           <b>{`$ ${price}`}</b>
           <p className="product-description">{description}</p>

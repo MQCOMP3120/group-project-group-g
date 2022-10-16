@@ -11,11 +11,16 @@ import {
   sortByRatingLowHigh,
 } from "../features/products/filterSlice";
 import ProductCard from "../components/ProductCard";
+import ErrorPage from "./ErrorPage";
 
 export default function SingleBrand() {
   const { brandId } = useParams();
   const dispatch = useDispatch();
-  const { singleBrandProducts } = useSelector((state) => state.filter);
+  const { singleBrandProducts, brands, isLoading } = useSelector(
+    (state) => state.filter
+  );
+
+  const currentBrand = brands.filter((brand) => brand.id === brandId)[0];
 
   const filterItems = [
     "Relevance",
@@ -47,7 +52,11 @@ export default function SingleBrand() {
 
   useEffect(() => {
     dispatch(sortByBrand(brandId));
-  }, [brandId]);
+  }, [brandId, currentBrand]);
+
+  if (isLoading || currentBrand === undefined) {
+    return <h1> Loading ....</h1>;
+  }
 
   return (
     <Wrapper className="section-center">
@@ -55,9 +64,9 @@ export default function SingleBrand() {
         <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>
           Home
         </Breadcrumb.Item>
-        <Breadcrumb.Item active> {brandId} </Breadcrumb.Item>
+        <Breadcrumb.Item active> {currentBrand.title} </Breadcrumb.Item>
       </Breadcrumb>
-      <h3> {brandId} </h3>
+      <h3> {currentBrand.title} </h3>
       <Dropdown className="mt-5">
         <span> Sort by: </span>
         <Dropdown.Toggle variant="secondary-outline">
@@ -78,11 +87,12 @@ export default function SingleBrand() {
         {singleBrandProducts.map((product, idx) => (
           <ProductCard
             key={idx}
-            name={product.name}
-            imgUrl={product.imgUrl}
+            name={product.tittle}
+            imgUrl={product.image}
             price={product.price}
             rating={product.rating}
             id={product.id}
+            description={product.description}
           />
         ))}
       </div>

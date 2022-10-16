@@ -17,7 +17,6 @@ export default function DropDownSearchBar({ productOptions, onInputChange }) {
           className="form-control"
           placeholder="Search product"
           onChange={onInputChange}
-          autofocus
         />
 
         <ul className="list-group">
@@ -31,7 +30,7 @@ export default function DropDownSearchBar({ productOptions, onInputChange }) {
                 to={`/products/${productOption.id}`}
                 onClick={() => dispatch(closeSearch())}
               >
-                {productOption.name}
+                {productOption.title}
               </Button>
             );
           })}

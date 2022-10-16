@@ -8,7 +8,6 @@ import {
   Form,
 } from "react-bootstrap";
 import { openSearch } from "../features/navbar/searchSlice";
-import { signIn } from "../features/userAuth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import logo from "../assets/logo.jpg";
 import { BiHeart, BiSearch } from "react-icons/bi";
@@ -18,9 +17,10 @@ import { BsPersonCircle } from "react-icons/bs";
 export default function NavBar() {
   const dispatch = useDispatch();
   const { isSignIn } = useSelector((state) => state.auth);
+  const { brands } = useSelector((state) => state.filter);
 
   // for testing only, will change this when connect to back-end API
-  const brands = ["Apple", "Samsung", "Google", "Nokia", "Oppo", "Sony"];
+  //const brands = ["Apple", "Samsung", "Google", "Nokia", "Oppo", "Sony"];
 
   // boostrap Nav bar doc: https://react-bootstrap.github.io/components/navbar/
   return (
@@ -44,10 +44,14 @@ export default function NavBar() {
               Products
             </Nav.Link>
             <NavDropdown title="Brands" id="navbarScrollingDropdown">
-              {brands.map((brand, idx) => {
+              {brands.map((brand) => {
                 return (
-                  <Dropdown.Item as={Link} to={`/brands/${brand}`} key={idx}>
-                    {brand}
+                  <Dropdown.Item
+                    as={Link}
+                    to={`/brands/${brand.id}`}
+                    key={brand.id}
+                  >
+                    {brand.title}
                   </Dropdown.Item>
                 );
               })}

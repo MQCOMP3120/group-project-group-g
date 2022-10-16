@@ -1,12 +1,30 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import NavBar from './components/NavBar';
-import SearchModal from './components/SearchModal';
-import { Home, Cart, Login, Products, Register, SingleProduct, SingleBrand, UserProfile, WishList, ErrorPage } from './pages'
-import { useSelector } from 'react-redux'
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import SearchModal from "./components/SearchModal";
+import {
+  Home,
+  Cart,
+  Login,
+  Products,
+  Register,
+  SingleProduct,
+  SingleBrand,
+  UserProfile,
+  WishList,
+  ErrorPage,
+} from "./pages";
+import { useSelector, useDispatch } from "react-redux";
+import { getProducts, getBrands } from "./features/products/filterSlice";
 
 function App() {
-  const { searchModalOpen } = useSelector((store) => store.search)
+  const dispatch = useDispatch();
+  const { searchModalOpen } = useSelector((store) => store.search);
 
+  useEffect(() => {
+    dispatch(getProducts());
+    dispatch(getBrands());
+  }, []);
   return (
     <BrowserRouter>
       {searchModalOpen && <SearchModal />}
