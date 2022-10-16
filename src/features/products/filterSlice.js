@@ -2,16 +2,25 @@ import { createSlice } from "@reduxjs/toolkit";
 import { testProductData } from "../../util/constants";
 
 const initialState = {
+  allProducts: testProductData,
   sortedProducts: testProductData,
   singleBrandProducts: [],
-  keyWord: "",
 };
 
 const filterSlice = createSlice({
   name: "filter",
   initialState,
   reducers: {
-    sortByRelevance: (state, action) => {},
+    sortByRelevance: (state, action) => {
+      const keyWord = action.payload;
+      if (keyWord === "") {
+        state.sortedProducts = state.allProducts;
+      } else {
+        state.sortedProducts = state.allProducts.filter((product) =>
+          product.name.toLocaleLowerCase().includes(keyWord.toLocaleLowerCase())
+        );
+      }
+    },
 
     sortByBrand: (state, action) => {
       const brand = action.payload;
@@ -48,5 +57,6 @@ export const {
   sortByRatingHighLow,
   sortByRatingLowHigh,
   sortByBrand,
+  sortByRelevance,
 } = filterSlice.actions;
 export default filterSlice.reducer;

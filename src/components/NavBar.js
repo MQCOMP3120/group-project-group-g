@@ -11,7 +11,7 @@ import { openSearch } from "../features/navbar/searchSlice";
 import { signIn } from "../features/userAuth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import logo from "../assets/logo.jpg";
-import { BiHeart } from "react-icons/bi";
+import { BiHeart, BiSearch } from "react-icons/bi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsPersonCircle } from "react-icons/bs";
 
@@ -53,16 +53,10 @@ export default function NavBar() {
               })}
             </NavDropdown>
           </Nav>
-          <Form className="d-flex me-5 w-20">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-3 search-form-input"
-              aria-label="Search"
-              onMouseDown={() => dispatch(openSearch())}
-            />
-          </Form>
           <Nav>
+            <Nav.Link>
+              <BiSearch size={25} onClick={() => dispatch(openSearch())} />
+            </Nav.Link>
             {isSignIn && (
               <>
                 <Nav.Link as={Link} to="/wishlist">

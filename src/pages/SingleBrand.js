@@ -55,7 +55,7 @@ export default function SingleBrand() {
         <Breadcrumb.Item linkAs={Link} linkProps={{ to: "/" }}>
           Home
         </Breadcrumb.Item>
-        <Breadcrumb.Item active> Brands / {brandId} </Breadcrumb.Item>
+        <Breadcrumb.Item active> {brandId} </Breadcrumb.Item>
       </Breadcrumb>
       <h3> {brandId} </h3>
       <Dropdown className="mt-5">

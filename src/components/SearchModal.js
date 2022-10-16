@@ -1,16 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Form, Button } from "react-bootstrap";
-import { BiSearch } from "react-icons/bi";
-import { Typeahead } from "react-bootstrap-typeahead";
 import { GrClose } from "react-icons/gr";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { closeSearch } from "../features/navbar/searchSlice";
+import { sortByRelevance } from "../features/products/filterSlice";
+import DropDownSearchBar from "./DropDownSearchBar";
 
 export default function SearchModal() {
   const dispatch = useDispatch();
-  const options = ["dsad", "dsadsa", "dsadsa"];
-  const [singleSelections, setSingleSelections] = useState([]);
+  const { sortedProducts } = useSelector((state) => state.filter);
+  const [keyword, setKeyword] = useState("");
+
+  const onInputChange = (e) => {
+    // setKeyword(e.target.value);
+    dispatch(sortByRelevance(e.target.value));
+  };
+
+  // useEffect(() => {
+  //   console.log(keyword);
+  //   dispatch(sortByRelevance(keyword));
+  // }, [keyword]);
+
   return (
     <Wrapper className="center-items">
       <GrClose
@@ -19,18 +30,13 @@ export default function SearchModal() {
         color="white"
         onClick={() => dispatch(closeSearch())}
       />
-      <Typeahead
-        className="searchBox mx-4"
-        id="basic-typeahead-single"
-        labelKey="name"
-        onChange={setSingleSelections}
-        options={options}
-        placeholder="Search..."
-        selected={singleSelections}
-      />
-      <Button>
-        <BiSearch size={25} />
-      </Button>
+      <Form onSubmit={() => console.log("submit")}>
+        <DropDownSearchBar
+          productOptions={sortedProducts}
+          onInputChange={onInputChange}
+          closeSearch={closeSearch}
+        />
+      </Form>
     </Wrapper>
   );
 }
