@@ -9,10 +9,10 @@ import jsonData from'./services/sample.json'
 
 function Stage({fn, keyWords}) {
     // values for conversations and new conversation
-    const [brands, setBrands] =  useState()
-    const [products, setProducts] = useState()
-    const [wishLists, setWishLists] = useState()
-    const [carts, setCarts] = useState()
+    const [brands, setBrands] =  useState([])
+    const [products, setProducts] = useState([])
+    const [wishLists, setWishLists] = useState([])
+    const [carts, setCarts] = useState([])
     const navigate = useNavigate()
 
 //####################################
@@ -53,15 +53,13 @@ async function httpGetBrands(){
     //     )
     // }
     try{
-        if(keyWords.jwt){
-            const response = await axioserver.getBrands(keyWords.jwt)
-            console.log("httpGetBrands res:\n", response)
-            if(response.error){
-                alert("invalid")
-                return
-            }
-            setBrands(response)
+        const response = await axioserver.getBrands(keyWords.jwt)
+        console.log("httpGetBrands res:\n", response)
+        if(response.error){
+            alert("invalid")
+            setBrands([])
         }
+        setBrands(response)
     } catch(error){
         alert(`httpGetConversation respond:${error}`)
     }
@@ -83,15 +81,13 @@ async function httpGetProducts(){
     //     )
     // }
     try{
-        if(keyWords.jwt){
-            const response = await axioserver.getProducts(keyWords.jwt)
-            console.log("httpGetProducts res:\n", response)
-            if(response.error){
-                alert("invalid")
-                return
-            }
-            setProducts(response)
+        const response = await axioserver.getProducts(keyWords.jwt)
+        console.log("httpGetProducts res:\n", response)
+        if(response.error){
+            alert("invalid")
+            setProducts([])
         }
+        setProducts(response)
     } catch(error){
         alert(`httpGetConversation respond:${error}`)
     }
@@ -104,7 +100,7 @@ function httpGetWishLists(){
         {console.log("httpGetWishLists res:\n", response)
             if(response.error){
                 alert("invalid")
-                return
+                setWishLists([])
             }
             setWishLists(response)
         })
@@ -121,7 +117,7 @@ function httpGetCarts(){
         {console.log("httpGetCarts res:\n", response)
             if(response.error){
                 alert("invalid")
-                return
+                setCarts([])
             }
             setCarts(response)
         })
@@ -189,7 +185,7 @@ function httpGetCarts(){
         <div className="stagePage">
             <button onClick={httpGetBrands}> Get Brands </button>
             <div>
-                {brands && brands.map( brand =>
+                {brands.length>0 && brands.map( brand =>
                 <div key={brand.id} className="brandItem">
                     id:{brand.id} title:{brand.title} product count:{brand.products}
                 </div>)}
@@ -197,7 +193,7 @@ function httpGetCarts(){
 
             <button onClick={httpGetProducts}> Get Products </button>
             <div>
-                {products && products.map( product =>
+                {products.length>0 && products.map( product =>
                 <div key={product.id} className="brandItem">
                     id:{product.id}--title:{product.title}--price:{product.price}--brandId:{product.brandId}--brand:{product.brand}
                     --rating:{product.rating}--timestamp:{product.timestamp}
@@ -208,7 +204,7 @@ function httpGetCarts(){
 
             <button onClick={httpGetWishLists}> Get WishLists </button>
             <div>
-                {wishLists && wishLists.map( wishList =>
+                {wishLists.length>0 && wishLists.map( wishList =>
                 <div key={wishList.productId} className="brandItem">
                     productId:{wishList.productId}
                 </div>)}
@@ -216,7 +212,7 @@ function httpGetCarts(){
 
             <button onClick={httpGetCarts}> Get Carts </button>
             <div>
-                {carts && carts.map( cart =>
+                {carts.length>0 && carts.map( cart =>
                 <div key={cart.id} className="brandItem">
                     id:{cart.id}--userId:{cart.userId}--timestamp:{cart.timestamp}--paid:{cart.paid}
                     {cart.products.map( product =>

@@ -2,27 +2,27 @@ const models = require('../models')
 const auth = require('./auth')
 
 const getProducts = async (request, response) => {
-    const user = await auth.validUser(request, response)
-    if (user === "false")   return 
+    // const user = await auth.validUser(request, response)
+    // if (user === "false")   return 
 
     const match = await models.Product.find({}).populate('brandId')
     if(match && match.length>0) {
         response.status(200).json(match)
     } else {
-        response.status(401).json({error: "invalid"})
+        response.status(200).json({error: "invalid"})
     }
 }
 
 const getProduct = async (request, response) => {
-    const user = await auth.validUser(request, response)
-    if (user === "false")   return 
+    // const user = await auth.validUser(request, response)
+    // if (user === "false")   return 
 
     const id = request.params.id
     const match = await models.Product.findById(id).populate('brandId')
     if (match) {
         response.status(200).json(match)
     } else {
-        response.status(401).json({error: "invalid"})
+        response.status(200).json({error: "invalid"})
     }
 }
 
@@ -134,7 +134,7 @@ const getWishList = async (request, response) => {
         }
         return response.status(200).json(products)
     }
-    response.status(401).json({error: "invalid"})                                    
+    response.status(200).json({error: "invalid"})                                    
 
 
 }
