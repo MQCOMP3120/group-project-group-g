@@ -5,11 +5,20 @@ import { Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { closeSearch } from "../features/navbar/searchSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function DropDownSearchBar({ productOptions, onInputChange }) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/products");
+    dispatch(closeSearch());
+  };
+
   return (
-    <Form className="search-bar-dropdown d-flex">
+    <Form className="search-bar-dropdown d-flex" onSubmit={handleSubmit}>
       <Form.Group>
         <input
           autoFocus

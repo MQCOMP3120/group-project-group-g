@@ -10,17 +10,9 @@ import DropDownSearchBar from "./DropDownSearchBar";
 export default function SearchModal() {
   const dispatch = useDispatch();
   const { sortedProducts } = useSelector((state) => state.filter);
-  const [keyword, setKeyword] = useState("");
 
   const onInputChange = (e) => {
-    // setKeyword(e.target.value);
-    e.preventDefault();
     dispatch(sortByRelevance(e.target.value));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("submit");
   };
 
   return (
@@ -31,13 +23,11 @@ export default function SearchModal() {
         color="white"
         onClick={() => dispatch(closeSearch())}
       />
-      <Form onSubmit={handleSubmit}>
-        <DropDownSearchBar
-          productOptions={sortedProducts.slice(0, 3)}
-          onInputChange={onInputChange}
-          closeSearch={closeSearch}
-        />
-      </Form>
+      <DropDownSearchBar
+        productOptions={sortedProducts.slice(0, 3)}
+        onInputChange={onInputChange}
+        closeSearch={closeSearch}
+      />
     </Wrapper>
   );
 }
@@ -46,7 +36,7 @@ const Wrapper = styled.section`
   position: relative;
   z-index: 10000;
   width: 100vw;
-  height: 50vh;
+  height: 35vh;
   position: absolute;
   background-color: rgba(120, 120, 120, 0.64);
 
@@ -60,7 +50,7 @@ const Wrapper = styled.section`
     cursor: pointer;
   }
   .searchBox {
-    width: 40vw;
+    width: 45vw;
     height: 5vh;
   }
 `;

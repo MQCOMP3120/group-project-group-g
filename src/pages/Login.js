@@ -3,26 +3,34 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { AiOutlineRight } from "react-icons/ai";
 import { GoogleLogin } from "@react-oauth/google";
-import { signIn } from "../features/userAuth/authSlice";
+import {
+  signIn,
+  setUser,
+  authUser,
+  usernameOnChange,
+  passwordOnChange,
+} from "../features/userAuth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import jwtDecode from "jwt-decode";
 import Home from "./Home";
 
 export default function Login() {
   const dispatch = useDispatch();
-  const { isSignIn } = useSelector((state) => state.auth);
+  const { isSignIn, user } = useSelector((state) => state.auth);
+
+  // dispatch(regUser());
 
   if (isSignIn) {
     return <Home />;
   }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const form = e.currentTarget;
-    if (form.checkValidity() === false) {
-      e.stopPropagation();
-    }
+    dispatch(authUser());
     dispatch(signIn());
+    console.log(user);
   };
+
   return (
     <Wrapper className="center-items section-center">
       <Form noValidate validated={isSignIn} onSubmit={handleSubmit}>
@@ -36,13 +44,21 @@ export default function Login() {
           </Link>
         </Form.Group>
         <Form.Group className="mb-3">
-          <Form.FloatingLabel controlId="emailInput" label="Email Address">
-            <Form.Control type="email" placeholder="Email Address" />
+          <Form.FloatingLabel controlId="usernameInput" label="Username">
+            <Form.Control
+              type="username"
+              placeholder="Username"
+              onChange={(e) => dispatch(usernameOnChange(e.target.value))}
+            />
           </Form.FloatingLabel>
         </Form.Group>
         <Form.Group className="mb-5">
           <Form.FloatingLabel controlId="passwordInput" label="Password">
-            <Form.Control type="password" placeholder="Password" />
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              onChange={(e) => dispatch(passwordOnChange(e.target.value))}
+            />
           </Form.FloatingLabel>
         </Form.Group>
         <Form.Group className="d-grid mb-3">
@@ -56,8 +72,9 @@ export default function Login() {
         <Form.Group className="d-flex justify-content-center">
           <GoogleLogin
             onSuccess={(res) => {
-              // let userObj = jwtDecode(res.credential);
-              // console.log(userObj);
+              const { name, email } = jwtDecode(res.credential);
+              const username = name;
+              dispatch(setUser({ username, email }));
               dispatch(signIn());
             }}
             onError={() => {

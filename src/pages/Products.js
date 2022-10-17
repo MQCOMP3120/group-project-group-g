@@ -10,13 +10,13 @@ import {
   sortByRatingHighLow,
   sortByRatingLowHigh,
   resetProducts,
+  resetKeyword,
 } from "../features/products/filterSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Products() {
   const dispatch = useDispatch();
   const filterItems = [
-    "Relevance",
     "All Products",
     "Price: low - high",
     "Price: high - low",
@@ -26,7 +26,9 @@ export default function Products() {
 
   const [selectedFilterItem, setSelectedFilterItem] = useState(filterItems[0]);
 
-  const { sortedProducts, isLoading } = useSelector((state) => state.filter);
+  const { sortedProducts, isLoading, keyword } = useSelector(
+    (state) => state.filter
+  );
 
   const filterProducts = (item) => {
     setSelectedFilterItem(item);
@@ -45,6 +47,7 @@ export default function Products() {
         dispatch(sortByRatingHighLow());
       case "All Products":
         dispatch(resetProducts());
+        dispatch(resetKeyword());
     }
   };
 
@@ -60,7 +63,11 @@ export default function Products() {
         </Breadcrumb.Item>
         <Breadcrumb.Item active> Products </Breadcrumb.Item>
       </Breadcrumb>
-      <h2>All Products</h2>
+      <h2>
+        {keyword === ""
+          ? "All Products"
+          : `${sortedProducts.length} results for "${keyword}"`}
+      </h2>
       <Dropdown className="mt-5">
         <span> Sort by: </span>
         <Dropdown.Toggle variant="secondary-outline">

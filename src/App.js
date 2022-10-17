@@ -25,6 +25,7 @@ function App() {
     dispatch(getProducts());
     dispatch(getBrands());
   }, []);
+
   return (
     <BrowserRouter>
       {searchModalOpen && <SearchModal />}

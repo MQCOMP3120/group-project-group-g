@@ -8,6 +8,7 @@ const initialState = {
   singleBrandProducts: [],
   brands: [],
   isLoading: false,
+  keyword: "",
 };
 
 export const getProducts = createAsyncThunk("products/getProducts", () => {
@@ -26,18 +27,22 @@ const filterSlice = createSlice({
   name: "filter",
   initialState,
   reducers: {
+    resetKeyword: (state) => {
+      // state = initial state
+      state.keyword = "";
+    },
     resetProducts: (state) => {
       state.sortedProducts = state.allProducts;
     },
     sortByRelevance: (state, action) => {
-      const keyWord = action.payload;
-      if (keyWord === "") {
+      state.keyword = action.payload;
+      if (state.keyword === "") {
         state.sortedProducts = state.allProducts;
       } else {
         state.sortedProducts = state.allProducts.filter((product) =>
           product.title
             .toLocaleLowerCase()
-            .includes(keyWord.toLocaleLowerCase())
+            .includes(state.keyword.toLocaleLowerCase())
         );
       }
     },
@@ -64,7 +69,27 @@ const filterSlice = createSlice({
       });
     },
     sortByRatingHighLow: (state) => {
-      state.sortedProducts.sort((a, b) => {
+      state.singleBrandProducts.sort((a, b) => {
+        return b.rating - a.rating;
+      });
+    },
+    singleBrandSortByPriceLowHigh: (state) => {
+      state.singleBrandProducts.sort((a, b) => {
+        return a.price - b.price;
+      });
+    },
+    singleBrandSortByPriceHighLow: (state) => {
+      state.singleBrandProducts.sort((a, b) => {
+        return b.price - a.price;
+      });
+    },
+    singleBrandSortByRatingLowHigh: (state) => {
+      state.singleBrandProducts.sort((a, b) => {
+        return a.rating - b.rating;
+      });
+    },
+    singleBrandSortByRatingHighLow: (state) => {
+      state.singleBrandProducts.sort((a, b) => {
         return b.rating - a.rating;
       });
     },
@@ -77,7 +102,6 @@ const filterSlice = createSlice({
     },
     [getProducts.fulfilled]: (state, action) => {
       // when data is successfully fecthed
-      console.log(action);
       state.isLoading = false;
       state.allProducts = action.payload;
       state.sortedProducts = action.payload;
@@ -108,8 +132,13 @@ export const {
   sortByPriceHighLow,
   sortByRatingHighLow,
   sortByRatingLowHigh,
+  singleBrandSortByPriceLowHigh,
+  singleBrandSortByPriceHighLow,
+  singleBrandSortByRatingHighLow,
+  singleBrandSortByRatingLowHigh,
   sortByBrand,
   sortByRelevance,
   resetProducts,
+  resetKeyword,
 } = filterSlice.actions;
 export default filterSlice.reducer;

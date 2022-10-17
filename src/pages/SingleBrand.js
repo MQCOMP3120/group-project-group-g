@@ -5,13 +5,12 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import {
   sortByBrand,
-  sortByPriceHighLow,
-  sortByPriceLowHigh,
-  sortByRatingHighLow,
-  sortByRatingLowHigh,
+  singleBrandSortByPriceHighLow,
+  singleBrandSortByPriceLowHigh,
+  singleBrandSortByRatingHighLow,
+  singleBrandSortByRatingLowHigh,
 } from "../features/products/filterSlice";
 import ProductCard from "../components/ProductCard";
-import ErrorPage from "./ErrorPage";
 
 export default function SingleBrand() {
   const { brandId } = useParams();
@@ -23,7 +22,6 @@ export default function SingleBrand() {
   const currentBrand = brands.filter((brand) => brand.id === brandId)[0];
 
   const filterItems = [
-    "Relevance",
     "Price: low - high",
     "Price: high - low",
     "Rating: low - high",
@@ -37,16 +35,16 @@ export default function SingleBrand() {
 
     switch (item) {
       case "Price: low - high":
-        dispatch(sortByPriceLowHigh());
+        dispatch(singleBrandSortByPriceLowHigh());
         break;
       case "Price: high - low":
-        dispatch(sortByPriceHighLow());
+        dispatch(singleBrandSortByPriceHighLow());
         break;
       case "Rating: low - high":
-        dispatch(sortByRatingLowHigh());
+        dispatch(singleBrandSortByRatingLowHigh());
         break;
       case "Rating: high - low":
-        dispatch(sortByRatingHighLow());
+        dispatch(singleBrandSortByRatingHighLow());
     }
   };
 
@@ -87,7 +85,7 @@ export default function SingleBrand() {
         {singleBrandProducts.map((product, idx) => (
           <ProductCard
             key={idx}
-            name={product.tittle}
+            name={product.title}
             imgUrl={product.image}
             price={product.price}
             rating={product.rating}
