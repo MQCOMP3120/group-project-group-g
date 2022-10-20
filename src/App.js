@@ -1,56 +1,56 @@
-import { useState } from 'react'
-import Home from './homepage'
-import Stage from './stage'
-
+import { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import SearchModal from "./components/SearchModal";
 import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-} from "react-router-dom"
-
-// Three web page
-// Home, Coversation, Chat
+  Home,
+  Cart,
+  Login,
+  Products,
+  Register,
+  SingleProduct,
+  SingleBrand,
+  UserProfile,
+  WishList,
+  ErrorPage,
+} from "./pages";
+import { useSelector, useDispatch } from "react-redux";
+import { setUser, signIn } from "./features/userAuth/authSlice";
+import { getProducts, getBrands } from "./features/products/filterSlice";
 
 function App() {
-    const [keyWords, setkeyWords] = useState({
-            "homeState": "init",
-            "username": "",
-            "jwt": "",
-            "userId": "",
-            // "username": "ben",
-            // "jwt": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzU5MTc1MGE1YjIxNDM2YmI5OGYxOCIsInVzZXJuYW1lIjoiYmVuIiwiaWF0IjoxNjY0NDU1MDkwfQ.uX8K85oud9-xqmVjIhJYPR7exgrgMuBqiP64mZEbh04",
-        })
+  const dispatch = useDispatch();
+  const { searchModalOpen } = useSelector((store) => store.search);
 
-    const padding = {
-        margin: '10px',
-        listStyleType: 'none',
-        width: '150px',
-        textAlign: 'center',
-        padding: '5px 10px',
-        backgroundColor:'#00665f',
-        color: 'white',
-        border: '1px solid #00665f',
-        textDecoration: 'none',
+  useEffect(() => {
+    dispatch(getProducts());
+    dispatch(getBrands());
+
+    const loggedUser = JSON.parse(window.localStorage.getItem("user"));
+    if (loggedUser) {
+      dispatch(setUser(loggedUser));
+      dispatch(signIn());
     }
-  
-    const modifyKeyWords = (info) => {
-        setkeyWords(info)
-      }
+  }, []);
 
-    return (
-        <Router>
-            <div>
-                <Link style={padding} to="/">Home</Link>
-                <Link style={padding} to="/Stage">Stage</Link>
-            </div>
-
-            <Routes>
-                <Route path="/" element={<Home fn={modifyKeyWords} keyWords={keyWords}/>} />
-                <Route path="/Stage" element={<Stage fn={modifyKeyWords} keyWords={keyWords}/>} />
-            </Routes>
-        </Router>
-    )
+  return (
+    <BrowserRouter>
+      {searchModalOpen && <SearchModal />}
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/userprofile" element={<UserProfile />} />
+        <Route path="/wishlist" element={<WishList />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/:productId" element={<SingleProduct />} />
+        <Route path="/brands/:brandId" element={<SingleBrand />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
