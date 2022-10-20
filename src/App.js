@@ -15,6 +15,7 @@ import {
   ErrorPage,
 } from "./pages";
 import { useSelector, useDispatch } from "react-redux";
+import { setUser, signIn } from "./features/userAuth/authSlice";
 import { getProducts, getBrands } from "./features/products/filterSlice";
 
 function App() {
@@ -24,6 +25,12 @@ function App() {
   useEffect(() => {
     dispatch(getProducts());
     dispatch(getBrands());
+
+    const loggedUser = JSON.parse(window.localStorage.getItem("user"));
+    if (loggedUser) {
+      dispatch(setUser(loggedUser));
+      dispatch(signIn());
+    }
   }, []);
 
   return (

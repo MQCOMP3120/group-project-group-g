@@ -1,23 +1,52 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Breadcrumb, Button } from "react-bootstrap";
 import { BiHeart } from "react-icons/bi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import styled from "styled-components";
 import RatingStars from "../components/RatingStars";
-import { useSelector } from "react-redux";
+import {
+  addProduct,
+  putCart,
+  getCart,
+  postCart,
+} from "../features/cart/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function SingleProduct() {
+  const dispatch = useDispatch();
   const { productId } = useParams();
   const { allProducts, isLoading } = useSelector((state) => state.filter);
+  const { user, isSignIn } = useSelector((store) => store.auth);
+  const { userCart } = useSelector((store) => store.cart);
 
   const productInfo = allProducts.filter(
     (product) => product.id === productId
   )[0];
 
+  useEffect(() => {
+    if (isSignIn && user.jwt) {
+      dispatch(getCart());
+    }
+    if (!userCart[0]) {
+      console.log("empty cart");
+    }
+  }, [isLoading]);
+
   if (isLoading || !productInfo) {
     return <h1> Loading .... </h1>;
   }
+
+  const handleAddProduct = (productId) => {
+    dispatch(addProduct({ productId: productId, quantity: 1 }));
+    if (userCart[0]) {
+      // if current user cart exist then add product into the cart
+      dispatch(putCart());
+    } else {
+      // otherwise make a new cart for current user
+      dispatch(postCart());
+    }
+  };
 
   const { id, image, title, price, rating, description } = productInfo;
   return (
@@ -41,7 +70,7 @@ export default function SingleProduct() {
           <b>{`$ ${price}`}</b>
           <p className="product-description">{description}</p>
           <div className="btn-group my-4">
-            <Button variant="primary">
+            <Button variant="primary" onClick={() => handleAddProduct(id)}>
               <AiOutlineShoppingCart /> Add to Cart
             </Button>{" "}
             <Button variant="light">

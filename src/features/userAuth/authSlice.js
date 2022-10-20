@@ -5,6 +5,7 @@ import axios from "axios";
 const initialState = {
   isSignIn: false,
   authErr: false,
+  isLoading: false,
   user: {
     userId: "",
     username: "",
@@ -71,13 +72,30 @@ const authSlice = createSlice({
         ...state.user,
         ...newUser,
       };
-      console.log(state.user);
+      window.localStorage.setItem("user", JSON.stringify(newUser));
+      // const j = JSON.stringify(newUser);
+      // console.log(JSON.parse(j));
     },
     signIn: (state) => {
       state.isSignIn = true;
     },
     signOut: (state) => {
+      window.localStorage.clear();
       state.isSignIn = false;
+    },
+  },
+  extraReducers: {
+    [authUser.pending]: (state) => {
+      // while the fetching status is pending
+      state.isLoading = true;
+    },
+    [authUser.fulfilled]: (state, action) => {
+      // when data is successfully fecthed
+      state.isLoading = false;
+    },
+    [authUser.rejected]: (state) => {
+      // when error occurs
+      state.isLoading = false;
     },
   },
 });

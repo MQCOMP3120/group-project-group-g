@@ -1,6 +1,6 @@
 import { Form } from "react-bootstrap";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineRight } from "react-icons/ai";
 import { GoogleLogin } from "@react-oauth/google";
 import {
@@ -12,17 +12,19 @@ import {
 } from "../features/userAuth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import jwtDecode from "jwt-decode";
-import Home from "./Home";
+import { useEffect } from "react";
 
 export default function Login() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { isSignIn, user } = useSelector((state) => state.auth);
 
   // dispatch(regUser());
-
-  if (isSignIn) {
-    return <Home />;
-  }
+  useEffect(() => {
+    if (isSignIn) {
+      return navigate("/");
+    }
+  }, [isSignIn]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

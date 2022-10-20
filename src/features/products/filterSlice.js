@@ -116,7 +116,6 @@ const filterSlice = createSlice({
     },
     [getBrands.fulfilled]: (state, action) => {
       // when data is successfully fecthed
-      console.log(action);
       state.isLoading = false;
       state.brands = action.payload;
     },
@@ -140,5 +139,6 @@ export const {
   sortByRelevance,
   resetProducts,
   resetKeyword,
+  getProductById,
 } = filterSlice.actions;
 export default filterSlice.reducer;

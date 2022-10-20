@@ -1,6 +1,6 @@
 import { Form } from "react-bootstrap";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineLeft } from "react-icons/ai";
 import Home from "./Home";
 import {
@@ -13,11 +13,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 export default function Register() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { isSignIn, user } = useSelector((state) => state.auth);
 
   console.log(user);
   if (isSignIn) {
-    return <Home />;
+    return navigate("/");
   }
 
   const handleSubmit = (e) => {

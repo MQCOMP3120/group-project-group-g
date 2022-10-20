@@ -24,7 +24,7 @@ export default function SearchModal() {
         onClick={() => dispatch(closeSearch())}
       />
       <DropDownSearchBar
-        productOptions={sortedProducts.slice(0, 3)}
+        productOptions={sortedProducts.slice(0, 7)}
         onInputChange={onInputChange}
         closeSearch={closeSearch}
       />
