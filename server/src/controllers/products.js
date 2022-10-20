@@ -36,7 +36,7 @@ const deleteProduct = async (request, response) => {
     if (match.acknowledged) {
         response.status(200).json({status: "OK"})
     } else {
-        response.status(401).json({error: "invalid"})
+        response.status(200).json({error: "invalid"})
     }
 
 }
@@ -68,7 +68,7 @@ const createProduct = async (request, response) => {
             }
         }
     }
-    response.status(401).json({error: "invalid"})
+    response.status(200).json({error: "invalid"})
 }
 
 
@@ -102,7 +102,7 @@ const modProduct = async (request, response) => {
             }
         }
     }
-    response.status(401).json({error: "invalid"})
+    response.status(200).json({error: "invalid"})
 }
 
 const createWishList = async (request, response) => {
@@ -119,7 +119,7 @@ const createWishList = async (request, response) => {
             productId: request.body.productId,
         })
     }
-    response.status(401).json({error: "invalid"})
+    response.status(200).json({error: "invalid"})
 }
 
 const getWishList = async (request, response) => {
@@ -151,7 +151,7 @@ const deleteWishList = async (request, response) => {
     if (match.deletedCount && match.deletedCount != 0) {
         response.status(200).json({status: "OK"})
     } else {
-        response.status(401).json({error: "invalid"})
+        response.status(200).json({error: "invalid"})
     }
 }
 

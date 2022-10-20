@@ -27,7 +27,7 @@ const createBrand = async (request, response) => {
             title: returned.title,
             id: returned._id})
     } else {
-        response.status(401).json({error: "invalid"})
+        response.status(200).json({error: "invalid"})
     }
 }
 

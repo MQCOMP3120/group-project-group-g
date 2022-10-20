@@ -103,7 +103,11 @@ Brands:
 
 
     
-Cart: only allow one unpaid cart, but multiple paid cart as shopping history. 
+Cart:
+only allow one unpaid cart exist for one user, but multiple paid carts as shopping history.
+it means when you create a new cart, it is default to unpaid, you can't create another cart until you set the cart to paid.
+but you can modify the unpaid cart with PUT command
+
     Get all carts
         GET /api/carts
         return success: status(200).[{id, userId, timestamp, paid, products:[{productId,quantity},]}, ]

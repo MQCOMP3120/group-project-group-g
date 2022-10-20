@@ -6,11 +6,11 @@ const createCart = async (request, response) => {
     if (user === "false")   return
 
     const match = await models.Cart.find({userId: user._id, paid:false})
-    if(match && match.length>0) return response.status(401).json({error: "invalid"})
+    if(match && match.length>0) return response.status(200).json({error: "invalid"})
 
     const cart = new models.Cart({userId: user._id, paid:false})
     const cartReturn = await cart.save()
-    if(!cartReturn) return response.status(401).json({error: "invalid"})
+    if(!cartReturn) return response.status(200).json({error: "invalid"})
     if(request.body.products && request.body.products.length>0){
         for (item of request.body.products){
             const product = await models.Product.findById(item.productId)
@@ -21,7 +21,7 @@ const createCart = async (request, response) => {
                     quantity: item.quantity,
                 })
                 const returned = await cartQ.save()
-                if(!returned) return response.status(401).json({error: "invalid"})
+                if(!returned) return response.status(200).json({error: "invalid"})
             }
         }
     }
@@ -117,7 +117,7 @@ const modCart = async (request, response) => {
     const id = request.params.id
     const cart = {userId: user._id, paid:request.body.paid}
     const cartReturn = await models.Cart.findByIdAndUpdate(id, cart,{new: true})
-    if(!cartReturn) return response.status(401).json({error: "invalid"})
+    if(!cartReturn) return response.status(200).json({error: "invalid"})
     await models.CartQ.deleteMany({cartId: cartReturn._id})
 
     if(request.body.products && request.body.products.length>0){
@@ -130,8 +130,9 @@ const modCart = async (request, response) => {
                     quantity: item.quantity,
                 })
                 const returned = await cartQ.save()
-                if(!returned) return response.status(401).json({error: "invalid"})
+                if(!returned) return response.status(200).json({error: "invalid"})
             }
+            else return response.status(200).json({error: "invalid"})
         }
     }
     response.status(200).json({
@@ -149,7 +150,7 @@ const deleteCart = async (request, response) => {
 
     const id = request.params.id
     const cartReturn = await models.Cart.deleteOne({_id: id})
-    if(!cartReturn.acknowledged) return response.status(401).json({error: "invalid"})
+    if(!cartReturn.acknowledged) return response.status(200).json({error: "invalid"})
 
     await models.CartQ.deleteMany({cartId: id})
 
@@ -163,7 +164,7 @@ const payCart = async (request, response) => {
     const id = request.params.id
     const cart = {userId: user._id, paid:request.body.paid}
     const cartReturn = await models.Cart.findByIdAndUpdate(id, cart,{new: true})
-    if(!cartReturn) return response.status(401).json({error: "invalid"})
+    if(!cartReturn) return response.status(200).json({error: "invalid"})
     response.status(200).json({status: "OK"})
 }
 
