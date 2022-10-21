@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 import {
   Container,
   Nav,
@@ -24,12 +25,7 @@ export default function NavBar() {
 
   // boostrap Nav bar doc: https://react-bootstrap.github.io/components/navbar/
   return (
-    <Navbar
-      className="navbar-expand-md py-4 shadow-sm nav-bar"
-      id="nav-bar"
-      bg="light"
-      expand="xxl"
-    >
+    <Navbar className="py-4" id="nav-bar" variant="dark" bg="dark">
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img src={logo} alt="logo" width={"60px"} height={"60px"} />

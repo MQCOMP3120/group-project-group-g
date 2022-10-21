@@ -18,10 +18,10 @@ export default function Products() {
   const dispatch = useDispatch();
   const filterItems = [
     "All Products",
-    "Price: low - high",
-    "Price: high - low",
-    "Rating: low - high",
-    "Rating: high - low",
+    "Price: Low - High",
+    "Price: High - Low",
+    "Rating: Low - High",
+    "Rating: High - Low",
   ];
 
   const [selectedFilterItem, setSelectedFilterItem] = useState(filterItems[0]);
@@ -34,16 +34,16 @@ export default function Products() {
     setSelectedFilterItem(item);
 
     switch (item) {
-      case "Price: low - high":
+      case "Price: Low - High":
         dispatch(sortByPriceLowHigh());
         break;
-      case "Price: high - low":
+      case "Price: High - Low":
         dispatch(sortByPriceHighLow());
         break;
-      case "Rating: low - high":
+      case "Rating: Low - High":
         dispatch(sortByRatingLowHigh());
         break;
-      case "Rating: high - low":
+      case "Rating: High - Low":
         dispatch(sortByRatingHighLow());
       case "All Products":
         dispatch(resetProducts());
