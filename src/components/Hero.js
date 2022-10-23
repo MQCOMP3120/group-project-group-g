@@ -8,10 +8,9 @@ export default function Hero() {
       <article className="hero-text">
         <h1>Your Ideal Online Mobile Phone Store</h1>
         <p>
-          orem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-          lobortis lorem risus.
+          Shop the latest Phones from all popular brands at the lowest prices
         </p>
-        <Button as={Link} to="/products" size="lg">
+        <Button as={Link} to="/products" className="button">
           {" "}
           Shop Now{" "}
         </Button>
@@ -38,12 +37,36 @@ const Wrapper = styled.section`
   .img-container {
     display: none;
   }
+  h1 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
+    display: flex;
+    align-items: center;
+  }
+  .button {
+    background-color: #444444;
+    color: white;
+    padding: 15px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 0px;
+  }
 
   p {
     line-height: 2;
     max-width: 45em;
     margin-bottom: 2rem;
     font-size: 1rem;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
   }
   @media (min-width: 992px) {
     height: calc(100vh - 10rem);
@@ -68,12 +91,12 @@ const Wrapper = styled.section`
       bottom: 5vh;
       right: 0;
       position: absolute;
-      height: 35vh;
+      height: 36vh;
     }
     #img-2 {
       top: 0;
       position: absolute;
-      height: 35vh;
+      height: 36vh;
     }
   }
 `;
