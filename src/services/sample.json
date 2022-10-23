@@ -25,6 +25,7 @@
       "title": "Apple iPhone 14 Pro Max 1TB (Deep Purple)",
       "price": "2769",
       "brand": "APPLE",
+      "rating": "0.0",
       "description": "iPhone 14 Pro Max. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. And get peace of mind with a vital new safety feature.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596696-Product-0-I-637982217440527446_467x.jpg?v=1662700888"
     },
@@ -33,6 +34,7 @@
       "title": "Apple iPhone 14 Pro Max 512GB (Space Black)",
       "price": "2419",
       "brand": "APPLE",
+      "rating": "4.0",
       "description": "iPhone 14 Pro Max. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. And get peace of mind with a vital new safety feature.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596689-Product-0-I-637982215040436891_1280x.jpg?v=1662701000"
     },
@@ -41,6 +43,7 @@
       "title": "Apple iPhone 14 Pro Max 256GB (Space Black)",
       "price": "2099",
       "brand": "APPLE",
+      "rating": "4.0",
       "description": "iPhone 14 Pro Max. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. And get peace of mind with a vital new safety feature.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596689-Product-0-I-637982215040436891_1280x.jpg?v=1662701000"
     },
@@ -49,6 +52,7 @@
       "title": "Apple iPhone 14 Pro Max 128GB (Gold)",
       "price": "1899",
       "brand": "APPLE",
+      "rating": "3.0",
       "description": "iPhone 14 Pro Max. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. And get peace of mind with a vital new safety feature.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596683-Product-0-I-637982217468965668_1280x.jpg?v=1662700892"
     },
@@ -57,6 +61,7 @@
       "title": "Apple iPhone 14 Pro 1TB (Deep Purple)",
       "price": "2599",
       "brand": "APPLE",
+      "rating": "5.0",
       "description": "iPhone 14 Pro. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. And get peace of mind with a vital new safety feature.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596679-Product-0-I-637982213240520852_1280x.jpg?v=1662700243"
     },
@@ -65,6 +70,7 @@
       "title": "Apple iPhone 14 Pro 512GB (Deep Purple)",
       "price": "2249",
       "brand": "APPLE",
+      "rating": "5.0",
       "description": "iPhone 14 Pro. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. And get peace of mind with a vital new safety feature.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596675-Product-0-I-637982214440877409_1280x.jpg?v=1662700241"
     },
@@ -73,6 +79,7 @@
       "title": "Apple iPhone 14 Pro 256GB (Silver)",
       "price": "1899",
       "brand": "APPLE",
+      "rating": "1.0",
       "description": "iPhone 14 Pro. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. And get peace of mind with a vital new safety feature.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596669-Product-0-I-637982240845588597_1280x.jpg?v=1662700232"
     },
@@ -81,6 +88,7 @@
       "title": "Apple iPhone 14 Pro 128GB (Space Black)",
       "price": "1749",
       "brand": "APPLE",
+      "rating": "1.0",
       "description": "iPhone 14 Pro. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. And get peace of mind with a vital new safety feature.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596664-Product-0-I-637982209640642178_1280x.jpg?v=1662700042"
     },
@@ -90,6 +98,7 @@
       "title": "Apple iPhone 14 Plus 512GB (PRODUCT)RED",
       "price": "2099",
       "brand": "APPLE",
+      "rating": "3.0",
       "description": "iPhone 14 Plus. Think big with a larger 6.7-inch display1 and all-day battery life.2 Capture stunning photos in low light and bright light with the new dual-camera system. Get peace of mind with a vital safety feature.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596662-Product-0-I-637982188040452181_467x.jpg?v=1662700644"
     },
@@ -98,6 +107,7 @@
       "title": "Apple iPhone 14 Plus 256GB (PRODUCT)RED",
       "price": "1749",
       "brand": "APPLE",
+      "rating": "2.0",
       "description": "iPhone 14 Plus. Think big with a larger 6.7-inch display1 and all-day battery life.2 Capture stunning photos in low light and bright light with the new dual-camera system. Get peace of mind with a vital safety feature.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596657-Product-0-I-637982188040452181_1280x.jpg?v=1662700643"
     },
@@ -106,6 +116,7 @@
       "title": "Apple iPhone 14 Plus 128GB (Blue)",
       "price": "1579",
       "brand": "APPLE",
+      "rating": "3.0",
       "description": "iPhone 14 Plus. Think big with a larger 6.7-inch display1 and all-day battery life.2 Capture stunning photos in low light and bright light with the new dual-camera system. Get peace of mind with a vital safety feature.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596653-Product-0-I-637982188645613786_1280x.jpg?v=1662700587"
     },
@@ -114,6 +125,7 @@
       "title": "Apple iPhone 14 512GB (Starlight)",
       "price": "1899",
       "brand": "APPLE",
+      "rating": "5.0",
       "description": "iPhone 14. With the most impressive dual-camera system on iPhone. Capture stunning photos in low light and bright light. Get peace of mind with a vital safety feature.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596645-Product-0-I-637982177240669658_1280x.jpg?v=1662700586"
     },
@@ -122,6 +134,7 @@
       "title": "Apple iPhone 14 256GB (PRODUCT)RED",
       "price": "1579",
       "brand": "APPLE",
+      "rating": "4.0",
       "description": "iPhone 14. With the most impressive dual-camera system on iPhone. Capture stunning photos in low light and bright light. Get peace of mind with a vital safety feature.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596642-Product-0-I-637982182640404678_1280x.jpg?v=1662700581"
     },
@@ -130,6 +143,7 @@
       "title": "Apple iPhone 14 128GB (Midnight)",
       "price": "1399",
       "brand": "APPLE",
+      "rating": "3.0",
       "description": "iPhone 14. With the most impressive dual-camera system on iPhone. Capture stunning photos in low light and bright light. Get peace of mind with a vital safety feature.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596634-Product-0-I-637982174240799602_1280x.jpg?v=1662700577"
     },
@@ -138,6 +152,7 @@
       "title": "Apple iPhone 13 Pro Max 1TB (Silver)",
       "price": "2719",
       "brand": "APPLE",
+      "rating": "2.0",
       "description": "iPhone 13 Pro Max. The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel. Lightning-fast A15 Bionic chip. Superfast 5G.1 Durable design, and the best battery life ever in an iPhone.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530314-Product-0-I-637672997549004264_1920x.jpg?v=1653609935"
     },
@@ -146,6 +161,7 @@
       "title": "Apple iPhone 13 Pro Max 256GB (Silver)",
       "price": "2019",
       "brand": "APPLE",
+      "rating": "3.0",
       "description": "iPhone 13 Pro Max. The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel. Lightning-fast A15 Bionic chip. Superfast 5G.1 Durable design, and the best battery life ever in an iPhone.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530306-Product-0-I-637672995748981245_ea8fcd3b-4a3c-4d81-9568-29950baa32eb_1280x.jpg?v=1653609945"
     },
@@ -154,6 +170,7 @@
       "title": "Apple iPhone 13 mini 512GB (Pink)",
       "price": "1569",
       "brand": "APPLE",
+      "rating": "0.0",
       "description": "iPhone 13 mini. The most advanced dual-camera system ever on iPhone. Lightning-fast A15 Bionic chip. A leap in battery life. Durable design. Superfast 5G.1 And a brighter Super Retina XDR display.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530281-Product-0-I-637672974749305563_1280x.jpg?v=1648609711"
     },  
@@ -162,6 +179,7 @@
       "title": "Apple iPhone 13 mini 256GB (Midnight)",
       "price": "1219",
       "brand": "APPLE",
+      "rating": "1.0",
       "description": "iPhone 13 mini. The most advanced dual-camera system ever on iPhone. Lightning-fast A15 Bionic chip. A leap in battery life. Durable design. Superfast 5G.1 And a brighter Super Retina XDR display.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530274-Product-0-I-637672972949605410_4357c0e6-047c-4753-a10a-57b040a810a3_467x.jpg?v=1648609974"
     },  
@@ -170,6 +188,7 @@
       "title": "Apple iPhone 13 512GB (Starlight)",
       "price": "1749",
       "brand": "APPLE",
+      "rating": "3.0",
       "description": "iPhone 13. The most advanced dual-camera system ever on iPhone. Lightning-fast A15 Bionic chip. A big leap in battery life. Durable design. Superfast 5G.1 And a brighter Super Retina XDR display.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530264-Product-0-I-637672980149207313_467x.jpg?v=1648609725"
     },  
@@ -178,6 +197,7 @@
       "title": "Apple iPhone 13 Pro Max 128GB (Alpine Green)",
       "price": "1849",
       "brand": "APPLE",
+      "rating": "5.0",
       "description": "iPhone 13 Pro Max. The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel. Lightning-fast A15 Bionic chip. Superfast 5G.1 Durable design, and the best battery life ever in an iPhone.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580992-Product-0-I-637824115977343671_1280x.jpg?v=1653609946"
     },  
@@ -186,6 +206,7 @@
       "title": "Apple iPhone SE 5G 256GB (Product)RED [3rd Gen]",
       "price": "969",
       "brand": "APPLE",
+      "rating": "5.0",
       "description": "Lightning-fast A15 Bionic chip and fast 5G.1 Big-time battery life and a superstar camera. Plus, the toughest glass in a smartphone and a Home button with secure Touch ID.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580981-Product-0-I-637824074577505136_467x.jpg?v=1653609986"
     },  
@@ -194,6 +215,7 @@
       "title": "Apple iPhone 12 128GB (White)",
       "price": "1129",
       "brand": "APPLE",
+      "rating": "3.0",
       "description": "iPhone 12 pushes everything forward with superfast 5G.1 A14 Bionic chip. Advanced dual-camera system. And a beautiful Super Retina XDR display, so you can see everything in vivid detail.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/481751-Product-0-I-637382641441411352_8d513cd1-a76f-47c4-88be-0d41bfcfacc9_1280x.jpg?v=1653609898"
     },  
@@ -202,6 +224,7 @@
       "title": "Apple iPhone 11 128GB (White)",
       "price": "759",
       "brand": "APPLE",
+      "rating": "0.0",
       "description": "Shoot 4K video, beautiful portraits and sweeping landscapes with the all-new dual-camera system. Capture your best low-light photos with Night mode. See true-to-life colour in your photos, videos and games on the 6.1-inch Liquid Retina display.3 Experience unprecedented performance with A13 Bionic for gaming, augmented reality and photography. Do more and charge less with all-day battery life.2 And worry less with water resistance up to 2 metres for 30 minutes.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/489405-Product-0-I-637383628438971406_1280x.jpg?v=1653609898"
     },  
@@ -211,6 +234,7 @@
       "title": "Google Pixel Case for Pixel 7 (Chalk)",
       "price": "49.99",
       "brand": "GOOGLE",
+      "rating": "2.0",
       "description": "The Pixel 7 Case brings out the phone's design, while adding design of its own: colours made to complement and material that helps protect beautifully.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/609928-Product-0-I-638006528840547831_467x.jpg?v=1665039149"
     },
@@ -219,6 +243,7 @@
       "title": "Google Pixel 7 Pro 5G 512GB (Obsidian)",
       "price": "1599",
       "brand": "GOOGLE",
+      "rating": "1.0",
       "description": "Introducing Pixel 7 Pro, Google's best-of-everything phone. Powered by Google Tensor G2, it's fast and secure, with an immersive display and amazing battery life. The best Pixel camera yet includes a telephoto lens and pro-level features like Macro Focus.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/601383-Product-0-I-638007125867239993_467x.jpg?v=1665076261"
     },
@@ -227,6 +252,7 @@
       "title": "Google Pixel 6a 5G 128GB (Sage)",
       "price": "749",
       "brand": "GOOGLE",
+      "rating": "4.0",
       "description": "Meet Pixel 6a, the more affordable Google phone that adapts to you.1 Powered by Google Tensor, it's super fast and secure, with an amazing battery and camera",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/593602-Product-0-I-637920187982339582_5d3b15e5-e983-4fbb-b8f1-d770000117f9_1280x.jpg?v=1658293315"
     },
@@ -235,6 +261,7 @@
       "title": "Google Pixel 7 5G 256GB (Obsidian)",
       "price": "1129",
       "brand": "GOOGLE",
+      "rating": "4.0",
       "description": "Meet Google Pixel 7. Powered by Google Tensor G2, it's fast and secure, with amazing battery life and the advanced Pixel Camera for beautifully authentic, accurate photos with Real Tone and stunning video with Cinematic Blur.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/601378-Product-0-I-637987418240446947_1280x.jpg?v=1665039139"
     },
@@ -243,6 +270,7 @@
       "title": "Samsung Galaxy Z Flip4 5G 256GB (Blue)",
       "price": "1649",
       "brand": "SAMSUNG",
+      "rating": "3.0",
       "description": "Introducing Samsung Galaxy Z Flip4. Fold it, flip it, stand it. Capture photos and videos hands-free with a camera designed to stand on its own with revolutionary folding glass or get that quick selfie when folded for moments that can’t wait.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/598445-Product-0-I-637947047614673572_467x.jpg?v=1664423558"
     },
@@ -251,6 +279,7 @@
       "title": "Samsung Galaxy Z Fold4 5G 512GB (Green)",
       "price": "2699",
       "brand": "SAMSUNG",
+      "rating": "2.0",
       "description": "Introducing Samsung Galaxy Z Fold4. With a re-engineered slim hinge, the Galaxy Z Fold4 is our lightest Fold yet.* It puts a powerful hinge, foldable screen, S Pen stylus compatibility^ and a wider cover screen1 all in the palm of your hand.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/598440-Product-0-I-637947046422742828_467x.jpg?v=1664423612"
     },
@@ -259,6 +288,7 @@
       "title": "Samsung Galaxy S22 Ultra 5G 256GB (Phantom Black)",
       "price": "1999",
       "brand": "SAMSUNG",
+      "rating": "1.0",
       "description": "We are breaking the rules of innovation with the Galaxy S22 Ultra. Setting the standard at being our most epic smartphone. We know you want the best and that is why we are breaking all the rules. With all day battery life, our most advanced pro-grade camera, our brightest display and a Galaxy first with a built in S-Pen, Ultra easily lives up to its name.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580965-Product-0-I-637783567959637902_ad344dde-4d7e-43d7-9b46-945127a9b929_1280x.jpg?v=1662345707"
     },
@@ -267,6 +297,7 @@
       "title": "Samsung Galaxy A23 128GB (Peach)",
       "price": "349",
       "brand": "SAMSUNG",
+      "rating": "0.0",
       "description": "6.6 Infinity-V Full HD+, 90Hz refresh rate display, 128GB Storage with 4GB RAM50MP (Wide) + 2MP (Depth) + 5MP (UltraWide) + 2MP (Macro) rear cameras",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/586033-Product-0-I-637841531577454252_1280x.jpg?v=1662002651"
     },
@@ -275,6 +306,7 @@
       "title": "Samsung Galaxy S22 5G 128GB (Phantom Black)",
       "price": "1049",
       "brand": "SAMSUNG",
+      "rating": "2.0",
       "description": "We are breaking the rules of video with the Galaxy S22. Setting the standard at being our most epic smartphone. We know you want the best and that is why we are breaking all the rules. Designed to revolutionise video and photography, it’s time to express, create and connect the way you want to.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580945-Product-0-I-637782961358871995_1280x.jpg?v=1662345313"
     },
@@ -283,6 +315,7 @@
       "title": "Samsung Galaxy S21+ 5G 128GB (Violet)",
       "price": "1549",
       "brand": "SAMSUNG",
+      "rating": "3.0",
       "description": "Miss nothing, with Galaxy S21+ 5G. A camera so good, everyone’s a pro. When capturing your best moments, you no longer have to choose between photo and video. Galaxy S21 captures both, simultaneously, so you’ll never miss a moment. Capture big screen quality videos in stunning 8K resolution* and zoom in with less pixilation with 3x Optical Zoom.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/506518-Product-0-I-637474453937101007_11ee33cb-9905-4b4e-b093-14b0654be7f9_1280x.jpg?v=1662001662"
     },
@@ -291,6 +324,7 @@
       "title": "Samsung Galaxy S22 Ultra 5G 128GB (Burgundy)",
       "price": "1849",
       "brand": "SAMSUNG",
+      "rating": "3.0",
       "description": "We are breaking the rules of innovation with the Galaxy S22 Ultra. Setting the standard at being our most epic smartphone. We know you want the best and that is why we are breaking all the rules. With all day battery life, our most advanced pro-grade camera, our brightest display and a Galaxy first with a built in S-Pen, Ultra easily lives up to its name.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580962-Product-0-I-637783590760542702_1280x.jpg?v=1662345721"
     },
@@ -299,6 +333,7 @@
       "title": "Samsung Galaxy S21 FE 5G 128GB (Lavender)",
       "price": "999",
       "brand": "SAMSUNG",
+      "rating": "5.0",
       "description": "Say hello to the newest edition to the Galaxy S21 family. Galaxy S21 FE 5G - Fan Edition. Jammed packed full of state-of-the-art flagship features without the price tag. Capture photos in stunning clarity with three lenses, ultra-wide, wide and telephoto and experience night photography to the fullest, making lo-lights the highlight of every feed. Get ready for dual video recording, a two-sided camera feature that lets you shoot the moment in one take, simultaneously. Design wise, the contour slim cut camera blends beautifully with the back of the phone - comes in Lavender, White, Graphite and Olive, an array of colours you’ll want to get your hands on. And, have the power to last with an impressive display, fast processor and powerful battery.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/578711-Product-0-I-637753269158691425_1280x.jpg?v=1662001653"
     },
@@ -307,6 +342,7 @@
       "title": "Motorola g82 5G 128GB (Meteorite Grey)",
       "price": "399",
       "brand": "MOTOROLA",
+      "rating": "5.0",
       "description": "moto g82 5G lets you view over a billion shades of colours with infinite contrast on a 6.6 pOLED display. Immerse yourself in multidimensional sound with stereo speakers and Dolby Atmos®1. Capture the moment from any angle and in any light—minus any unwanted camera movement with OIS. Enjoy a long-lasting 5000 mAh battery and TurboPower™ 30 charging. And experience superfast 5G speed2. moto g82 5G. It’s one in a billion.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/594111-Product-0-I-637902018177351554_1280x.jpg?v=1656631971"
     },
@@ -315,6 +351,7 @@
       "title": "Motorola Edge 30 5G 128GB (Meteor Grey)",
       "price": "699",
       "brand": "MOTOROLA",
+      "rating": "5.0",
       "description": "The new motorola edge 30 helps you tell your story with more clarity and focus. With our most advanced 50 MP camera, you can shoot with faster, more accurate autofocus, capture razor-sharp low-light images, and record over a billion shades of colour. That’s just the beginning. Bring your favourite movies and games to life on an ultra-smooth 144 Hz 6.5 OLED display and listen with multidimensional Dolby Atmos® sound. Start every journey with one of the thinnest 5G smartphones, packing tons of the latest technology into a sleek, ultra-modern design. So, give it your best shot. Find your edge with motorola edge 30",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/589721-Product-0-I-637877094205570542_1280x.jpg?v=1652076695"
     },
@@ -323,6 +360,7 @@
       "title": "Motorola Edge 20 Pro 5G 256GB (Midnight Sky)",
       "price": "899",
       "brand": "MOTOROLA",
+      "rating": "5.0",
       "description": "The world has changed. And a new kind of world calls for a new kind of phone. One that takes the latest smartphone experiences to another level, empowering you to tell your story like never before. The new motorola edge 20 pro was born for this. Featuring our most advanced camera system ever, you can capture stunning ultra-high res photos with a 108 MP sensor, and focus from incredible distances with 50x Super Zoom. Or view a billion shades of colour on a breathtaking 6.7 display with the fastest smartphone refresh rate. Even connect your phone to the big screen with Ready For to play games, make video calls, and use your favourite apps. It’s time to unleash your creativity. motorola edge 20 pro is here.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/531026-Product-0-I-637648962750758737_1280x.jpg?v=1629852149"
     },
@@ -331,6 +369,7 @@
       "title": "Motorola Edge 30 Ultra 5G 256GB (Interstellar Black)",
       "price": "1399",
       "brand": "MOTOROLA",
+      "rating": "4.0",
       "description": "Introducing motorola edge 30 ultra. Capture your sharpest, most beautifully detailed photos in any light with a 200MP camera system, the industry’s highest resolution. Experience the fastest, most powerful Snapdragon® processor1. Fuel up in minutes2 at unbelievable 125W speeds, the fastest TurboPower™ charging ever. Enjoy the stunning endless edge design and breathtaking views on a totally immersive 6.67 144Hz display3. Find your edge with motorola edge 30 ultra.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/609040-Product-0-I-638011718240850935_7c75a31f-6e53-4940-bbea-a1d2096ddee9_1280x.jpg?v=1665543296"
     },
@@ -339,6 +378,7 @@
       "title": "Motorola g32 128GB (Mineral Grey)",
       "price": "299",
       "brand": "MOTOROLA",
+      "rating": "3.0",
       "description": "Take movies, shows, and games to the next level with moto g32. Enjoy smooth, seamless views on a 6.5 FHD+ display with a 90 Hz refresh rate. Immerse yourself in multidimensional sound with stereo speakers and Dolby Atmos®. Binge for longer with a 5000 mAh battery, then fuel up fast with TurboPower™ 30 charging. All of that plus a Snapdragon® 680 processor, 50 MP camera system, and plenty of storage.1 Take entertainment to another level with moto g32.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/600060-Product-0-I-637963255377304439_1280x.jpg?v=1660692827"
     },
@@ -347,6 +387,7 @@
       "title": "OPPO Find X5 Lite 5G 256GB (Starry Black)",
       "price": "699",
       "brand": "OPPO",
+      "rating": "2.0",
       "description": "Look up, smile, and pose—you don’t need fancy gadgets for DSLR-like portraits with a delicately blurred background. With Portrait Mode’s 25 levels of adjustable aperture, you can custom-create your perfect, pro-level portrait on the go.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/584381-Product-0-I-637820013177736636_c7f642dd-7d4b-4a72-8728-ace1bb3fce65_1280x.jpg?v=1660689715"
     },
@@ -355,6 +396,7 @@
       "title": "OPPO Reno8 Lite 5G 128GB (Rainbow Spectrum)",
       "price": "499",
       "brand": "OPPO",
+      "rating": "1.0",
       "description": "Reno8 lite 5G’s 6.4-inch AMOLED screen7 is the perfect companion for Netflix, Amazon’s high-definition display capabilities and is a perfect fit for Swiss authority SGS8 for its low blue light eye protecting abilities. Adaptive Sleep9 ensures the screen never switches off whilst you’re watching.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/590591-Product-0-I-637902093777411378_e1dc551a-5a95-42ff-bcd3-8d50d279ac00_1280x.jpg?v=1660690595"
     },
@@ -363,6 +405,7 @@
       "title": "OPPO Find X5 5G 256GB (Black)",
       "price": "1399",
       "brand": "OPPO",
+      "rating": "0.0",
       "description": "OPPO Find X5’s streamlined curve is made possible with frosting matte glass, creating a silky gloss which feels incredible to touch. The 75° slope offers the optimal curve for illuminating the body in sunlight or shadow.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/584383-Product-0-I-637840501379222845_e91e8c90-b818-44f6-ae4b-c24861c6f1ac_1280x.jpg?v=1661740943"
     },
@@ -371,6 +414,7 @@
       "title": "OPPO A77 5G 128GB (Ocean Blue)",
       "price": "449",
       "brand": "OPPO",
+      "rating": "1.0",
       "description": "OPPO A77 5G features 33W SUPERVOOCTM1 charging technology with advanced temperature control and hardware protection, so you’re safely energised in an instant – and ready to roll...",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/597611-Product-0-I-637945950778424531_1280x.jpg?v=1658962427"
     },
@@ -379,6 +423,7 @@
       "title": "Asus ROG Phone 6 5G 512GB (Black)",
       "price": "1799",
       "brand": "ASUS",
+      "rating": "3.0",
       "description": "The legend has evolved! The ROG Phone 6 is the latest incarnation of world-beating gaming phone. It harnesses the brute gaming power of the latest Qualcomm® Snapdragon® 8+ Gen 1 Mobile Platform, with a new class leading GameCool 6 thermal system that lets you smash every barrier and break every limit, and a 165 Hz display for a revolutionary visual experience. For total control, there’s the AirTrigger 6 system and the Armoury Crate app, and for marathon gameplay, there’s a monster 6000 mAh1 battery. Dare to choose the mighty ROG Phone 6, and you will be rewarded with an experience that befits a true legend.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/598341-Product-0-I-637953050618247843_1280x.jpg?v=1659672352"
     },
@@ -387,6 +432,7 @@
       "title": "Asus ROG 5 Gaming Phone 5G 256GB (Phantom Black)",
       "price": "1399",
       "brand": "ASUS",
+      "rating": "2.0",
       "description": "Play to the max with ROG Phone 5, the ultimate gaming phone build for gamers. Powered to win with the latest Qualcomm® Snapdragon™ 888 5G Mobile Platform, this futuristic wonder packs an unbelievably responsive 144 Hz / 1ms display, a monster 6000mAh1 battery system, massively upgraded AirTrigger 5 game controls, and our iconic GameFX audio system. ROG Phone 5 will take your gaming to a new dimension — if you dare.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/521371-Product-0-I-637559099525059063_1280x.jpg?v=1620277225"
     },
@@ -395,6 +441,7 @@
       "title": "Asus ROG 5s 5G 512GB (Phantom Black)",
       "price": "1199",
       "brand": "ASUS",
+      "rating": "4.0",
       "description": "Fuelled for winning by the latest Qualcomm® Snapdragon® 888+ 5G mobile platform, ROG Phone 5s launches your mobile gaming experience into the next dimension. With an unbelievably responsive 360 Hz native touch sampling rate, the 144 Hz / 1 ms display brings you the smoothest ever viewing experience. It also packs a monster 6000 mAh1 battery system, AirTrigger 5 game controls, and our iconic GameFX audio system. Dare to choose ROG Phone 5s, and you’ll be rewarded with unbridled performance for a world-leading gaming and entertainment experience.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/567190-Product-0-I-637739418159209357_1280x.jpg?v=1638316333"
     },
@@ -403,6 +450,7 @@
       "title": "Asus Zenfone 8 5G 256GB (Obsidian Black)",
       "price": "899",
       "brand": "ASUS",
+      "rating": "5.0",
       "description": "Powered by the latest flagship Qualcomm® Snapdragon™ 888 5G Mobile Platform, with Adreno™ 660 graphics, 8GB RAM and 256GB storage, the small size of Zenfone 8 belies the fact that it's also the most powerful Zenfone to date.The fast and responsive 5.9-inch 120 Hz Samsung AMOLED display delivers smooth-scrolling, blur-free visuals, and is HDR10+ certified. For the ultimate protection, the display is covered with the latest and toughest Corning® Gorilla® Glass Victus™.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/523032-Product-0-I-637588260089814323_ae3da2cf-ea6b-4729-8ddb-15fc3ac14265_1280x.jpg?v=1623193474"
     },
@@ -411,6 +459,7 @@
       "title": "Asus ROG 5 Ultimate 5G 512GB (Storm White)",
       "price": "1699",
       "brand": "ASUS",
+      "rating": "3.0",
       "description": "6.78 inch FHD+ (2448x1080) screen, 144 Hz / 1 ms Samsung AMOLED, Qualcomm Snapdragon 888 processor",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/532639-Product-0-I-637653295350360624_1280x.jpg?v=1629696803"
     },
@@ -419,6 +468,7 @@
       "title": "Asus Zenfone 9 5G 128GB (Starry Blue)",
       "price": "1199",
       "brand": "ASUS",
+      "rating": "0.0",
       "description": "The ultra-compact, ultra-stylish, and ultra-speedy Zenfone 9 fits perfectly in your hand, yet it packs a big punch thanks to the premium Snapdragon® 8+ Gen 1 Mobile Platform and long-lasting 4300 mAh battery. The massively upgraded dual-camera system now includes a 6-Axis Hybrid Gimbal Stabilizer for super-steady snaps and videos. Big possibilities are waiting for you, so grab your Zenfone 9 and go!",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/609013-Product-0-I-638007538676158074_1280x.jpg?v=1665117542"
     }
