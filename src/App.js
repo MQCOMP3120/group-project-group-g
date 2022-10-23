@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState,useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import SearchModal from "./components/SearchModal";
@@ -18,6 +18,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { setUser, signIn } from "./features/userAuth/authSlice";
 import { getProducts, getBrands } from "./features/products/filterSlice";
 
+import DevHome from './services/devhomepage'
+import Stage from './services/stage'
+
+
 function App() {
   const dispatch = useDispatch();
   const { searchModalOpen } = useSelector((store) => store.search);
@@ -33,6 +37,19 @@ function App() {
     }
   }, []);
 
+  const [keyWords, setkeyWords] = useState({
+    "homeState": "init",
+    "username": "",
+    "jwt": "",
+    "userId": "",
+    // "username": "ben",
+    // "jwt": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzU5MTc1MGE1YjIxNDM2YmI5OGYxOCIsInVzZXJuYW1lIjoiYmVuIiwiaWF0IjoxNjY0NDU1MDkwfQ.uX8K85oud9-xqmVjIhJYPR7exgrgMuBqiP64mZEbh04",
+  })
+
+  const modifyKeyWords = (info) => {
+    setkeyWords(info)
+  }
+
   return (
     <BrowserRouter>
       {searchModalOpen && <SearchModal />}
@@ -47,6 +64,8 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/products/:productId" element={<SingleProduct />} />
         <Route path="/brands/:brandId" element={<SingleBrand />} />
+        <Route path="/devhome" element={<DevHome fn={modifyKeyWords} keyWords={keyWords}/>} />
+        <Route path="/stage" element={<Stage fn={modifyKeyWords} keyWords={keyWords}/>} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
