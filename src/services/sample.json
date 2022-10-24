@@ -23,66 +23,138 @@
   "Products": [
     {
       "title": "Apple iPhone 14 Pro Max 1TB (Deep Purple)",
-      "price": "2769",
+      "price": "2769.99",
       "brand": "APPLE",
+      "rating": "0.0",
+      "size": "6.7-inch Super Retina XDR display",
+      "resolution": "2556‑by‑1179-pixel resolution at 460 ppi",
+      "refreshrate": "120Hz",
+      "processor": "A16 Bionic, the ultimate smartphone chip. Superfast 5G",
+      "gpu": "Apple GPU (5-core graphics)",
+      "ram": "6GB LPDDR4 RAM",
       "description": "iPhone 14 Pro Max. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. And get peace of mind with a vital new safety feature.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596696-Product-0-I-637982217440527446_467x.jpg?v=1662700888"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596696-Product-0-I-637982217440527446_467x.jpg?v=1662700888",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596696-Product-3-I-637982217440527446_467x.jpg?v=1662700888",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596696-Product-8-I-637982217440527446_467x.jpg?v=1662700888"
     },
-
+  
     {
       "title": "Apple iPhone 14 Pro Max 512GB (Space Black)",
       "price": "2419",
       "brand": "APPLE",
+      "rating": "4.0",
+      "size": "6.7-inch Super Retina XDR display",
+      "resolution": "2556‑by‑1179-pixel resolution at 460 ppi",
+      "refreshrate": "120Hz",
+      "processor": "A16 Bionic, the ultimate smartphone chip. Superfast 5G",
+      "gpu": "Apple GPU (5-core graphics)",
+      "ram": "6GB LPDDR4 RAM",
       "description": "iPhone 14 Pro Max. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. And get peace of mind with a vital new safety feature.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596689-Product-0-I-637982215040436891_1280x.jpg?v=1662701000"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596689-Product-0-I-637982215040436891_1280x.jpg?v=1662701000",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596689-Product-3-I-637982215071532112_467x.jpg?v=1662701000",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596689-Product-8-I-637982215083095181_467x.jpg?v=1662701000"
     },
 
     {
       "title": "Apple iPhone 14 Pro Max 256GB (Space Black)",
       "price": "2099",
       "brand": "APPLE",
+      "rating": "4.0",
+      "size": "6.7-inch Super Retina XDR display",
+      "resolution": "2556‑by‑1179-pixel resolution at 460 ppi",
+      "refreshrate": "120Hz",
+      "processor": "A16 Bionic, the ultimate smartphone chip. Superfast 5G",
+      "gpu": "Apple GPU (5-core graphics)",
+      "ram": "6GB LPDDR4 RAM",
       "description": "iPhone 14 Pro Max. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. And get peace of mind with a vital new safety feature.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596689-Product-0-I-637982215040436891_1280x.jpg?v=1662701000"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596689-Product-0-I-637982215040436891_1280x.jpg?v=1662701000",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596685-Product-3-I-637982215040436891_467x.jpg?v=1662700898",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596685-Product-8-I-637982215040436891_467x.jpg?v=1662700898"
     },
 
     {
       "title": "Apple iPhone 14 Pro Max 128GB (Gold)",
       "price": "1899",
       "brand": "APPLE",
+      "rating": "3.0",
+      "size": "6.7-inch Super Retina XDR display",
+      "resolution": "2556‑by‑1179-pixel resolution at 460 ppi",
+      "refreshrate": "120Hz",
+      "processor": "A16 Bionic, the ultimate smartphone chip. Superfast 5G",
+      "gpu": "Apple GPU (5-core graphics)",
+      "ram": "6GB LPDDR4 RAM",
       "description": "iPhone 14 Pro Max. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. And get peace of mind with a vital new safety feature.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596683-Product-0-I-637982217468965668_1280x.jpg?v=1662700892"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596683-Product-0-I-637982217468965668_1280x.jpg?v=1662700892",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596683-Product-3-I-637982217471934407_467x.jpg?v=1662700892",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596683-Product-8-I-637982217484434650_467x.jpg?v=1662700892"
     },
 
     {
       "title": "Apple iPhone 14 Pro 1TB (Deep Purple)",
       "price": "2599",
       "brand": "APPLE",
+      "rating": "5.0",
+      "size": "6.1-inch Super Retina XDR display",
+      "resolution": "2556‑by‑1179-pixel resolution at 460 ppi",
+      "refreshrate": "120Hz",
+      "processor": "A16 Bionic, the ultimate smartphone chip. Superfast 5G",
+      "gpu": "Apple GPU (5-core graphics)",
+      "ram": "6GB LPDDR4 RAM",
       "description": "iPhone 14 Pro. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. And get peace of mind with a vital new safety feature.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596679-Product-0-I-637982213240520852_1280x.jpg?v=1662700243"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596679-Product-0-I-637982213240520852_1280x.jpg?v=1662700243",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596679-Product-3-I-637982213272396278_467x.jpg?v=1662700243",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596679-Product-8-I-637982213282083743_467x.jpg?v=1662700243"
     },
 
     {
       "title": "Apple iPhone 14 Pro 512GB (Deep Purple)",
       "price": "2249",
       "brand": "APPLE",
+      "rating": "5.0",
+      "size": "6.1-inch Super Retina XDR display",
+      "resolution": "2556‑by‑1179-pixel resolution at 460 ppi",
+      "refreshrate": "120Hz",
+      "processor": "A16 Bionic, the ultimate smartphone chip. Superfast 5G",
+      "gpu": "Apple GPU (5-core graphics)",
+      "ram": "6GB LPDDR4 RAM",
       "description": "iPhone 14 Pro. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. And get peace of mind with a vital new safety feature.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596675-Product-0-I-637982214440877409_1280x.jpg?v=1662700241"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596675-Product-0-I-637982214440877409_1280x.jpg?v=1662700241",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596679-Product-3-I-637982213272396278_467x.jpg?v=1662700243",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596679-Product-8-I-637982213282083743_467x.jpg?v=1662700243"
     },
 
     {
       "title": "Apple iPhone 14 Pro 256GB (Silver)",
       "price": "1899",
       "brand": "APPLE",
+      "rating": "1.0",
+      "size": "6.1-inch Super Retina XDR display",
+      "resolution": "2556‑by‑1179-pixel resolution at 460 ppi",
+      "refreshrate": "120Hz",
+      "processor": "A16 Bionic, the ultimate smartphone chip. Superfast 5G",
+      "gpu": "Apple GPU (5-core graphics)",
+      "ram": "6GB LPDDR4 RAM",
       "description": "iPhone 14 Pro. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. And get peace of mind with a vital new safety feature.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596669-Product-0-I-637982240845588597_1280x.jpg?v=1662700232"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596669-Product-0-I-637982240845588597_1280x.jpg?v=1662700232",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596669-Product-3-I-637982240845588597_1280x.jpg?v=1662700232",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596669-Product-8-I-637982240840744766_1280x.jpg?v=1662700232"
     },
 
     {
       "title": "Apple iPhone 14 Pro 128GB (Space Black)",
       "price": "1749",
       "brand": "APPLE",
+      "rating": "1.0",
+      "size": "6.1-inch Super Retina XDR display",
+      "resolution": "2556‑by‑1179-pixel resolution at 460 ppi",
+      "refreshrate": "120Hz",
+      "processor": "A16 Bionic, the ultimate smartphone chip. Superfast 5G",
+      "gpu": "Apple GPU (5-core graphics)",
+      "ram": "6GB LPDDR4 RAM",
       "description": "iPhone 14 Pro. Capture incredible detail with a 48MP Main camera. Experience iPhone in a whole new way with Dynamic Island and Always-On display. And get peace of mind with a vital new safety feature.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596664-Product-0-I-637982209640642178_1280x.jpg?v=1662700042"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596664-Product-0-I-637982209640642178_1280x.jpg?v=1662700042",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596664-Product-3-I-637982209640798430_1280x.jpg?v=1662700042",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596664-Product-8-I-637982209640954693_1280x.jpg?v=1662700042"
     },
 
 
@@ -90,120 +162,255 @@
       "title": "Apple iPhone 14 Plus 512GB (PRODUCT)RED",
       "price": "2099",
       "brand": "APPLE",
+      "rating": "3.0",
+      "size": "6.7-inch Super Retina XDR display",
+      "resolution": "2778‑by‑1284-pixel resolution at 458 ppi",
+      "refreshrate": "60Hz",
+      "processor": "A15 Bionic chip with 5-core GPU for lightning-fast performance. Superfast 5G",
+      "gpu": "Apple GPU (5-core graphics)",
+      "ram": "6GB LPDDR4 RAM",
       "description": "iPhone 14 Plus. Think big with a larger 6.7-inch display1 and all-day battery life.2 Capture stunning photos in low light and bright light with the new dual-camera system. Get peace of mind with a vital safety feature.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596662-Product-0-I-637982188040452181_467x.jpg?v=1662700644"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596662-Product-0-I-637982188040452181_467x.jpg?v=1662700644",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596662-Product-2-I-637982188040608397_1280x.jpg?v=1662700644",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596662-Product-8-I-637982188040452181_467x.jpg?v=1662700644"
     },
 
     {
       "title": "Apple iPhone 14 Plus 256GB (PRODUCT)RED",
       "price": "1749",
       "brand": "APPLE",
+      "rating": "2.0",
+      "size": "6.7-inch Super Retina XDR display",
+      "resolution": "2778‑by‑1284-pixel resolution at 458 ppi",
+      "refreshrate": "60Hz",
+      "processor": "A15 Bionic chip with 5-core GPU for lightning-fast performance. Superfast 5G",
+      "gpu": "Apple GPU (5-core graphics)",
+      "ram": "6GB LPDDR4 RAM",
       "description": "iPhone 14 Plus. Think big with a larger 6.7-inch display1 and all-day battery life.2 Capture stunning photos in low light and bright light with the new dual-camera system. Get peace of mind with a vital safety feature.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596657-Product-0-I-637982188040452181_1280x.jpg?v=1662700643"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596657-Product-0-I-637982188040452181_1280x.jpg?v=1662700643",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596662-Product-2-I-637982188040608397_1280x.jpg?v=1662700644",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596662-Product-8-I-637982188040452181_467x.jpg?v=1662700644"
     },
 
     {
       "title": "Apple iPhone 14 Plus 128GB (Blue)",
       "price": "1579",
       "brand": "APPLE",
+      "rating": "3.0",
+      "size": "6.7-inch Super Retina XDR display",
+      "resolution": "2778‑by‑1284-pixel resolution at 458 ppi",
+      "refreshrate": " 60Hz",
+      "processor": "A15 Bionic chip with 5-core GPU for lightning-fast performance. Superfast 5G",
+      "gpu": "Apple GPU (5-core graphics)",
+      "ram": "6GB LPDDR4 RAM",
       "description": "iPhone 14 Plus. Think big with a larger 6.7-inch display1 and all-day battery life.2 Capture stunning photos in low light and bright light with the new dual-camera system. Get peace of mind with a vital safety feature.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596653-Product-0-I-637982188645613786_1280x.jpg?v=1662700587"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596653-Product-0-I-637982188645613786_1280x.jpg?v=1662700587",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596653-Product-5-I-637982188678114072_1280x.jpg?v=1662700587",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596653-Product-8-I-637982188683426607_1280x.jpg?v=1662700587"
     },
 
     {
       "title": "Apple iPhone 14 512GB (Starlight)",
       "price": "1899",
       "brand": "APPLE",
+      "rating": "5.0",
+      "size": "6.1-inch Super Retina XDR display",
+      "resolution": "2532‑by‑1170-pixel resolution at 460 ppi",
+      "refreshrate": " 60Hz",
+      "processor": "A15 Bionic chip with 5-core GPU for lightning-fast performance. Superfast 5G",
+      "gpu": "Apple GPU (5-core graphics)",
+      "ram": "6GB LPDDR4 RAM",
       "description": "iPhone 14. With the most impressive dual-camera system on iPhone. Capture stunning photos in low light and bright light. Get peace of mind with a vital safety feature.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596645-Product-0-I-637982177240669658_1280x.jpg?v=1662700586"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596645-Product-0-I-637982177240669658_1280x.jpg?v=1662700586",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596645-Product-2-I-637982177245982209_1280x.jpg?v=1662700586",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596645-Product-8-I-637982177240825910_1280x.jpg?v=1662700586"
     },
 
     {
       "title": "Apple iPhone 14 256GB (PRODUCT)RED",
       "price": "1579",
       "brand": "APPLE",
+      "rating": "4.0",
+      "size": "6.1-inch Super Retina XDR display",
+      "resolution": "2532‑by‑1170-pixel resolution at 460 ppi",
+      "refreshrate": " 60Hz",
+      "processor": "A15 Bionic chip with 5-core GPU for lightning-fast performance. Superfast 5G",
+      "gpu": "Apple GPU (5-core graphics)",
+      "ram": "6GB LPDDR4 RAM",
       "description": "iPhone 14. With the most impressive dual-camera system on iPhone. Capture stunning photos in low light and bright light. Get peace of mind with a vital safety feature.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596642-Product-0-I-637982182640404678_1280x.jpg?v=1662700581"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596642-Product-0-I-637982182640404678_1280x.jpg?v=1662700581",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596642-Product-2-I-637982182670092510_1280x.jpg?v=1662700581",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596642-Product-8-I-637982182681342507_1280x.jpg?v=1662700581"
     },
 
     {
       "title": "Apple iPhone 14 128GB (Midnight)",
       "price": "1399",
       "brand": "APPLE",
+      "rating": "3.0",
+      "size": "6.1-inch Super Retina XDR display",
+      "resolution": "2532‑by‑1170-pixel resolution at 460 ppi",
+      "refreshrate": " 60Hz",
+      "processor": "A15 Bionic chip with 5-core GPU for lightning-fast performance. Superfast 5G",
+      "gpu": "Apple GPU (5-core graphics)",
+      "ram": "6GB LPDDR4 RAM",
       "description": "iPhone 14. With the most impressive dual-camera system on iPhone. Capture stunning photos in low light and bright light. Get peace of mind with a vital safety feature.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596634-Product-0-I-637982174240799602_1280x.jpg?v=1662700577"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596634-Product-0-I-637982174240799602_1280x.jpg?v=1662700577",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596634-Product-2-I-637982174240955818_1280x.jpg?v=1662700577",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596634-Product-8-I-637982174240955818_1280x.jpg?v=1662700577"
     },
 
     {
       "title": "Apple iPhone 13 Pro Max 1TB (Silver)",
       "price": "2719",
       "brand": "APPLE",
+      "rating": "2.0",
+      "size": "6.7-inch Super Retina XDR display",
+      "resolution": "2778‑by‑1284-pixel resolution at 458 ppi",
+      "refreshrate": "120Hz",
+      "processor": "A15 Bionic chip with 5-core GPU for lightning-fast performance. Superfast 5G",
+      "gpu": "Apple GPU (5-core graphics)",
+      "ram": "6GB LPDDR4 RAM",
       "description": "iPhone 13 Pro Max. The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel. Lightning-fast A15 Bionic chip. Superfast 5G.1 Durable design, and the best battery life ever in an iPhone.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530314-Product-0-I-637672997549004264_1920x.jpg?v=1653609935"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530314-Product-0-I-637672997549004264_1920x.jpg?v=1653609935",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530314-Product-2-I-637675032152249116_1280x.jpg?v=1653609935",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530314-Product-7-I-637675032149905385_1280x.jpg?v=1653609935"
     },
 
     {
       "title": "Apple iPhone 13 Pro Max 256GB (Silver)",
       "price": "2019",
       "brand": "APPLE",
+      "rating": "3.0",
+      "size": "6.7-inch Super Retina XDR display",
+      "resolution": "2778‑by‑1284-pixel resolution at 458 ppi",
+      "refreshrate": "120Hz",
+      "processor": "A15 Bionic chip with 5-core GPU for lightning-fast performance. Superfast 5G",
+      "gpu": "Apple GPU (5-core graphics)",
+      "ram": "6GB LPDDR4 RAM",
       "description": "iPhone 13 Pro Max. The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel. Lightning-fast A15 Bionic chip. Superfast 5G.1 Durable design, and the best battery life ever in an iPhone.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530306-Product-0-I-637672995748981245_ea8fcd3b-4a3c-4d81-9568-29950baa32eb_1280x.jpg?v=1653609945"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530306-Product-0-I-637672995748981245_ea8fcd3b-4a3c-4d81-9568-29950baa32eb_1280x.jpg?v=1653609945",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530314-Product-2-I-637675032152249116_1280x.jpg?v=1653609935",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530314-Product-7-I-637675032149905385_1280x.jpg?v=1653609935"
     },
 
     {
       "title": "Apple iPhone 13 mini 512GB (Pink)",
       "price": "1569",
       "brand": "APPLE",
+      "rating": "0.0",
+      "size": "5.4-inch Super Retina XDR display",
+      "resolution": "2340-by-1080-pixel resolution at 476 ppi",
+      "refreshrate": "60Hz",
+      "processor": "A15 Bionic chip for lightning-fast performance",
+      "gpu": "Apple GPU (4-core graphics)",
+      "ram": "4GB LPDDR4 RAM",
       "description": "iPhone 13 mini. The most advanced dual-camera system ever on iPhone. Lightning-fast A15 Bionic chip. A leap in battery life. Durable design. Superfast 5G.1 And a brighter Super Retina XDR display.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530281-Product-0-I-637672974749305563_1280x.jpg?v=1648609711"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530281-Product-0-I-637672974749305563_1280x.jpg?v=1648609711",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530281-Product-3-I-637673815350240680_cea2604f-8b3e-4d2b-8524-f00efe250077_1280x.jpg?v=1648609711",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530281-Product-8-I-637674992549695739_256bee38-ef11-4b9f-848d-0da88a6ac742_1280x.jpg?v=1648609711"
     },  
 
     {
       "title": "Apple iPhone 13 mini 256GB (Midnight)",
       "price": "1219",
       "brand": "APPLE",
+      "rating": "1.0",
+      "size": "5.4-inch Super Retina XDR display",
+      "resolution": "2340-by-1080-pixel resolution at 476 ppi",
+      "refreshrate": "60Hz",
+      "processor": "A15 Bionic chip for lightning-fast performance",
+      "gpu": "Apple GPU (4-core graphics)",
+      "ram": "4GB LPDDR4 RAM",
       "description": "iPhone 13 mini. The most advanced dual-camera system ever on iPhone. Lightning-fast A15 Bionic chip. A leap in battery life. Durable design. Superfast 5G.1 And a brighter Super Retina XDR display.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530274-Product-0-I-637672972949605410_4357c0e6-047c-4753-a10a-57b040a810a3_467x.jpg?v=1648609974"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530274-Product-0-I-637672972949605410_4357c0e6-047c-4753-a10a-57b040a810a3_467x.jpg?v=1648609974",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530257-Product-3-I-637673293349709191_1280x.jpg?v=1648609692",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530257-Product-8-I-637673293349865448_1280x.jpg?v=1648609692"
     },  
 
     {
       "title": "Apple iPhone 13 512GB (Starlight)",
       "price": "1749",
       "brand": "APPLE",
+      "rating": "3.0",
+      "size": "6.1-inch Super Retina XDR display",
+      "resolution": "2532-by-1170 pixels resolution at 460 ppi",
+      "refreshrate": "60Hz  ",
+      "processor": "A15 Bionic chip for lightning-fast performance",
+      "gpu": "Apple GPU (4-core graphics)",
+      "ram": "4GB LPDDR4 RAM",
       "description": "iPhone 13. The most advanced dual-camera system ever on iPhone. Lightning-fast A15 Bionic chip. A big leap in battery life. Durable design. Superfast 5G.1 And a brighter Super Retina XDR display.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530264-Product-0-I-637672980149207313_467x.jpg?v=1648609725"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530264-Product-0-I-637672980149207313_467x.jpg?v=1648609725",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530264-Product-3-I-637673351549383333_e8ff1a1f-b708-430b-9b27-865791b91183_1280x.jpg?v=1648609725",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/530264-Product-8-I-637673351548914596_dd61aaf9-04e1-4be2-b7be-2aa950b37898_1280x.jpg?v=1648609725"
     },  
 
     {
       "title": "Apple iPhone 13 Pro Max 128GB (Alpine Green)",
       "price": "1849",
       "brand": "APPLE",
+      "rating": "5.0",
+      "size": "6.7-inch Super Retina XDR display with ProMotion for a faster",
+      "resolution": "2778-by-1284 pixels resolution at 458 ppi",
+      "refreshrate": "120Hz",
+      "processor": "A15 Bionic chip for lightning-fast performance",
+      "gpu": "Apple GPU (5-core graphics)",
+      "ram": "6GB LPDDR4 RAM",
       "description": "iPhone 13 Pro Max. The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel. Lightning-fast A15 Bionic chip. Superfast 5G.1 Durable design, and the best battery life ever in an iPhone.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580992-Product-0-I-637824115977343671_1280x.jpg?v=1653609946"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580992-Product-0-I-637824115977343671_1280x.jpg?v=1653609946",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580992-Product-2-I-637824115977499921_1280x.jpg?v=1653609946",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580992-Product-8-I-637824115977499921_1280x.jpg?v=1653609946"
     },  
 
     {
       "title": "Apple iPhone SE 5G 256GB (Product)RED [3rd Gen]",
       "price": "969",
       "brand": "APPLE",
+      "rating": "5.0",
+      "size": "4.7-inch Retina HD display",
+      "resolution": "1334-by-750 pixels resolution at 326 ppi",
+      "refreshrate": "60Hz",
+      "processor": "A15 Bionic chip for lightning-fast performance",
+      "gpu": "Apple GPU (4-core graphics)",
+      "ram": "3GB LPDDR4 RAM",
       "description": "Lightning-fast A15 Bionic chip and fast 5G.1 Big-time battery life and a superstar camera. Plus, the toughest glass in a smartphone and a Home button with secure Touch ID.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580981-Product-0-I-637824074577505136_467x.jpg?v=1653609986"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580981-Product-0-I-637824074577505136_467x.jpg?v=1653609986",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580975-Product-2-I-637824075207037644_1280x.jpg?v=1653609964",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580975-Product-8-I-637824075217506399_1280x.jpg?v=1653609964"
     },  
 
     {
       "title": "Apple iPhone 12 128GB (White)",
       "price": "1129",
       "brand": "APPLE",
+      "rating": "3.0",
+      "size": "6.1-inch Super Retina XDR display",
+      "resolution": "2532-by-1170-pixel resolution at 460 ppi",
+      "refreshrate": "60Hz",
+      "processor": "A14 Bionic chip",
+      "gpu": "Apple GPU (4-core graphics)",
+      "ram": "4GB LPDDR4 RAM",
       "description": "iPhone 12 pushes everything forward with superfast 5G.1 A14 Bionic chip. Advanced dual-camera system. And a beautiful Super Retina XDR display, so you can see everything in vivid detail.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/481751-Product-0-I-637382641441411352_8d513cd1-a76f-47c4-88be-0d41bfcfacc9_1280x.jpg?v=1653609898"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/481751-Product-0-I-637382641441411352_8d513cd1-a76f-47c4-88be-0d41bfcfacc9_1280x.jpg?v=1653609898",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/481751-Product-2-I-637382672040729264_1280x.jpg?v=1653609898",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/481751-Product-5-I-637382672038697972_1280x.jpg?v=1653609898"
     },  
 
     {
       "title": "Apple iPhone 11 128GB (White)",
       "price": "759",
       "brand": "APPLE",
+      "rating": "0.0",
+      "size": "6.1-inch Liquid Retina HD LCD display",
+      "resolution": "1792-by-828-pixel resolution at 326 ppi",
+      "refreshrate": "60Hz",
+      "processor": "A13 Bionic chip with third-generation Neural Engine",
+      "gpu": "Apple GPU (4-core graphics)",
+      "ram": "4GB LPDDR4 RAM",
       "description": "Shoot 4K video, beautiful portraits and sweeping landscapes with the all-new dual-camera system. Capture your best low-light photos with Night mode. See true-to-life colour in your photos, videos and games on the 6.1-inch Liquid Retina display.3 Experience unprecedented performance with A13 Bionic for gaming, augmented reality and photography. Do more and charge less with all-day battery life.2 And worry less with water resistance up to 2 metres for 30 minutes.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/489405-Product-0-I-637383628438971406_1280x.jpg?v=1653609898"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/489405-Product-0-I-637383628438971406_1280x.jpg?v=1653609898",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/489405-Product-2-I-637383628439752737_1280x.jpg?v=1653609898",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/489405-Product-3-I-637389819239084686_1280x.jpg?v=1653609898"
     },  
 
 
@@ -211,6 +418,7 @@
       "title": "Google Pixel Case for Pixel 7 (Chalk)",
       "price": "49.99",
       "brand": "GOOGLE",
+      "rating": "2.0",
       "description": "The Pixel 7 Case brings out the phone's design, while adding design of its own: colours made to complement and material that helps protect beautifully.",
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/609928-Product-0-I-638006528840547831_467x.jpg?v=1665039149"
     },
@@ -219,208 +427,442 @@
       "title": "Google Pixel 7 Pro 5G 512GB (Obsidian)",
       "price": "1599",
       "brand": "GOOGLE",
+      "rating": "1.0",
+      "size": "6.7 QHD+ LTPO Smooth Display",
+      "resolution": "(1440 x 3120) LTPO OLED at 512 ppi",
+      "refreshrate": "120Hz",
+      "processor": "Google Tensor G2",
+      "gpu": "Mali-G710 MC10",
+      "ram": "12GB LPDDR5 RAM",
       "description": "Introducing Pixel 7 Pro, Google's best-of-everything phone. Powered by Google Tensor G2, it's fast and secure, with an immersive display and amazing battery life. The best Pixel camera yet includes a telephoto lens and pro-level features like Macro Focus.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/601383-Product-0-I-638007125867239993_467x.jpg?v=1665076261"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/601383-Product-0-I-638007125867239993_467x.jpg?v=1665076261",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/601383-Product-2-I-638007125840520984_1280x.jpg?v=1665076261",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/601383-Product-9-I-638007125840520984_1280x.jpg?v=1665076261"
     },
 
     {
       "title": "Google Pixel 6a 5G 128GB (Sage)",
       "price": "749",
       "brand": "GOOGLE",
+      "rating": "4.0",
+      "size": "Full-screen 6.1 inch (156 mm)13 display",
+      "resolution": "FHD+ (1080 x 2400) OLED at 429 ppi",
+      "refreshrate": "60Hz",
+      "processor": "Google Tensor",
+      "gpu": "Mali-G78 MP20",
+      "ram": "6GB LPDDR5 RAM",
       "description": "Meet Pixel 6a, the more affordable Google phone that adapts to you.1 Powered by Google Tensor, it's super fast and secure, with an amazing battery and camera",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/593602-Product-0-I-637920187982339582_5d3b15e5-e983-4fbb-b8f1-d770000117f9_1280x.jpg?v=1658293315"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/593602-Product-0-I-637920187982339582_5d3b15e5-e983-4fbb-b8f1-d770000117f9_1280x.jpg?v=1658293315",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/593602-Product-2-I-637920187977249252_ed7d3167-aaaa-43d8-8d58-bd558f7f3215_1280x.jpg?v=1658293315",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/593602-Product-10-I-637920188582004034_d88e6c61-5f10-45d8-8c09-47e1dee481b3_1280x.jpg?v=1658293315"
     },
 
     {
       "title": "Google Pixel 7 5G 256GB (Obsidian)",
       "price": "1129",
       "brand": "GOOGLE",
+      "rating": "4.0",
+      "size": "Full-screen 6.3 inch (160.5 mm)13 display",
+      "resolution": "FHD+ (1080 x 2400) OLED at 416 ppi",
+      "refreshrate": "90Hz",
+      "processor": "Tensor G2",
+      "gpu": "Mali-G710 MC10",
+      "ram": "8GB LPDDR5 RAM",
       "description": "Meet Google Pixel 7. Powered by Google Tensor G2, it's fast and secure, with amazing battery life and the advanced Pixel Camera for beautifully authentic, accurate photos with Real Tone and stunning video with Cinematic Blur.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/601378-Product-0-I-637987418240446947_1280x.jpg?v=1665039139"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/601378-Product-0-I-637987418240446947_1280x.jpg?v=1665039139",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/601378-Product-2-I-637987418240446947_1280x.jpg?v=1665039139",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/601378-Product-10-I-637988360840462297_1280x.jpg?v=1665039141"
     },
 
     {
       "title": "Samsung Galaxy Z Flip4 5G 256GB (Blue)",
       "price": "1649",
       "brand": "SAMSUNG",
+      "rating": "3.0",
+      "size": "6.7 main display",
+      "resolution": "1080 x 2640 pixels (~426 ppi density)",
+      "refreshrate": "120Hz",
+      "processor": "Qualcomm SD8+ Gen 1",
+      "gpu": "Adreno 730",
+      "ram": "8GB LPDDR5 RAM",
       "description": "Introducing Samsung Galaxy Z Flip4. Fold it, flip it, stand it. Capture photos and videos hands-free with a camera designed to stand on its own with revolutionary folding glass or get that quick selfie when folded for moments that can’t wait.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/598445-Product-0-I-637947047614673572_467x.jpg?v=1664423558"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/598445-Product-0-I-637947047614673572_467x.jpg?v=1664423558",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/596679-Product-3-I-637982213272396278_467x.jpg?v=1662700243",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/598446-Product-7-I-637947049377323664_1280x.jpg?v=1664423557"
     },
 
     {
       "title": "Samsung Galaxy Z Fold4 5G 512GB (Green)",
       "price": "2699",
       "brand": "SAMSUNG",
+      "rating": "2.0",
+      "size": "7.6 Main & 6.2 cover display",
+      "resolution": "1080 x 2640 pixels (~426 ppi density)",
+      "refreshrate": "120Hz",
+      "processor": "Qualcomm's Snapdragon 8 Gen 1",
+      "gpu": "Adreno 730",
+      "ram": "8GB LPDDR5 RAM",
       "description": "Introducing Samsung Galaxy Z Fold4. With a re-engineered slim hinge, the Galaxy Z Fold4 is our lightest Fold yet.* It puts a powerful hinge, foldable screen, S Pen stylus compatibility^ and a wider cover screen1 all in the palm of your hand.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/598440-Product-0-I-637947046422742828_467x.jpg?v=1664423612"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/598440-Product-0-I-637947046422742828_467x.jpg?v=1664423612",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/598440-Product-3-I-637947046419052543_1280x.jpg?v=1664423612",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/598440-Product-8-I-637947046409211982_1280x.jpg?v=1664423613"
     },
 
     {
       "title": "Samsung Galaxy S22 Ultra 5G 256GB (Phantom Black)",
       "price": "1999",
       "brand": "SAMSUNG",
+      "rating": "1.0",
+      "size": "Samsung Galaxy S22 Ultra 5G ",
+      "resolution": "1440 x 3088 pixels (~500 ppi density)",
+      "refreshrate": "120Hz",
+      "processor": "Qualcomm's Snapdragon 8 Gen 1",
+      "gpu": "Adreno 730",
+      "ram": "8GB LPDDR5 RAM",
       "description": "We are breaking the rules of innovation with the Galaxy S22 Ultra. Setting the standard at being our most epic smartphone. We know you want the best and that is why we are breaking all the rules. With all day battery life, our most advanced pro-grade camera, our brightest display and a Galaxy first with a built in S-Pen, Ultra easily lives up to its name.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580965-Product-0-I-637783567959637902_ad344dde-4d7e-43d7-9b46-945127a9b929_1280x.jpg?v=1662345707"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580965-Product-0-I-637783567959637902_ad344dde-4d7e-43d7-9b46-945127a9b929_1280x.jpg?v=1662345707",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580965-Product-3-I-637783567958856606_18c2ec45-0003-4a32-a343-b60b0c941ca7_1280x.jpg?v=1662345707",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580965-Product-7-I-637783567958544116_3bc25885-e2cf-448c-b587-c803777d4c38_1280x.jpg?v=1662345707"
     },
 
     {
       "title": "Samsung Galaxy A23 128GB (Peach)",
       "price": "349",
       "brand": "SAMSUNG",
+      "rating": "0.0",
+      "size": "6.6 Infinity-V Full HD",
+      "resolution": "1080 x 2408 pixels, 20:9 ratio (~400 ppi density)",
+      "refreshrate": "90Hz",
+      "processor": "Octa-core(EXYNOS)",
+      "gpu": "Adreno 610 ",
+      "ram": "4GB LPDDR5 RAM",
       "description": "6.6 Infinity-V Full HD+, 90Hz refresh rate display, 128GB Storage with 4GB RAM50MP (Wide) + 2MP (Depth) + 5MP (UltraWide) + 2MP (Macro) rear cameras",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/586033-Product-0-I-637841531577454252_1280x.jpg?v=1662002651"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/586033-Product-0-I-637841531577454252_1280x.jpg?v=1662002651",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/586033-Product-2-I-637841531577141715_1280x.jpg?v=1662002651",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/586033-Product-5-I-637841531577297985_1280x.jpg?v=1662002651"
     },
 
     {
       "title": "Samsung Galaxy S22 5G 128GB (Phantom Black)",
       "price": "1049",
       "brand": "SAMSUNG",
+      "rating": "2.0",
+      "size": "6.1 BrightVision display",
+      "resolution": "1080 x 2340 pixels, 19.5:9 ratio (~425 ppi density)",
+      "refreshrate": "120Hz",
+      "processor": "Qualcomm SM8450 Snapdragon 8 Gen 1 (4 nm) - ROW",
+      "gpu": "Xclipse 920 - Europe Adreno 730 - ROW",
+      "ram": "8GB LPDDR5 RAM",
       "description": "We are breaking the rules of video with the Galaxy S22. Setting the standard at being our most epic smartphone. We know you want the best and that is why we are breaking all the rules. Designed to revolutionise video and photography, it’s time to express, create and connect the way you want to.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580945-Product-0-I-637782961358871995_1280x.jpg?v=1662345313"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580945-Product-0-I-637782961358871995_1280x.jpg?v=1662345313",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580945-Product-2-I-637782961358871995_1280x.jpg?v=1662345313",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580945-Product-5-I-637782961359028241_1280x.jpg?v=1662345314"
     },
 
     {
       "title": "Samsung Galaxy S21+ 5G 128GB (Violet)",
       "price": "1549",
       "brand": "SAMSUNG",
+      "rating": "3.0",
+      "size": "6.7 Infinity-O display",
+      "resolution": "1080 x 2400 pixels, 20:9 ratio (~394 ppi density)",
+      "refreshrate": "120Hz",
+      "processor": "Qualcomm SM8350 Snapdragon 888 5G (5 nm) - USA/China",
+      "gpu": "Adreno 660 - USA/China",
+      "ram": "8GB LPDDR5 RAM",
       "description": "Miss nothing, with Galaxy S21+ 5G. A camera so good, everyone’s a pro. When capturing your best moments, you no longer have to choose between photo and video. Galaxy S21 captures both, simultaneously, so you’ll never miss a moment. Capture big screen quality videos in stunning 8K resolution* and zoom in with less pixilation with 3x Optical Zoom.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/506518-Product-0-I-637474453937101007_11ee33cb-9905-4b4e-b093-14b0654be7f9_1280x.jpg?v=1662001662"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/506518-Product-0-I-637474453937101007_11ee33cb-9905-4b4e-b093-14b0654be7f9_1280x.jpg?v=1662001662",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/506518-Product-2-I-637474453965244704_342fbfec-8c44-4ec2-a120-36ba1f4efc64_1280x.jpg?v=1662001662",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/506518-Product-6-I-637474453975557487_13d2db54-6a8d-4521-8eec-9bd57ac8f064_1280x.jpg?v=1662001662"
     },
 
     {
       "title": "Samsung Galaxy S22 Ultra 5G 128GB (Burgundy)",
       "price": "1849",
       "brand": "SAMSUNG",
+      "rating": "3.0",
+      "size": "6.8 BrightVision display",
+      "resolution": "1440 x 3088 pixels (~500 ppi density)",
+      "refreshrate": "120Hz",
+      "processor": "Qualcomm SM8450 Snapdragon 8 Gen 1 (4 nm) - ROW",
+      "gpu": "Adreno 730 - ROW",
+      "ram": "8/12GB LPDDR5 RAM",
       "description": "We are breaking the rules of innovation with the Galaxy S22 Ultra. Setting the standard at being our most epic smartphone. We know you want the best and that is why we are breaking all the rules. With all day battery life, our most advanced pro-grade camera, our brightest display and a Galaxy first with a built in S-Pen, Ultra easily lives up to its name.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580962-Product-0-I-637783590760542702_1280x.jpg?v=1662345721"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580962-Product-0-I-637783590760542702_1280x.jpg?v=1662345721",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580966-Product-2-I-637783590799321185_1280x.jpg?v=1662345709",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580966-Product-5-I-637783590786196205_1280x.jpg?v=1662345709"
     },
 
     {
       "title": "Samsung Galaxy S21 FE 5G 128GB (Lavender)",
       "price": "999",
       "brand": "SAMSUNG",
+      "rating": "5.0",
+      "size": "6.4 FHD+ Display",
+      "resolution": "1080 x 2400 pixels, 20:9 ratio (~401 ppi density)",
+      "refreshrate": "120Hz",
+      "processor": "Qualcomm SM8350 Snapdragon 888 5G (5 nm)",
+      "gpu": "Adreno 660 - Version",
+      "ram": "6/8GB LPDDR5 RAM",
       "description": "Say hello to the newest edition to the Galaxy S21 family. Galaxy S21 FE 5G - Fan Edition. Jammed packed full of state-of-the-art flagship features without the price tag. Capture photos in stunning clarity with three lenses, ultra-wide, wide and telephoto and experience night photography to the fullest, making lo-lights the highlight of every feed. Get ready for dual video recording, a two-sided camera feature that lets you shoot the moment in one take, simultaneously. Design wise, the contour slim cut camera blends beautifully with the back of the phone - comes in Lavender, White, Graphite and Olive, an array of colours you’ll want to get your hands on. And, have the power to last with an impressive display, fast processor and powerful battery.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/578711-Product-0-I-637753269158691425_1280x.jpg?v=1662001653"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/578711-Product-0-I-637753269158691425_1280x.jpg?v=1662001653",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/578714-Product-2-I-637770572558861993_1280x.jpg?v=1662001665",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/578714-Product-5-I-637770572559330784_1280x.jpg?v=1662001665"
     },
 
     {
       "title": "Motorola g82 5G 128GB (Meteorite Grey)",
       "price": "399",
       "brand": "MOTOROLA",
+      "rating": "5.0",
+      "size": "6.6 pOLED smooth display",
+      "resolution": "1080 x 2400 pixels, 20:9 ratio (~402 ppi density)",
+      "refreshrate": "120Hz",
+      "processor": "Qualcomm SM6375 Snapdragon 695 5G (6 nm)",
+      "gpu": "Adreno 619",
+      "ram": "6/8GB LPDDR5 RAM",
       "description": "moto g82 5G lets you view over a billion shades of colours with infinite contrast on a 6.6 pOLED display. Immerse yourself in multidimensional sound with stereo speakers and Dolby Atmos®1. Capture the moment from any angle and in any light—minus any unwanted camera movement with OIS. Enjoy a long-lasting 5000 mAh battery and TurboPower™ 30 charging. And experience superfast 5G speed2. moto g82 5G. It’s one in a billion.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/594111-Product-0-I-637902018177351554_1280x.jpg?v=1656631971"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/594111-Product-0-I-637902018177351554_1280x.jpg?v=1656631971",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/594111-Product-2-I-637902018177820263_1280x.jpg?v=1656631971",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/594111-Product-3-I-637902018178289089_1280x.jpg?v=1656631971"
     },
 
     {
       "title": "Motorola Edge 30 5G 128GB (Meteor Grey)",
       "price": "699",
       "brand": "MOTOROLA",
+      "rating": "5.0",
+      "size": "6.5 smooth display",
+      "resolution": "1080 x 2400 pixels, 20:9 ratio (~405 ppi density)",
+      "refreshrate": "144Hz",
+      "processor": "Qualcomm SM7325-AE Snapdragon 778G+ 5G (6 nm)",
+      "gpu": "Adreno 642L",
+      "ram": "6/8GB LPDDR5 RAM",
       "description": "The new motorola edge 30 helps you tell your story with more clarity and focus. With our most advanced 50 MP camera, you can shoot with faster, more accurate autofocus, capture razor-sharp low-light images, and record over a billion shades of colour. That’s just the beginning. Bring your favourite movies and games to life on an ultra-smooth 144 Hz 6.5 OLED display and listen with multidimensional Dolby Atmos® sound. Start every journey with one of the thinnest 5G smartphones, packing tons of the latest technology into a sleek, ultra-modern design. So, give it your best shot. Find your edge with motorola edge 30",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/589721-Product-0-I-637877094205570542_1280x.jpg?v=1652076695"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/589721-Product-0-I-637877094205570542_1280x.jpg?v=1652076695",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/589721-Product-2-I-637877094177758041_1280x.jpg?v=1652076695",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/589721-Product-5-I-637877094183695523_1280x.jpg?v=1652076695"
     },
 
     {
       "title": "Motorola Edge 20 Pro 5G 256GB (Midnight Sky)",
       "price": "899",
       "brand": "MOTOROLA",
+      "rating": "5.0",
+      "size": "6.7 smooth display",
+      "resolution": "1080 x 2400 pixels, 19.5:9 ratio (~385 ppi density)",
+      "refreshrate": "144Hz",
+      "processor": "Qualcomm SM8250-AC Snapdragon 870 5G (7 nm)",
+      "gpu": "Adreno 650",
+      "ram": "6/12GB LPDDR5 RAM",
       "description": "The world has changed. And a new kind of world calls for a new kind of phone. One that takes the latest smartphone experiences to another level, empowering you to tell your story like never before. The new motorola edge 20 pro was born for this. Featuring our most advanced camera system ever, you can capture stunning ultra-high res photos with a 108 MP sensor, and focus from incredible distances with 50x Super Zoom. Or view a billion shades of colour on a breathtaking 6.7 display with the fastest smartphone refresh rate. Even connect your phone to the big screen with Ready For to play games, make video calls, and use your favourite apps. It’s time to unleash your creativity. motorola edge 20 pro is here.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/531026-Product-0-I-637648962750758737_1280x.jpg?v=1629852149"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/531026-Product-0-I-637648962750758737_1280x.jpg?v=1629852149",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/531026-Product-4-I-637648962749352519_1280x.jpg?v=1629852149",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/531026-Product-2-I-637648962750289985_1280x.jpg?v=1629852149"
     },
 
     {
       "title": "Motorola Edge 30 Ultra 5G 256GB (Interstellar Black)",
       "price": "1399",
       "brand": "MOTOROLA",
+      "rating": "4.0",
+      "size": "6.67 smooth display",
+      "resolution": "1080 x 2400 pixels, 20:9 ratio (~395 ppi density)",
+      "refreshrate": "144Hz",
+      "processor": "Qualcomm SM8475 Snapdragon 8+ Gen 1 (4 nm)",
+      "gpu": "Adreno 730",
+      "ram": "8/12GB LPDDR5 RAM",
       "description": "Introducing motorola edge 30 ultra. Capture your sharpest, most beautifully detailed photos in any light with a 200MP camera system, the industry’s highest resolution. Experience the fastest, most powerful Snapdragon® processor1. Fuel up in minutes2 at unbelievable 125W speeds, the fastest TurboPower™ charging ever. Enjoy the stunning endless edge design and breathtaking views on a totally immersive 6.67 144Hz display3. Find your edge with motorola edge 30 ultra.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/609040-Product-0-I-638011718240850935_7c75a31f-6e53-4940-bbea-a1d2096ddee9_1280x.jpg?v=1665543296"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/609040-Product-0-I-638011718240850935_7c75a31f-6e53-4940-bbea-a1d2096ddee9_1280x.jpg?v=1665543296",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/609040-Product-2-I-638011718240850935_b3d51bc5-374e-42d6-8de8-ad45b82c0686_1280x.jpg?v=1665543296",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/609040-Product-5-I-638011718240694632_077c7fed-0d09-4f60-a1c3-2c8443e00403_1280x.jpg?v=1665543296"
     },
 
     {
       "title": "Motorola g32 128GB (Mineral Grey)",
       "price": "299",
       "brand": "MOTOROLA",
+      "rating": "3.0",
+      "size": "6.5 Smooth 90 Hz Full HD+ display",
+      "resolution": "1080 x 2400 pixels, 20:9 ratio (~405 ppi density)",
+      "refreshrate": "90Hz",
+      "processor": "Qualcomm SM6225 Snapdragon 680 4G (6 nm)",
+      "gpu": "Adreno 610",
+      "ram": "4/6GB LPDDR5 RAM",
       "description": "Take movies, shows, and games to the next level with moto g32. Enjoy smooth, seamless views on a 6.5 FHD+ display with a 90 Hz refresh rate. Immerse yourself in multidimensional sound with stereo speakers and Dolby Atmos®. Binge for longer with a 5000 mAh battery, then fuel up fast with TurboPower™ 30 charging. All of that plus a Snapdragon® 680 processor, 50 MP camera system, and plenty of storage.1 Take entertainment to another level with moto g32.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/600060-Product-0-I-637963255377304439_1280x.jpg?v=1660692827"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/600060-Product-0-I-637963255377304439_1280x.jpg?v=1660692827",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/600060-Product-2-I-637963255377304439_1280x.jpg?v=1660692827",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/600060-Product-3-I-637963255377460660_1280x.jpg?v=1660692827"
     },
 
     {
       "title": "OPPO Find X5 Lite 5G 256GB (Starry Black)",
       "price": "699",
       "brand": "OPPO",
+      "rating": "2.0",
+      "size": "6.4 90Hz AMOLED Screen",
+      "resolution": "1080 x 2400 pixels, 20:9 ratio (~409 ppi density)",
+      "refreshrate": "90Hz",
+      "processor": "MediaTek MT6877 Dimensity 900 (6 nm)",
+      "gpu": "Mali-G68 MC4",
+      "ram": "8GB LPDDR5 RAM",
       "description": "Look up, smile, and pose—you don’t need fancy gadgets for DSLR-like portraits with a delicately blurred background. With Portrait Mode’s 25 levels of adjustable aperture, you can custom-create your perfect, pro-level portrait on the go.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/584381-Product-0-I-637820013177736636_c7f642dd-7d4b-4a72-8728-ace1bb3fce65_1280x.jpg?v=1660689715"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/584381-Product-0-I-637820013177736636_c7f642dd-7d4b-4a72-8728-ace1bb3fce65_1280x.jpg?v=1660689715",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/584381-Product-3-I-637946812377215781_1280x.jpg?v=1660689715",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/584381-Product-6-I-637946812407371924_1280x.jpg?v=1660689715"
     },
 
     {
       "title": "OPPO Reno8 Lite 5G 128GB (Rainbow Spectrum)",
       "price": "499",
       "brand": "OPPO",
+      "rating": "1.0",
+      "size": "6.4 AMOLED FHD",
+      "resolution": "1080 x 2400 pixels, 20:9 ratio (~409 ppi density)",
+      "refreshrate": "60Hz",
+      "processor": "Qualcomm SM6375 Snapdragon 695 5G (6 nm)",
+      "gpu": "Adreno 619",
+      "ram": "8/12GB LPDDR5 RAM",
       "description": "Reno8 lite 5G’s 6.4-inch AMOLED screen7 is the perfect companion for Netflix, Amazon’s high-definition display capabilities and is a perfect fit for Swiss authority SGS8 for its low blue light eye protecting abilities. Adaptive Sleep9 ensures the screen never switches off whilst you’re watching.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/590591-Product-0-I-637902093777411378_e1dc551a-5a95-42ff-bcd3-8d50d279ac00_1280x.jpg?v=1660690595"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/590591-Product-0-I-637902093777411378_e1dc551a-5a95-42ff-bcd3-8d50d279ac00_1280x.jpg?v=1660690595",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/590591-Product-3-I-637946813578480945_d1ccbaa7-9c80-4320-a56a-5667faabf6c0_1280x.jpg?v=1660690595",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/590591-Product-6-I-637946813577074711_4e501c49-f139-4f81-9929-261f4f8a877c_1280x.jpg?v=1660690595"
     },
 
     {
       "title": "OPPO Find X5 5G 256GB (Black)",
       "price": "1399",
       "brand": "OPPO",
+      "rating": "0.0",
+      "size": "6.5 display",
+      "resolution": "1080 x 2400 pixels, 20:9 ratio (~402 ppi density)",
+      "refreshrate": "120Hz",
+      "processor": "Qualcomm SM8350 Snapdragon 888 5G (5 nm)",
+      "gpu": "Adreno 660",
+      "ram": "8/12GB LPDDR5 RAM",
       "description": "OPPO Find X5’s streamlined curve is made possible with frosting matte glass, creating a silky gloss which feels incredible to touch. The 75° slope offers the optimal curve for illuminating the body in sunlight or shadow.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/584383-Product-0-I-637840501379222845_e91e8c90-b818-44f6-ae4b-c24861c6f1ac_1280x.jpg?v=1661740943"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/584383-Product-0-I-637840501379222845_e91e8c90-b818-44f6-ae4b-c24861c6f1ac_1280x.jpg?v=1661740943",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/584383-Product-3-I-637946810577632681_ead14ec9-3482-4acb-b67e-70fba3b661fd_1280x.jpg?v=1661740943",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/584383-Product-6-I-637946810582945186_b63a02d1-b03d-4fe9-a8e2-5f8391035ec7_1280x.jpg?v=1661740943"
     },
 
     {
       "title": "OPPO A77 5G 128GB (Ocean Blue)",
       "price": "449",
       "brand": "OPPO",
+      "rating": "1.0",
+      "size": "6.56 Colour-Rich Display",
+      "resolution": "720 x 1612 pixels, 20:9 ratio (~269 ppi density)",
+      "refreshrate": "90Hz",
+      "processor": "MediaTek MT6833P Dimensity 810 (6 nm)",
+      "gpu": "Mali-G57 MC2",
+      "ram": "4/6GB LPDDR5 RAM",
       "description": "OPPO A77 5G features 33W SUPERVOOCTM1 charging technology with advanced temperature control and hardware protection, so you’re safely energised in an instant – and ready to roll...",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/597611-Product-0-I-637945950778424531_1280x.jpg?v=1658962427"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/597611-Product-0-I-637945950778424531_1280x.jpg?v=1658962427",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/597611-Product-2-I-637945950779362075_1280x.jpg?v=1658962427",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/597611-Product-5-I-637945950778737042_1280x.jpg?v=1658962427"
     },
 
     {
       "title": "Asus ROG Phone 6 5G 512GB (Black)",
       "price": "1799",
       "brand": "ASUS",
+      "rating": "3.0",
+      "size": "Enjoy supreme visuals with 6.78 inch",
+      "resolution": "1080 x 2448 pixels (~395 ppi density)",
+      "refreshrate": "165Hz",
+      "processor": "Qualcomm SM8475 Snapdragon 8+ Gen 1 (4 nm)",
+      "gpu": "Adreno 730",
+      "ram": "8/16GB LPDDR5 RAM",
       "description": "The legend has evolved! The ROG Phone 6 is the latest incarnation of world-beating gaming phone. It harnesses the brute gaming power of the latest Qualcomm® Snapdragon® 8+ Gen 1 Mobile Platform, with a new class leading GameCool 6 thermal system that lets you smash every barrier and break every limit, and a 165 Hz display for a revolutionary visual experience. For total control, there’s the AirTrigger 6 system and the Armoury Crate app, and for marathon gameplay, there’s a monster 6000 mAh1 battery. Dare to choose the mighty ROG Phone 6, and you will be rewarded with an experience that befits a true legend.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/598341-Product-0-I-637953050618247843_1280x.jpg?v=1659672352"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/598341-Product-0-I-637953050618247843_1280x.jpg?v=1659672352",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/598341-Product-2-I-637953050579185538_1280x.jpg?v=1659672352",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/598341-Product-5-I-637953050578873086_1280x.jpg?v=1659672352"
     },
 
     {
       "title": "Asus ROG 5 Gaming Phone 5G 256GB (Phantom Black)",
       "price": "1399",
       "brand": "ASUS",
+      "rating": "2.0",
+      "size": "6.78 AMOLED display",
+      "resolution": "1080 x 2448 pixels (~395 ppi density)",
+      "refreshrate": "144Hz",
+      "processor": "Qualcomm SM8350 Snapdragon 888 5G (5 nm)",
+      "gpu": "Adreno 660",
+      "ram": "8/16GB LPDDR5 RAM",
       "description": "Play to the max with ROG Phone 5, the ultimate gaming phone build for gamers. Powered to win with the latest Qualcomm® Snapdragon™ 888 5G Mobile Platform, this futuristic wonder packs an unbelievably responsive 144 Hz / 1ms display, a monster 6000mAh1 battery system, massively upgraded AirTrigger 5 game controls, and our iconic GameFX audio system. ROG Phone 5 will take your gaming to a new dimension — if you dare.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/521371-Product-0-I-637559099525059063_1280x.jpg?v=1620277225"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/521371-Product-0-I-637559099525059063_1280x.jpg?v=1620277225",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/521371-Product-4-I-637559099490371507_1280x.jpg?v=1620277225",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/521371-Product-2-I-637559099490215245_1280x.jpg?v=1620277225"
     },
 
     {
       "title": "Asus ROG 5s 5G 512GB (Phantom Black)",
       "price": "1199",
       "brand": "ASUS",
+      "rating": "4.0",
+      "size": "6.78 AMOLED display",
+      "resolution": "1080 x 2448 pixels (~395 ppi density)",
+      "refreshrate": "144Hz",
+      "processor": "Qualcomm SM8350 Snapdragon 888+ 5G (5 nm)",
+      "gpu": "Adreno 660",
+      "ram": "8/16GB LPDDR5 RAM",
       "description": "Fuelled for winning by the latest Qualcomm® Snapdragon® 888+ 5G mobile platform, ROG Phone 5s launches your mobile gaming experience into the next dimension. With an unbelievably responsive 360 Hz native touch sampling rate, the 144 Hz / 1 ms display brings you the smoothest ever viewing experience. It also packs a monster 6000 mAh1 battery system, AirTrigger 5 game controls, and our iconic GameFX audio system. Dare to choose ROG Phone 5s, and you’ll be rewarded with unbridled performance for a world-leading gaming and entertainment experience.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/567190-Product-0-I-637739418159209357_1280x.jpg?v=1638316333"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/567190-Product-0-I-637739418159209357_1280x.jpg?v=1638316333",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/567190-Product-2-I-637739418159209357_1280x.jpg?v=1638316333",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/567190-Product-3-I-637739418159209357_1280x.jpg?v=1638316333"
     },
 
     {
       "title": "Asus Zenfone 8 5G 256GB (Obsidian Black)",
       "price": "899",
       "brand": "ASUS",
+      "rating": "5.0",
+      "size": "5.9 compact, pocket size design",
+      "resolution": "1080 x 2400 pixels, 20:9 ratio (~446 ppi density)",
+      "refreshrate": "120Hz",
+      "processor": "Qualcomm SM8350 Snapdragon 888 5G (5 nm)",
+      "gpu": "Adreno 660",
+      "ram": "6/16GB LPDDR5 RAM",
       "description": "Powered by the latest flagship Qualcomm® Snapdragon™ 888 5G Mobile Platform, with Adreno™ 660 graphics, 8GB RAM and 256GB storage, the small size of Zenfone 8 belies the fact that it's also the most powerful Zenfone to date.The fast and responsive 5.9-inch 120 Hz Samsung AMOLED display delivers smooth-scrolling, blur-free visuals, and is HDR10+ certified. For the ultimate protection, the display is covered with the latest and toughest Corning® Gorilla® Glass Victus™.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/523032-Product-0-I-637588260089814323_ae3da2cf-ea6b-4729-8ddb-15fc3ac14265_1280x.jpg?v=1623193474"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/523032-Product-0-I-637588260089814323_ae3da2cf-ea6b-4729-8ddb-15fc3ac14265_1280x.jpg?v=1623193474",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/523032-Product-2-I-637588260092158097_65c68014-e0cf-4238-99c9-f6e628179bdc_1280x.jpg?v=1623193474",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/523032-Product-5-I-637588261889243558_1280x.jpg?v=1623193474"
     },
 
     {
       "title": "Asus ROG 5 Ultimate 5G 512GB (Storm White)",
       "price": "1699",
       "brand": "ASUS",
+      "rating": "3.0",
+      "size": "6.78 inch FHD",
+      "resolution": "1080 x 2448 pixels (~395 ppi density)",
+      "refreshrate": "144Hz",
+      "processor": "Qualcomm SM8350 Snapdragon 888 5G (5 nm)",
+      "gpu": "Adreno 660",
+      "ram": "18GB LPDDR5 RAM",
       "description": "6.78 inch FHD+ (2448x1080) screen, 144 Hz / 1 ms Samsung AMOLED, Qualcomm Snapdragon 888 processor",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/532639-Product-0-I-637653295350360624_1280x.jpg?v=1629696803"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/532639-Product-0-I-637653295350360624_1280x.jpg?v=1629696803",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/532639-Product-2-I-637653295350985606_1280x.jpg?v=1629696803",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/532639-Product-4-I-637653295353173100_1280x.jpg?v=1629696803"
     },
 
     {
       "title": "Asus Zenfone 9 5G 128GB (Starry Blue)",
       "price": "1199",
       "brand": "ASUS",
+      "rating": "0.0",
+      "size": "5.9 AMOLED display",
+      "resolution": "1080 x 2400 pixels, 20:9 ratio (~445 ppi density)",
+      "refreshrate": "120Hz",
+      "processor": "Qualcomm SM8475 Snapdragon 8+ Gen 1 (4 nm)",
+      "gpu": "Adreno 730",
+      "ram": "8/16GB LPDDR5 RAM",
       "description": "The ultra-compact, ultra-stylish, and ultra-speedy Zenfone 9 fits perfectly in your hand, yet it packs a big punch thanks to the premium Snapdragon® 8+ Gen 1 Mobile Platform and long-lasting 4300 mAh battery. The massively upgraded dual-camera system now includes a 6-Axis Hybrid Gimbal Stabilizer for super-steady snaps and videos. Big possibilities are waiting for you, so grab your Zenfone 9 and go!",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/609013-Product-0-I-638007538676158074_1280x.jpg?v=1665117542"
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/609013-Product-0-I-638007538676158074_1280x.jpg?v=1665117542",
+      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/609013-Product-2-I-638007538641157809_1280x.jpg?v=1665117542",
+      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/609013-Product-3-I-638007538640532826_1280x.jpg?v=1665117542"
     }
   ]
 
