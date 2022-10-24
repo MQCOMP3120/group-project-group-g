@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { Breadcrumb, Button } from "react-bootstrap";
 import { BiHeart } from "react-icons/bi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import RatingStars from "../components/RatingStars";
 import {
@@ -11,7 +12,11 @@ import {
   getCart,
   postCart,
 } from "../features/cart/cartSlice";
-import { useDispatch, useSelector } from "react-redux";
+
+import {  postWishList } from "../features/wishlist/wishlistSlice"
+
+
+
 
 export default function SingleProduct() {
   const dispatch = useDispatch();
@@ -73,7 +78,7 @@ export default function SingleProduct() {
             <Button variant="primary" onClick={() => handleAddProduct(id)}>
               <AiOutlineShoppingCart /> Add to Cart
             </Button>{" "}
-            <Button variant="light">
+            <Button variant="light" onClick={() => dispatch(postWishList(id))}>
               {" "}
               <BiHeart /> Add to Wish List
             </Button>{" "}

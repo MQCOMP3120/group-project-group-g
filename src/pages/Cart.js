@@ -46,11 +46,11 @@ export default function Cart() {
   const emptyCart = <p> Your cart is currently empty </p>;
   const productElem = !userCart[0]
     ? emptyCart
-    : cartProducts.map((product) => {
+    : cartProducts.map((product, idx) => {
         const { title, price, id } = getProduct(product.productId)[0];
         // console.log(id);
         return (
-          <div className="single-product-info my-5">
+          <div className="single-product-info my-5" key={idx}>
             <p>{title}</p>
             <p>quantity: {product.quantity}</p>
             <p>price: {`$${price}`} </p>
