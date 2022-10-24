@@ -64,9 +64,16 @@ const productSchema = new mongoose.Schema({
     title: {type: String, unique: true},
     price: {type: Number, default: 0},
     brandId: {type: mongoose.Types.ObjectId, ref: 'Brand'},
+    rating: {type: Number, default: 0},
+    resolution: {type: String, default: ""},
+    refreshrate: {type: String, default: ""},
+    processor: {type: String, default: ""},
+    gpu: {type: String, default: ""},
+    ram: {type: String, default: ""},
     description: {type: String, default: ""},
     image: {type: String, default: ""},
-    rating: {type: Number, default: 0},
+    image2: {type: String, default: ""},
+    image3: {type: String, default: ""},
     timestamp: {type: Date, default: Date.now},
   })
 

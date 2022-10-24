@@ -52,8 +52,16 @@ const createProduct = async (request, response) => {
                 title: request.body.title,
                 price: request.body.price,
                 brandId: brand._id,
+                rating: request.body.rating,
+                resolution: request.body.resolution,
+                refreshrate: request.body.refreshrate,
+                processor: request.body.processor,
+                gpu: request.body.gpu,
+                ram: request.body.ram,
                 description: request.body.description,
                 image: request.body.image,
+                image2: request.body.image2,
+                image3: request.body.image3,
             })
             const returned = await product.save()
             if (returned) {
@@ -62,8 +70,16 @@ const createProduct = async (request, response) => {
                     price: request.body.price,
                     brandId: brand._id,
                     brand: brand.title,
+                    rating: request.body.rating,
+                    resolution: request.body.resolution,
+                    refreshrate: request.body.refreshrate,
+                    processor: request.body.processor,
+                    gpu: request.body.gpu,
+                    ram: request.body.ram,
                     description: request.body.description,
                     image: request.body.image,
+                    image2: request.body.image2,
+                    image3: request.body.image3,
                 })
             }
         }
@@ -83,8 +99,16 @@ const modProduct = async (request, response) => {
                 title: request.body.title,
                 price: request.body.price,
                 brandId: brand._id,
+                rating: request.body.rating,
+                resolution: request.body.resolution,
+                refreshrate: request.body.refreshrate,
+                processor: request.body.processor,
+                gpu: request.body.gpu,
+                ram: request.body.ram,
                 description: request.body.description,
                 image: request.body.image,
+                image2: request.body.image2,
+                image3: request.body.image3,
             }
             const id = request.params.id
             //console.log("id:", id);
@@ -96,8 +120,16 @@ const modProduct = async (request, response) => {
                     price: request.body.price,
                     brandId: brand._id,
                     brand: brand.title,
+                    rating: request.body.rating,
+                    resolution: request.body.resolution,
+                    refreshrate: request.body.refreshrate,
+                    processor: request.body.processor,
+                    gpu: request.body.gpu,
+                    ram: request.body.ram,
                     description: request.body.description,
                     image: request.body.image,
+                    image2: request.body.image2,
+                    image3: request.body.image3,
                 })
             }
         }
