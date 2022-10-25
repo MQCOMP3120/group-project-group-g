@@ -194,12 +194,15 @@ function httpGetCarts(){
             <button onClick={httpGetProducts}> Get Products </button>
             <div>
                 {products.length>0 && products.map( product =>
-                <div key={product.id} className="brandItem">
+                    <div key={product.id} className="brandItem">
                     id:{product.id}--title:{product.title}--price:{product.price}--brandId:{product.brandId}--brand:{product.brand}
-                    --rating:{product.rating}--timestamp:{product.timestamp}
-                    --description:{product.description}
+                    --rating:{product.rating}
+                    {/* --timestamp:{product.timestamp}
+                    --description:{product.description} */}
                     <img src= {product.image} width="100" height="100"/>
-                </div>)}
+                    <img src= {product.image2} width="100" height="100"/>
+                    <img src= {product.image3} width="100" height="100"/>
+            </div>)}
             </div>
 
             <button onClick={httpGetWishLists}> Get WishLists </button>
