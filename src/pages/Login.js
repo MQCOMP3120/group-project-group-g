@@ -17,10 +17,11 @@ import { useEffect } from "react";
 export default function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { isSignIn, user } = useSelector((state) => state.auth);
+  const { isSignIn, user, authErr } = useSelector((state) => state.auth);
 
   // dispatch(regUser());
   useEffect(() => {
+    // console.log(isSignIn);
     if (isSignIn) {
       return navigate("/");
     }
@@ -29,13 +30,11 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(authUser());
-    dispatch(signIn());
-    console.log(user);
   };
 
   return (
     <Wrapper className="center-items section-center">
-      <Form noValidate validated={isSignIn} onSubmit={handleSubmit}>
+      <Form noValidate validated={authErr} onSubmit={handleSubmit}>
         <Form.Group className="mb-2 d-flex justify-content-between">
           <h2 className="current-page p-3"> Login </h2>
           <Link to="/register" className="p-3">

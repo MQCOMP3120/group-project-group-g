@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { cartApi, cartUserApi } from "../../util/api";
+import { cartApi, cartUserApi, productsApi } from "../../util/api";
 import axios from "axios";
 
 const initialState = {
@@ -53,20 +53,55 @@ export const postCart = createAsyncThunk(
   }
 );
 
+export const delCartProduct = createAsyncThunk(
+  "cart/delCartProduct",
+  async (id, { getState, dispatch }) => {
+    try {
+      const { auth, cart } = getState();
+      let { user } = auth;
+      const { userCart, cartProducts } = cart;
+      console.log(cart);
+      //   console.log(userCart);
+      if (userCart[0]) {
+        const resp = await axios.put(
+          `${cartApi}${userCart[0].id}`,
+          {
+            products: cartProducts.filter(
+              (product) => product.productId !== id
+            ),
+          },
+          {
+            headers: {
+              Authorization: user.jwt,
+            },
+          }
+        );
+        dispatch(removeProduct(id));
+        console.log(resp);
+      } else {
+        console.log("user cart doesn't exist");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+);
+
 // delete a cart / clear all items in current cart
 export const delCart = createAsyncThunk(
-  "cart/postCart",
+  "cart/delCart",
   async (arg, { getState, dispatch }) => {
     try {
       const { auth, cart } = getState();
       let { user } = auth;
       const { userCart } = cart;
-      const { data } = await axios.delete(`${cartApi}${userCart[0].id}`, {
+      await axios.delete(`${cartApi}${userCart[0].id}`, {
         headers: {
           Authorization: user.jwt,
         },
       });
-      dispatch(resetCart(data));
+
+      dispatch(resetCart());
     } catch (err) {
       console.log(err);
     }
@@ -96,7 +131,38 @@ export const putCart = createAsyncThunk(
         );
         console.log(resp);
       } else {
-        console.log("user cart don't exist");
+        console.log("user cart doesn't exist");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+);
+
+// pay cart
+export const payCart = createAsyncThunk(
+  "cart/payCart",
+  async (product, { getState }) => {
+    try {
+      //   dispatch(addProduct(product));
+      const { auth, cart } = getState();
+      let { user } = auth;
+      const { userCart, cartProducts } = cart;
+      console.log(cart);
+      //   console.log(userCart);
+      if (userCart[0]) {
+        const resp = await axios.patch(
+          `${cartApi}${userCart[0].id}`,
+          { products: cartProducts, paid: true },
+          {
+            headers: {
+              Authorization: user.jwt,
+            },
+          }
+        );
+        console.log(resp);
+      } else {
+        console.log("user cart doesn't exist");
       }
     } catch (err) {
       console.log(err);
@@ -118,7 +184,17 @@ const cartSlice = createSlice({
       //   console.log(state.userCart);
     },
     addProduct: (state, action) => {
-      state.cartProducts = [action.payload, ...state.cartProducts];
+      let product = action.payload;
+      const productExist = state.cartProducts.find(
+        (item) => item.productId === product.productId
+      );
+
+      if (!productExist) {
+        state.cartProducts = [product, ...state.cartProducts];
+      } else {
+        cartSlice.caseReducers.increaseProductQuantity(state, action);
+        console.log("produyct exosty");
+      }
       //   console.log(state.cartProducts);
     },
     resetCart: (state) => {
@@ -130,7 +206,24 @@ const cartSlice = createSlice({
       state.cartProducts = state.cartProducts.filter(
         (product) => product.productId !== id
       );
-      console.log(state.cartProducts);
+      console.log(state.userCart);
+    },
+    increaseProductQuantity: (state, action) => {
+      const id = action.payload.productId
+        ? action.payload.productId
+        : action.payload;
+      state.cartProducts.find((item) => item.productId === id).quantity++;
+    },
+    decreaseProductQuantity: (state, action) => {
+      const id = action.payload;
+      //console.log(id);
+      const productQuantity = state.cartProducts.find(
+        (item) => item.productId === id
+      ).quantity--;
+
+      if (productQuantity <= 1) {
+        cartSlice.caseReducers.removeProduct(state, action);
+      }
     },
   },
   extraReducers: {
@@ -149,6 +242,12 @@ const cartSlice = createSlice({
   },
 });
 
-export const { setCart, addProduct, resetCart, removeProduct } =
-  cartSlice.actions;
+export const {
+  setCart,
+  addProduct,
+  resetCart,
+  removeProduct,
+  increaseProductQuantity,
+  decreaseProductQuantity,
+} = cartSlice.actions;
 export default cartSlice.reducer;

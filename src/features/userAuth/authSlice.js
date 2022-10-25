@@ -17,8 +17,8 @@ const initialState = {
 };
 
 export const regUser = createAsyncThunk(
-  "/register",
-  async (arg, { getState }) => {
+  "auth/register",
+  async (arg, { getState, dispatch }) => {
     try {
       const { auth, dispatch } = getState();
       let { user } = auth;
@@ -27,6 +27,7 @@ export const regUser = createAsyncThunk(
       dispatch(setUser(data));
     } catch (err) {
       console.log(err);
+      window.alert("Invalid Register Details");
     }
   }
 );
@@ -41,11 +42,12 @@ export const authUser = createAsyncThunk(
       const { data, status } = await axios.post(loginApi, user);
 
       dispatch(setUser(data));
+      if (status === 200) {
+        dispatch(signIn());
+      }
     } catch (err) {
-      const { auth } = getState();
-      let { authErr } = auth;
-      authErr = true;
       console.log(err);
+      window.alert("Invalid Login Details");
     }
   }
 );
@@ -73,8 +75,6 @@ const authSlice = createSlice({
         ...newUser,
       };
       window.localStorage.setItem("user", JSON.stringify(newUser));
-      // const j = JSON.stringify(newUser);
-      // console.log(JSON.parse(j));
     },
     signIn: (state) => {
       state.isSignIn = true;
@@ -83,6 +83,12 @@ const authSlice = createSlice({
       window.localStorage.clear();
       state.isSignIn = false;
     },
+    // setAuthErrTrue: (state) => {
+    //   state.authErr = true;
+    // },
+    // setAuthErrfalse: (state) => {
+    //   state.authErr = false;
+    // },
   },
   extraReducers: {
     [authUser.pending]: (state) => {
@@ -96,6 +102,21 @@ const authSlice = createSlice({
     [authUser.rejected]: (state) => {
       // when error occurs
       state.isLoading = false;
+    },
+    [regUser.pending]: (state) => {
+      // while the fetching status is pending
+      state.isLoading = true;
+    },
+    [regUser.fulfilled]: (state, action) => {
+      // when data is successfully fecthed
+      state.isLoading = false;
+      // state.authErr = false;
+      // state.isSignIn = true;
+    },
+    [regUser.rejected]: (state) => {
+      // when error occurs
+      // state.isLoading = false;
+      // window.alert("Invalid login credential");
     },
   },
 });

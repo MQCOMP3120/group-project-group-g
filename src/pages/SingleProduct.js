@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { Breadcrumb, Button } from "react-bootstrap";
 import { BiHeart } from "react-icons/bi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
@@ -13,17 +13,15 @@ import {
   postCart,
 } from "../features/cart/cartSlice";
 
-import {  postWishList } from "../features/wishlist/wishlistSlice"
-
-
-
+import { postWishList } from "../features/wishlist/wishlistSlice";
 
 export default function SingleProduct() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { productId } = useParams();
   const { allProducts, isLoading } = useSelector((state) => state.filter);
   const { user, isSignIn } = useSelector((store) => store.auth);
-  const { userCart } = useSelector((store) => store.cart);
+  const { userCart, cartProducts } = useSelector((store) => store.cart);
 
   const productInfo = allProducts.filter(
     (product) => product.id === productId
@@ -33,9 +31,11 @@ export default function SingleProduct() {
     if (isSignIn && user.jwt) {
       dispatch(getCart());
     }
-    if (!userCart[0]) {
-      console.log("empty cart");
-    }
+
+    // if (!userCart[0]) {
+    //   console.log("empty cart");
+    // }
+    // console.log(userCart);
   }, [isLoading]);
 
   if (isLoading || !productInfo) {
@@ -43,13 +43,25 @@ export default function SingleProduct() {
   }
 
   const handleAddProduct = (productId) => {
-    dispatch(addProduct({ productId: productId, quantity: 1 }));
-    if (userCart[0]) {
-      // if current user cart exist then add product into the cart
-      dispatch(putCart());
+    if (isSignIn) {
+      dispatch(addProduct({ productId: productId, quantity: 1 }));
+      if (userCart[0]) {
+        // if current user cart exist then add product into the cart
+        dispatch(putCart());
+      } else {
+        // otherwise make a new cart for current user
+        dispatch(postCart());
+      }
     } else {
-      // otherwise make a new cart for current user
-      dispatch(postCart());
+      navigate("/login");
+    }
+  };
+
+  const handleAddToWishList = (id) => {
+    if (isSignIn) {
+      dispatch(postWishList(id));
+    } else {
+      navigate("/wishlist");
     }
   };
 
@@ -78,7 +90,7 @@ export default function SingleProduct() {
             <Button variant="primary" onClick={() => handleAddProduct(id)}>
               <AiOutlineShoppingCart /> Add to Cart
             </Button>{" "}
-            <Button variant="light" onClick={() => dispatch(postWishList(id))}>
+            <Button variant="light" onClick={() => handleAddToWishList(id)}>
               {" "}
               <BiHeart /> Add to Wish List
             </Button>{" "}

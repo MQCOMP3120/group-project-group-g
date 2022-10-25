@@ -10,6 +10,7 @@ import {
   emailOnChange,
 } from "../features/userAuth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
 export default function Register() {
   const dispatch = useDispatch();
@@ -17,9 +18,11 @@ export default function Register() {
   const { isSignIn, user } = useSelector((state) => state.auth);
 
   console.log(user);
-  if (isSignIn) {
-    return navigate("/");
-  }
+  useEffect(() => {
+    if (isSignIn) {
+      return navigate("/");
+    }
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
