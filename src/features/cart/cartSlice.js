@@ -7,6 +7,7 @@ const initialState = {
   cartProducts: [],
   isLoading: false,
   emptyCart: false,
+  subtotal: 0,
 };
 
 // get current user's cart
@@ -60,7 +61,7 @@ export const delCartProduct = createAsyncThunk(
       const { auth, cart } = getState();
       let { user } = auth;
       const { userCart, cartProducts } = cart;
-      console.log(cart);
+      // console.log(cart);
       //   console.log(userCart);
       if (userCart[0]) {
         const resp = await axios.put(
@@ -77,7 +78,7 @@ export const delCartProduct = createAsyncThunk(
           }
         );
         dispatch(removeProduct(id));
-        console.log(resp);
+        // console.log(resp);
       } else {
         console.log("user cart doesn't exist");
       }
@@ -95,13 +96,16 @@ export const delCart = createAsyncThunk(
       const { auth, cart } = getState();
       let { user } = auth;
       const { userCart } = cart;
-      await axios.delete(`${cartApi}${userCart[0].id}`, {
-        headers: {
-          Authorization: user.jwt,
-        },
-      });
+      if (userCart[0]) {
 
-      dispatch(resetCart());
+        await axios.delete(`${cartApi}${userCart[0].id}`, {
+          headers: {
+            Authorization: user.jwt,
+          },
+        });
+
+        dispatch(resetCart());
+      }
     } catch (err) {
       console.log(err);
     }
@@ -117,7 +121,7 @@ export const putCart = createAsyncThunk(
       const { auth, cart } = getState();
       let { user } = auth;
       const { userCart, cartProducts } = cart;
-      console.log(cart);
+      // console.log(cart);
       //   console.log(userCart);
       if (userCart[0]) {
         const resp = await axios.put(
@@ -129,7 +133,7 @@ export const putCart = createAsyncThunk(
             },
           }
         );
-        console.log(resp);
+        // console.log(resp);
       } else {
         console.log("user cart doesn't exist");
       }
@@ -148,18 +152,17 @@ export const payCart = createAsyncThunk(
       const { auth, cart } = getState();
       let { user } = auth;
       const { userCart, cartProducts } = cart;
-      console.log(cart);
-      //   console.log(userCart);
       if (userCart[0]) {
         const resp = await axios.patch(
           `${cartApi}${userCart[0].id}`,
-          { products: cartProducts, paid: true },
+          { ...userCart[0], paid: true },
           {
             headers: {
               Authorization: user.jwt,
             },
           }
         );
+        console.log(userCart)
         console.log(resp);
       } else {
         console.log("user cart doesn't exist");
@@ -206,7 +209,6 @@ const cartSlice = createSlice({
       state.cartProducts = state.cartProducts.filter(
         (product) => product.productId !== id
       );
-      console.log(state.userCart);
     },
     increaseProductQuantity: (state, action) => {
       const id = action.payload.productId
@@ -225,6 +227,9 @@ const cartSlice = createSlice({
         cartSlice.caseReducers.removeProduct(state, action);
       }
     },
+    setSubtotal: (state, action) => {
+      state.subtotal = action.payload
+    }
   },
   extraReducers: {
     [getCart.pending]: (state) => {
@@ -249,5 +254,6 @@ export const {
   removeProduct,
   increaseProductQuantity,
   decreaseProductQuantity,
+  setSubtotal
 } = cartSlice.actions;
 export default cartSlice.reducer;

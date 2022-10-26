@@ -38,28 +38,28 @@ export default function WishList() {
   const productElem = !productList[0]
     ? emptyWish
     : productList.map((product, idx) => {
-        const { title, price, id, image } = getProduct(product.productId)[0];
-        // console.log(id);
-        return (
-          <div className="single-product-info my-5" key={idx}>
-            <p>
-              <img src={image} width="100" height="100" />
-              &ensp;
-              {title}
-              &emsp; price: {`$${price}`}
-              &emsp;
-              <Button
-                variant="danger"
-                size="sm"
-                onClick={() => dispatch(delWishList(id))}
-              >
-                {" "}
-                Delete{" "}
-              </Button>
-            </p>
-          </div>
-        );
-      });
+      const { title, price, id, image } = getProduct(product.productId)[0];
+      // console.log(id);
+      return (
+        <div className="single-product-info my-5" key={idx}>
+          <p>
+            <img src={image} width="100" height="100" alt={title} onClick={() => navigate(`/products/${id}`)} />
+            &ensp;
+            {title}
+            &emsp; price: {`$${price}`}
+            &emsp;
+            <Button
+              variant="danger"
+              size="sm"
+              onClick={() => dispatch(delWishList(id))}
+            >
+              {" "}
+              Delete{" "}
+            </Button>
+          </p>
+        </div>
+      );
+    });
 
   return (
     <Wrapper className="section-center h-100">
@@ -83,5 +83,8 @@ const Wrapper = styled.section`
   .single-product-info {
     display: flex;
     justify-content: space-around;
+  }
+  img {
+    cursor: pointer;
   }
 `;

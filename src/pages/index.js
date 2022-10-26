@@ -8,6 +8,7 @@ import SingleBrand from './SingleBrand'
 import UserProfile from './UserProfile'
 import WishList from './WishList'
 import ErrorPage from './ErrorPage'
+import Payment from './Payment'
 
 export {
     Home,
@@ -20,4 +21,5 @@ export {
     UserProfile,
     WishList,
     ErrorPage,
+    Payment,
 }

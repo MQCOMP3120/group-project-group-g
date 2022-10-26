@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import SearchModal from "./components/SearchModal";
@@ -13,6 +13,7 @@ import {
   UserProfile,
   WishList,
   ErrorPage,
+  Payment
 } from "./pages";
 import { useSelector, useDispatch } from "react-redux";
 import { setUser, signIn } from "./features/userAuth/authSlice";
@@ -64,8 +65,9 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/products/:productId" element={<SingleProduct />} />
         <Route path="/brands/:brandId" element={<SingleBrand />} />
-        <Route path="/devhome" element={<DevHome fn={modifyKeyWords} keyWords={keyWords}/>} />
-        <Route path="/stage" element={<Stage fn={modifyKeyWords} keyWords={keyWords}/>} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/devhome" element={<DevHome fn={modifyKeyWords} keyWords={keyWords} />} />
+        <Route path="/stage" element={<Stage fn={modifyKeyWords} keyWords={keyWords} />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
