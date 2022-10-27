@@ -67,22 +67,6 @@ export default function Login() {
             Submit
           </button>
         </Form.Group>
-        <p className="break-line">
-          <span> or </span>
-        </p>
-        <Form.Group className="d-flex justify-content-center">
-          <GoogleLogin
-            onSuccess={(res) => {
-              const { name, email } = jwtDecode(res.credential);
-              const username = name;
-              dispatch(setUser({ username, email }));
-              dispatch(signIn());
-            }}
-            onError={() => {
-              console.log("Login Failed");
-            }}
-          />
-        </Form.Group>
       </Form>
     </Wrapper>
   );
@@ -90,7 +74,7 @@ export default function Login() {
 
 const Wrapper = styled.section`
   form {
-    height: 60vh;
+    height: 50vh;
     min-width: 30vw;
     padding: 2rem;
     border-radius: 15px;
@@ -99,17 +83,5 @@ const Wrapper = styled.section`
 
   .register-btn:hover {
     color: #0275d8;
-  }
-  .break-line {
-    width: 100%;
-    text-align: center;
-    border-bottom: 2px solid #787672;
-    line-height: 0.1em;
-    margin: 10px 0 20px;
-  }
-
-  .break-line span {
-    background: #fff;
-    padding: 0 10px;
   }
 `;

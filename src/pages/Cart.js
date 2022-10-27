@@ -52,12 +52,15 @@ export default function Cart() {
 
   const handleQuantityDecrease = (id) => {
     dispatch(decreaseProductQuantity(id));
+    console.log(cartProducts);
 
-    if (cartProducts.length <= 1) {
-      dispatch(delCart());
-    } else {
-      dispatch(putCart());
-    }
+    // if (cartProducts.length < 1) {
+    //   dispatch(delCart());
+    // } else {
+    //   dispatch(putCart());
+    // }
+
+    dispatch(putCart());
   };
 
   const getProduct = (id) => {
@@ -86,45 +89,46 @@ export default function Cart() {
   };
 
   const emptyCart = <p> Your cart is currently empty </p>;
-  const productElem = !userCart[0]
-    ? emptyCart
-    : cartProducts.map((product, idx) => {
-        const { title, price, id } = getProduct(product.productId)[0];
+  const productElem =
+    !userCart[0] || cartProducts.length < 1
+      ? emptyCart
+      : cartProducts.map((product, idx) => {
+          const { title, price, id } = getProduct(product.productId)[0];
 
-        return (
-          <div className="single-product-info my-5" key={idx}>
-            <p>{title}</p>
-            <div className="quantity">
-              <AiOutlineMinusCircle
-                className="icon"
-                size={20}
-                onClick={() => handleQuantityDecrease(id)}
-              />
-              <p>quantity: {product.quantity}</p>
-              <AiOutlinePlusCircle
-                className="icon"
-                size={20}
-                onClick={() => handleQuantityIncrease(id)}
-              />
+          return (
+            <div className="single-product-info my-5" key={idx}>
+              <p>{title}</p>
+              <div className="quantity">
+                <AiOutlineMinusCircle
+                  className="icon"
+                  size={20}
+                  onClick={() => handleQuantityDecrease(id)}
+                />
+                <p>quantity: {product.quantity}</p>
+                <AiOutlinePlusCircle
+                  className="icon"
+                  size={20}
+                  onClick={() => handleQuantityIncrease(id)}
+                />
+              </div>
+              <p>price: {`$${price * product.quantity}`} </p>
+              <Button
+                variant="danger"
+                size="sm"
+                onClick={() => handleRemoveCartItem(id)}
+              >
+                {" "}
+                Delete{" "}
+              </Button>
             </div>
-            <p>price: {`$${price * product.quantity}`} </p>
-            <Button
-              variant="danger"
-              size="sm"
-              onClick={() => handleRemoveCartItem(id)}
-            >
-              {" "}
-              Delete{" "}
-            </Button>
-          </div>
-        );
-      });
+          );
+        });
 
   return (
     <Wrapper className="section-center h-100">
       <h3 className="my-5"> My Cart </h3>
       {productElem}
-      {userCart[0] && (
+      {userCart[0] && cartProducts.length >= 1 && (
         <>
           <h2 className="my-3"> Subtotal: ${calculateSubtotal()}</h2>
           <div className="btn-group">

@@ -122,8 +122,6 @@ export const putCart = createAsyncThunk(
       const { auth, cart } = getState();
       let { user } = auth;
       const { userCart, cartProducts } = cart;
-      // console.log(cart);
-      //   console.log(userCart);
       if (userCart[0]) {
         const resp = await axios.put(
           `${cartApi}${userCart[0].id}`,
@@ -134,7 +132,6 @@ export const putCart = createAsyncThunk(
             },
           }
         );
-        // console.log(resp);
       } else {
         console.log("user cart doesn't exist");
       }
@@ -197,7 +194,6 @@ const cartSlice = createSlice({
         state.cartProducts = [product, ...state.cartProducts];
       } else {
         cartSlice.caseReducers.increaseProductQuantity(state, action);
-        console.log("produyct exosty");
       }
       //   console.log(state.cartProducts);
     },
@@ -220,11 +216,12 @@ const cartSlice = createSlice({
     decreaseProductQuantity: (state, action) => {
       const id = action.payload;
       //console.log(id);
-      const productQuantity = state.cartProducts.find(
+      const productQuantity = (state.cartProducts.find(
         (item) => item.productId === id
-      ).quantity--;
+      ).quantity -= 1);
 
-      if (productQuantity <= 1) {
+      console.log(productQuantity);
+      if (productQuantity <= 0) {
         cartSlice.caseReducers.removeProduct(state, action);
       }
     },
