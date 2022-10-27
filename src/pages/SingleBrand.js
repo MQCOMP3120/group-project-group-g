@@ -25,10 +25,10 @@ export default function SingleBrand() {
   const [productsPerPage] = useState(10);
 
   const filterItems = [
-    "Price: low - high",
-    "Price: high - low",
-    "Rating: low - high",
-    "Rating: high - low",
+    "Price: Low - High",
+    "Price: High - Low",
+    "Rating: Low - High",
+    "Rating: High - Low",
   ];
 
   const [selectedFilterItem, setSelectedFilterItem] = useState(filterItems[0]);
@@ -37,16 +37,16 @@ export default function SingleBrand() {
     setSelectedFilterItem(item);
 
     switch (item) {
-      case "Price: low - high":
+      case "Price: Low - High":
         dispatch(singleBrandSortByPriceLowHigh());
         break;
-      case "Price: high - low":
+      case "Price: High - Low":
         dispatch(singleBrandSortByPriceHighLow());
         break;
-      case "Rating: low - high":
+      case "Rating: Low - High":
         dispatch(singleBrandSortByRatingLowHigh());
         break;
-      case "Rating: high - low":
+      case "Rating: High - Low":
         dispatch(singleBrandSortByRatingHighLow());
     }
   };

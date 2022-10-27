@@ -17,11 +17,10 @@ import { useEffect } from "react";
 export default function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { isSignIn, user, authErr } = useSelector((state) => state.auth);
+  const { isSignIn, user } = useSelector((state) => state.auth);
 
   // dispatch(regUser());
   useEffect(() => {
-    // console.log(isSignIn);
     if (isSignIn) {
       return navigate("/");
     }
@@ -30,14 +29,16 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(authUser());
+    dispatch(signIn());
+    console.log(user);
   };
 
   return (
     <Wrapper className="center-items section-center">
-      <Form noValidate validated={authErr} onSubmit={handleSubmit}>
-        <Form.Group className="mb-2 d-flex justify-content-between">
-          <h2 className="current-page p-3"> Login </h2>
-          <Link to="/register" className="p-3">
+      <Form noValidate validated={isSignIn} onSubmit={handleSubmit}>
+        <Form.Group className="d-flex justify-content-between">
+          <h2 className="welcome-text"> Login </h2>
+          <Link to="/register">
             <p className="register-btn">
               Register
               <AiOutlineRight />
@@ -45,6 +46,8 @@ export default function Login() {
           </Link>
         </Form.Group>
         <Form.Group className="mb-3">
+          <p>Login to continue</p>
+
           <Form.FloatingLabel controlId="usernameInput" label="Username">
             <Form.Control
               type="username"
@@ -53,7 +56,7 @@ export default function Login() {
             />
           </Form.FloatingLabel>
         </Form.Group>
-        <Form.Group className="mb-5">
+        <Form.Group className="mb-4">
           <Form.FloatingLabel controlId="passwordInput" label="Password">
             <Form.Control
               type="password"
@@ -62,10 +65,27 @@ export default function Login() {
             />
           </Form.FloatingLabel>
         </Form.Group>
-        <Form.Group className="d-grid mb-3">
-          <button type="submit" className="btn btn-primary" id="login-btn">
+        <Form.Group>
+          <p className="register-btn">Forgot your password?</p>
+          <button type="submit" className="login-button">
             Submit
           </button>
+        </Form.Group>
+        <p className="break-line">
+          <span> or </span>
+        </p>
+        <Form.Group className="d-flex justify-content-center">
+          <GoogleLogin
+            onSuccess={(res) => {
+              const { name, email } = jwtDecode(res.credential);
+              const username = name;
+              dispatch(setUser({ username, email }));
+              dispatch(signIn());
+            }}
+            onError={() => {
+              console.log("Login Failed");
+            }}
+          />
         </Form.Group>
       </Form>
     </Wrapper>
@@ -74,14 +94,50 @@ export default function Login() {
 
 const Wrapper = styled.section`
   form {
-    height: 50vh;
+    height: 60vh;
     min-width: 30vw;
     padding: 2rem;
-    border-radius: 15px;
-    border: 1px solid #787672;
+  }
+  .welcome-text {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
   }
 
+  .login-button {
+    padding: 14px 28px;
+    gap: 10px;
+    width: 456px;
+    height: 44px;
+    background: #444444;
+    border-radius: 6px;
+
+    font-family: "Poppins";
+    font-style: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #ffffff;
+  }
+  .register-btn {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+  }
   .register-btn:hover {
     color: #0275d8;
+  }
+  .break-line {
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid #787672;
+    line-height: 0.1em;
+    margin: 20px 0 20px;
+  }
+  .break-line span {
+    background: #fff;
+    padding: 0 10px;
   }
 `;
