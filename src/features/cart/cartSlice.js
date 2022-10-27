@@ -12,6 +12,26 @@ const initialState = {
   subtotal: 0,
 };
 
+// get all carts
+export const getCarts = createAsyncThunk(
+  "cart/getCart",
+  async (arg, { getState }) => {
+    try {
+      const { auth } = getState();
+      let { user } = auth;
+      const resp = await axios.get(cartApi, {
+        headers: {
+          Authorization: user.jwt,
+        },
+      });
+
+      console.log(resp);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+);
+
 // get current user's cart
 export const getCart = createAsyncThunk(
   "cart/getCart",
@@ -219,8 +239,6 @@ const cartSlice = createSlice({
       const productQuantity = (state.cartProducts.find(
         (item) => item.productId === id
       ).quantity -= 1);
-
-      console.log(productQuantity);
       if (productQuantity <= 0) {
         cartSlice.caseReducers.removeProduct(state, action);
       }

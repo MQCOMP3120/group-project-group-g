@@ -11,6 +11,7 @@ import {
   singleBrandSortByRatingLowHigh,
 } from "../features/products/filterSlice";
 import ProductCard from "../components/ProductCard";
+import Pagination from "../components/Pagination";
 
 export default function SingleBrand() {
   const { brandId } = useParams();
@@ -20,6 +21,8 @@ export default function SingleBrand() {
   );
 
   const currentBrand = brands.filter((brand) => brand.id === brandId)[0];
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage] = useState(10);
 
   const filterItems = [
     "Price: low - high",
@@ -56,6 +59,15 @@ export default function SingleBrand() {
     return <h1> Loading ....</h1>;
   }
 
+  const idxOfLastProduct = currentPage * productsPerPage;
+  const idxOfFirstProduct = idxOfLastProduct - productsPerPage;
+  const currentProducts = singleBrandProducts.slice(
+    idxOfFirstProduct,
+    idxOfLastProduct
+  );
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <Wrapper className="section-center">
       <Breadcrumb className="my-5">
@@ -82,7 +94,7 @@ export default function SingleBrand() {
       </Dropdown>
       <hr />
       <div className="products">
-        {singleBrandProducts.map((product, idx) => (
+        {currentProducts.map((product, idx) => (
           <ProductCard
             key={idx}
             name={product.title}
@@ -94,6 +106,12 @@ export default function SingleBrand() {
           />
         ))}
       </div>
+      <Pagination
+        productsPerpage={productsPerPage}
+        totalProducts={singleBrandProducts.length}
+        paginate={paginate}
+        currentPage={currentPage}
+      />
     </Wrapper>
   );
 }
