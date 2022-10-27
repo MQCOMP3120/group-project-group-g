@@ -35,7 +35,7 @@ export default function Register() {
     <Wrapper className="center-items section-center">
       <Form onSubmit={handleSubmit}>
         <Form.Group className="d-flex justify-content-between">
-          <h2 className="welcome-text"> Register </h2>
+          <h2 className="welcome-text"> Welcome </h2>
           <Link to="/login">
             <p className="register-btn">
               Login

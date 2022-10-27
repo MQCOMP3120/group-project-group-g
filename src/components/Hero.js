@@ -49,12 +49,11 @@ const Wrapper = styled.section`
   .button {
     background-color: #444444;
     color: white;
-    padding: 15px 50px;
+    padding: 12px 50px;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border-radius: 0px;
+    border-radius: 4px;
   }
 
   p {

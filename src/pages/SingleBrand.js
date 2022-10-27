@@ -76,7 +76,7 @@ export default function SingleBrand() {
         </Breadcrumb.Item>
         <Breadcrumb.Item active> {currentBrand.title} </Breadcrumb.Item>
       </Breadcrumb>
-      <h3> {currentBrand.title} </h3>
+      <h3 className="text"> {currentBrand.title} </h3>
       <Dropdown className="mt-5">
         <span> Sort by: </span>
         <Dropdown.Toggle variant="secondary-outline">
@@ -117,6 +117,13 @@ export default function SingleBrand() {
 }
 
 const Wrapper = styled.section`
+  .text {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 54px;
+  }
   .products {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
