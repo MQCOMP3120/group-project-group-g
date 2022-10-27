@@ -129,6 +129,43 @@ cartQSchema.methods.toJSON = function () {
 const CartQ = mongoose.model('CartQ', cartQSchema)
 
 //###########################################################
+
+const historycartSchema = new mongoose.Schema({
+  userId: {type: mongoose.Types.ObjectId, ref: 'Users'},
+  timestamp: {type: Date, default: Date.now},
+  paid: {type: Boolean, default: true},
+})
+
+historycartSchema.methods.toJSON = function () {
+  const cObj = this.toObject()
+  cObj.id = cObj._id.toString()
+  delete cObj._id
+  delete cObj.__v
+  return cObj
+}
+
+const HistoryCart = mongoose.model('HistoryCart', historycartSchema)
+
+const historycartQSchema = new mongoose.Schema({
+  cartId: {type: mongoose.Types.ObjectId, ref: 'HistoryCart'},
+  productId: {type: mongoose.Types.ObjectId, ref: 'Product'},
+  quantity: {type: Number, default: 0},
+})
+
+historycartQSchema.methods.toJSON = function () {
+  const cObj = this.toObject()
+  cObj.id = cObj._id.toString()
+  if (cObj.productId) {
+    cObj.productId = cObj.productId._id.toString()
+  }
+  delete cObj.cartId
+  delete cObj._id
+  delete cObj.__v
+  return cObj
+}
+const HistoryCartQ = mongoose.model('HistoryCartQ', historycartQSchema)
+
+//###########################################################
 const wishListSchema = new mongoose.Schema({
   userId: {type: mongoose.Types.ObjectId, ref: 'Users', index: true},
   productId: {type: mongoose.Types.ObjectId, ref: 'Product', index: true},
@@ -156,5 +193,7 @@ const initDB = async () => {
 
 module.exports = {
   Users, Brand, Product, 
-  Cart, CartQ, WishList,
+  Cart, CartQ, 
+  HistoryCart, HistoryCartQ, 
+  WishList,
   initDB }
