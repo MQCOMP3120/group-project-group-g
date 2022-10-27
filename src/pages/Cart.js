@@ -29,7 +29,7 @@ export default function Cart() {
     } else {
       dispatch(getCart());
     }
-    console.log(userCart);
+    console.log(userCart[0]);
   }, []);
 
   if (isLoading) {
@@ -52,14 +52,6 @@ export default function Cart() {
 
   const handleQuantityDecrease = (id) => {
     dispatch(decreaseProductQuantity(id));
-    console.log(cartProducts);
-
-    // if (cartProducts.length < 1) {
-    //   dispatch(delCart());
-    // } else {
-    //   dispatch(putCart());
-    // }
-
     dispatch(putCart());
   };
 
@@ -85,6 +77,7 @@ export default function Cart() {
       subtotal: calculateSubtotal(),
     };
     dispatch(setCartSummary(cartSummary));
+    dispatch(payCart());
     navigate("/payment");
   };
 

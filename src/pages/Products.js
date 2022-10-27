@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Breadcrumb, Dropdown } from "react-bootstrap";
 // import { testProductData } from "../util/constants";
 import ProductCard from "../components/ProductCard";
+import Pagination from "../components/Pagination";
 import {
   sortByPriceLowHigh,
   sortByPriceHighLow,
@@ -25,6 +26,8 @@ export default function Products() {
   ];
 
   const [selectedFilterItem, setSelectedFilterItem] = useState(filterItems[0]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage] = useState(10);
 
   const { sortedProducts, isLoading, keyword } = useSelector(
     (state) => state.filter
@@ -54,6 +57,16 @@ export default function Products() {
   if (isLoading) {
     return <h1> Loading ... </h1>;
   }
+
+  const idxOfLastProduct = currentPage * productsPerPage;
+  const idxOfFirstProduct = idxOfLastProduct - productsPerPage;
+  const currentProducts = sortedProducts.slice(
+    idxOfFirstProduct,
+    idxOfLastProduct
+  );
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  // console.log(currentProducts, idxOfFirstProduct, idxOfLastProduct);
 
   return (
     <Wrapper className="section-center">
@@ -85,7 +98,7 @@ export default function Products() {
       </Dropdown>
       <hr />
       <div className="products">
-        {sortedProducts.map((product, idx) => (
+        {currentProducts.map((product, idx) => (
           <ProductCard
             key={idx}
             name={product.title}
@@ -96,6 +109,12 @@ export default function Products() {
           />
         ))}
       </div>
+      <Pagination
+        productsPerpage={productsPerPage}
+        totalProducts={sortedProducts.length}
+        paginate={paginate}
+        currentPage={currentPage}
+      />
     </Wrapper>
   );
 }
