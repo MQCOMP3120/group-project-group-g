@@ -152,20 +152,20 @@ but you can modify the unpaid cart with PUT command
 HistoryCart
     Get all carts
         GET /api/historycarts
-        return success: status(200).[{id, userId, timestamp, paid, products:[{productId,quantity},]}, ]
+        return success: status(200).[{id, userId, timestamp, paid, subtotal, products:[{productId,quantity},]}, ]
         return error: status(401).{error: "invalid"}
     Get a specific cart
         GET /api/historycarts/id
-        return success: status(200).{id, userId, timestamp, paid, products:[{productId,quantity},]}
+        return success: status(200).{id, userId, timestamp, paid, subtotal, products:[{productId,quantity},]}
         return error: status(401).{error: "invalid"}
     Get user carts
         GET /api/historycartsuser
-        return success: status(200).[{id, userId, timestamp, paid, products:[{productId,quantity},]}, ]
+        return success: status(200).[{id, userId, timestamp, paid, subtotal, products:[{productId,quantity},]}, ]
         return error: status(401).{error: "invalid"}
     Add a new cart
         POST /api/historycarts
         {products:[{productId,quantity}, ]}
-        return success: status(200).{id, userId, timestamp, paid, products[{productId,quantity},]}
+        return success: status(200).{id, userId, timestamp, paid, subtotal, products[{productId,quantity},]}
         return error: status(401).{error: "invalid"}
     Delete a cart
         DELETE /api/historycarts/id

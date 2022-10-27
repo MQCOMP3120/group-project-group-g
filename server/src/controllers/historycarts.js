@@ -5,7 +5,7 @@ const createHistoryCart = async (request, response) => {
     const user = await auth.validUser(request, response)
     if (user === "false")   return
 
-    const cart = new models.HistoryCart({userId: user._id, paid:true})
+    const cart = new models.HistoryCart({userId: user._id, paid:true, subtotal: request.body.subtotal})
     const cartReturn = await cart.save()
     if(!cartReturn) return response.status(200).json({error: "invalid"})
     if(request.body.products && request.body.products.length>0){
@@ -27,6 +27,7 @@ const createHistoryCart = async (request, response) => {
         userId: request.body.userId,
         timestamp: cartReturn.timestamp,
         paid: true,
+        subtotal:request.body.subtotal,
         products: request.body.products,
     })
 }
@@ -49,6 +50,7 @@ const getHistoryCarts = async (request, response) => {
                 userId: item.userId,
                 timestamp: item.timestamp,
                 paid: item.paid,
+                subtotal: item.subtotal,
                 products: products,
             })
         }
@@ -74,6 +76,7 @@ const getHistoryCart = async (request, response) => {
             userId: match.userId,
             timestamp: match.timestamp,
             paid: match.paid,
+            subtotal: match.subtotal,
             products: products,
         }
         return response.status(200).json(result)
@@ -99,6 +102,7 @@ const getHistoryUserCarts = async (request, response) => {
                 userId: item.userId,
                 timestamp: item.timestamp,
                 paid: item.paid,
+                subtotal: item.subtotal,
                 products: products,
             })
         }

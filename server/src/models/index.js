@@ -134,6 +134,7 @@ const historycartSchema = new mongoose.Schema({
   userId: {type: mongoose.Types.ObjectId, ref: 'Users'},
   timestamp: {type: Date, default: Date.now},
   paid: {type: Boolean, default: true},
+  subtotal: {type: Number, default: 0},
 })
 
 historycartSchema.methods.toJSON = function () {
