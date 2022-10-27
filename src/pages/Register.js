@@ -17,12 +17,9 @@ export default function Register() {
   const navigate = useNavigate();
   const { isSignIn, user } = useSelector((state) => state.auth);
 
-  console.log(user);
-  useEffect(() => {
-    if (isSignIn) {
-      return navigate("/");
-    }
-  }, []);
+  if (isSignIn) {
+    navigate("/");
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();

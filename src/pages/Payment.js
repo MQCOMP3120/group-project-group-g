@@ -1,8 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
 import styled from "styled-components";
+import { payCart, delCart, postCartHistory } from "../features/cart/cartSlice";
 
 export default function Payment() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const { cartSummary } = useSelector((state) => state.cart);
   const { allProducts } = useSelector((state) => state.filter);
 
@@ -11,6 +17,13 @@ export default function Payment() {
   };
 
   console.log(cartSummary);
+
+  const handlePayment = () => {
+    dispatch(payCart());
+    dispatch(postCartHistory());
+    dispatch(delCart());
+    navigate("/products");
+  };
   const summary = cartSummary.cartProducts ? (
     cartSummary.cartProducts.map((product) => {
       const { price, title, image } = getProduct(product.productId)[0];
@@ -36,6 +49,7 @@ export default function Payment() {
         <p>Total</p>
         <h3> ${cartSummary.subtotal}</h3>
       </div>
+      <Button onClick={() => handlePayment()}> Pay </Button>
     </Wrapper>
   );
 }

@@ -20,11 +20,14 @@ export const regUser = createAsyncThunk(
   "auth/register",
   async (arg, { getState, dispatch }) => {
     try {
-      const { auth, dispatch } = getState();
+      const { auth } = getState();
       let { user } = auth;
-      const { data } = await axios.post(registerApi, user);
+      const { data, status } = await axios.post(registerApi, user);
 
-      dispatch(setUser(data));
+      if (status >= 200 && status < 400) {
+        dispatch(setUser(data));
+        dispatch(signIn());
+      }
     } catch (err) {
       console.log(err);
       window.alert("Invalid Register Details");
@@ -41,8 +44,8 @@ export const authUser = createAsyncThunk(
       console.log(user);
       const { data, status } = await axios.post(loginApi, user);
 
-      dispatch(setUser(data));
-      if (status === 200) {
+      if (status >= 200 && status < 400) {
+        dispatch(setUser(data));
         dispatch(signIn());
       }
     } catch (err) {

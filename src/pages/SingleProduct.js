@@ -22,6 +22,7 @@ export default function SingleProduct() {
   const { allProducts, isLoading } = useSelector((state) => state.filter);
   const { user, isSignIn } = useSelector((store) => store.auth);
   const { userCart, cartProducts } = useSelector((store) => store.cart);
+  const { productList } = useSelector((state) => state.wish);
 
   const productInfo = allProducts.filter(
     (product) => product.id === productId
@@ -66,6 +67,10 @@ export default function SingleProduct() {
   };
 
   const { id, image, title, price, rating, description } = productInfo;
+
+  const productInWishlist = (id) =>
+    productList.find((product) => product.productId === id);
+
   return (
     <Wrapper className="section-center">
       <Breadcrumb className="my-5">
@@ -89,11 +94,16 @@ export default function SingleProduct() {
           <div className="btn-group my-4">
             <Button variant="primary" onClick={() => handleAddProduct(id)}>
               <AiOutlineShoppingCart /> Add to Cart
-            </Button>{" "}
-            <Button variant="light" onClick={() => handleAddToWishList(id)}>
-              {" "}
-              <BiHeart /> Add to Wish List
-            </Button>{" "}
+            </Button>
+            {productInWishlist(id) ? (
+              <Button variant="light" onClick={() => navigate("/wishlist")}>
+                <BiHeart color="red" /> In Wish List
+              </Button>
+            ) : (
+              <Button variant="light" onClick={() => handleAddToWishList(id)}>
+                <BiHeart /> Add to Wish List
+              </Button>
+            )}
           </div>
         </div>
       </div>

@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { cartApi, cartUserApi, productsApi } from "../../util/api";
+import { cartApi, cartUserApi, cartHistoryApi } from "../../util/api";
 import axios from "axios";
 
 const initialState = {
-  carts: [],
+  cartsHistory: [],
   userCart: [],
   cartProducts: [],
   cartSummary: {},
@@ -12,20 +12,44 @@ const initialState = {
   subtotal: 0,
 };
 
-// get all carts
-export const getCarts = createAsyncThunk(
-  "cart/getCart",
+// post a cart to cart history
+export const postCartHistory = createAsyncThunk(
+  "cart/postCartHistory",
   async (arg, { getState }) => {
+    try {
+      const { auth, cart } = getState();
+      let { user } = auth;
+      const { cartProducts } = cart;
+      const resp = await axios.post(
+        cartHistoryApi,
+        { products: cartProducts },
+        {
+          headers: {
+            Authorization: user.jwt,
+          },
+        }
+      );
+
+      console.log(resp);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+);
+
+// get cart history
+export const getCartHistory = createAsyncThunk(
+  "cart/getCartHistory",
+  async (arg, { getState, dispatch }) => {
     try {
       const { auth } = getState();
       let { user } = auth;
-      const resp = await axios.get(cartApi, {
+      const { data } = await axios.get(cartHistoryApi, {
         headers: {
           Authorization: user.jwt,
         },
       });
-
-      console.log(resp);
+      dispatch(setCartHistory(data));
     } catch (err) {
       console.log(err);
     }
@@ -249,6 +273,9 @@ const cartSlice = createSlice({
     setCartSummary: (state, action) => {
       state.cartSummary = action.payload;
     },
+    setCartHistory: (state, action) => {
+      state.cartsHistory = action.payload;
+    },
   },
   extraReducers: {
     [getCart.pending]: (state) => {
@@ -260,6 +287,18 @@ const cartSlice = createSlice({
       state.isLoading = false;
     },
     [getCart.rejected]: (state) => {
+      // when error occurs
+      state.isLoading = false;
+    },
+    [getCartHistory.pending]: (state) => {
+      // while the fetching status is pending
+      state.isLoading = true;
+    },
+    [getCartHistory.fulfilled]: (state) => {
+      // when data is successfully fecthed
+      state.isLoading = false;
+    },
+    [getCartHistory.rejected]: (state) => {
       // when error occurs
       state.isLoading = false;
     },
@@ -275,5 +314,6 @@ export const {
   decreaseProductQuantity,
   setSubtotal,
   setCartSummary,
+  setCartHistory,
 } = cartSlice.actions;
 export default cartSlice.reducer;

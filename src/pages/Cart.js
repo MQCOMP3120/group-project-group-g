@@ -69,13 +69,11 @@ export default function Cart() {
   };
 
   const handleCheckout = () => {
-    // dispatch(payCart())
     const cartSummary = {
       cartProducts: cartProducts,
       subtotal: calculateSubtotal(),
     };
     dispatch(setCartSummary(cartSummary));
-    dispatch(payCart());
     navigate("/payment");
   };
 
