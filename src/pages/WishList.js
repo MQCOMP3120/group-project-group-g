@@ -10,6 +10,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "react-bootstrap";
+import { putCart, postCart, addProduct } from "../features/cart/cartSlice";
 
 export default function WishList() {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ export default function WishList() {
   const { isSignIn } = useSelector((state) => state.auth);
   const { productList, isLoading } = useSelector((state) => state.wish);
   const { allProducts } = useSelector((state) => state.filter);
+  const { userCart } = useSelector((store) => store.cart);
 
   useEffect(() => {
     if (!isSignIn) {
@@ -30,6 +32,17 @@ export default function WishList() {
     return <h1> Loading ... </h1>;
   }
 
+  const handleAddProduct = (productId) => {
+    dispatch(addProduct({ productId: productId, quantity: 1 }));
+    if (userCart[0]) {
+      // if current user cart exist then add product into the cart
+      dispatch(putCart());
+    } else {
+      // otherwise make a new cart for current user
+      dispatch(postCart());
+    }
+  };
+
   const getProduct = (id) => {
     return allProducts.filter((product) => product.id === id);
   };
@@ -38,41 +51,54 @@ export default function WishList() {
   const productElem = !productList[0]
     ? emptyWish
     : productList.map((product, idx) => {
-      const { title, price, id, image } = getProduct(product.productId)[0];
-      // console.log(id);
-      return (
-        <div className="single-product-info my-5" key={idx}>
-          <p>
-            <img src={image} width="100" height="100" alt={title} onClick={() => navigate(`/products/${id}`)} />
-            &ensp;
-            {title}
-            &emsp; price: {`$${price}`}
-            &emsp;
-            <Button
-              variant="danger"
-              size="sm"
-              onClick={() => dispatch(delWishList(id))}
-            >
-              {" "}
-              Delete{" "}
-            </Button>
-          </p>
-        </div>
-      );
-    });
+        const { title, price, id, image } = getProduct(product.productId)[0];
+        // console.log(id);
+        return (
+          <div className="single-product-info my-5" key={idx}>
+            <div className="component">
+              <img
+                src={image}
+                width="50"
+                height="50"
+                alt={title}
+                onClick={() => navigate(`/products/${id}`)}
+              />
+              <div className="img-text">{title}</div>
+            </div>
+            <p>
+              &emsp; Price: {`$${price}`}
+              &emsp;
+              <Button
+                variant="danger"
+                size="sm"
+                onClick={() => dispatch(delWishList(id))}
+              >
+                {" "}
+                Remove{" "}
+              </Button>
+              &emsp;
+              <Button className="add-cart" onClick={() => handleAddProduct(id)}>
+                {" "}
+                Add to cart{" "}
+              </Button>
+            </p>
+          </div>
+        );
+      });
 
   return (
     <Wrapper className="section-center h-100">
-      <h3 className="my-5"> My Wish List </h3>
+      <h3 className="my-5"> Wish List </h3>
       {productElem}
       {productList[0] && (
         <Button
           variant="outline-danger"
-          size="lg"
+          size="md"
+          className="buttons"
           onClick={() => dispatch(delWishLists())}
         >
           {" "}
-          Clear{" "}
+          Clear Wish List{" "}
         </Button>
       )}
     </Wrapper>
@@ -82,7 +108,59 @@ export default function WishList() {
 const Wrapper = styled.section`
   .single-product-info {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  .add-cart {
+    background-color: #444444;
+    justify-content: center;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+
+  .component {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .quantity {
+    display: flex;
+    flex-direction: row;
+  }
+  .img-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  h2 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 54px;
+    text-align: right;
+  }
+  h3 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 54px;
+  }
+
+  .icon:hover {
+    color: blue;
+    cursor: pointer;
+  }
+  .icon {
+    margin: 3px;
   }
   img {
     cursor: pointer;

@@ -93,54 +93,72 @@ export default function Cart() {
     !userCart[0] || cartProducts.length < 1
       ? emptyCart
       : cartProducts.map((product, idx) => {
-          const { title, price, id } = getProduct(product.productId)[0];
+          const { title, price, id, image } = getProduct(product.productId)[0];
 
           return (
             <div className="single-product-info my-5" key={idx}>
-              <p>{title}</p>
-              <div className="quantity">
-                <AiOutlineMinusCircle
-                  className="icon"
-                  size={20}
-                  onClick={() => handleQuantityDecrease(id)}
+              <div className="component">
+                <img
+                  src={image}
+                  width="50"
+                  height="50"
+                  alt={title}
+                  onClick={() => navigate(`/products/${id}`)}
                 />
-                <p>quantity: {product.quantity}</p>
-                <AiOutlinePlusCircle
-                  className="icon"
-                  size={20}
-                  onClick={() => handleQuantityIncrease(id)}
-                />
+                <div className="img-text">
+                  {title}
+                  <div className="quantity">
+                    <AiOutlineMinusCircle
+                      className="icon"
+                      size={20}
+                      onClick={() => handleQuantityDecrease(id)}
+                    />
+                    Qty: {product.quantity}
+                    <AiOutlinePlusCircle
+                      className="icon"
+                      size={20}
+                      onClick={() => handleQuantityIncrease(id)}
+                    />
+                  </div>
+                </div>
               </div>
-              <p>price: {`$${price * product.quantity}`} </p>
-              <Button
-                variant="danger"
-                size="sm"
-                onClick={() => handleRemoveCartItem(id)}
-              >
-                {" "}
-                Delete{" "}
-              </Button>
+              <p>
+                Price: {`$${price * product.quantity}`} &emsp;
+                <Button
+                  variant="danger"
+                  size="sm"
+                  onClick={() => handleRemoveCartItem(id)}
+                >
+                  {" "}
+                  Remove{" "}
+                </Button>
+              </p>
             </div>
           );
         });
 
   return (
     <Wrapper className="section-center h-100">
-      <h3 className="my-5"> My Cart </h3>
+      <h3 className="my-5"> Cart </h3>
       {productElem}
       {userCart[0] && cartProducts.length >= 1 && (
         <>
-          <h2 className="my-3"> Subtotal: ${calculateSubtotal()}</h2>
-          <div className="btn-group">
+          <h2 className="my-2"> Subtotal: ${calculateSubtotal()}</h2>
+          <div className="buttons">
             <Button
               variant="outline-danger"
-              size="lg"
+              size="md"
+              className="clear-btn"
               onClick={() => dispatch(delCart())}
             >
               {" "}
-              Clear{" "}
+              Clear Cart{" "}
             </Button>
-            <Button variant="primary" onClick={() => handleCheckout()}>
+            <Button
+              variant="primary"
+              className="checkout-btn"
+              onClick={() => handleCheckout()}
+            >
               {" "}
               Check Out{" "}
             </Button>
@@ -154,20 +172,60 @@ export default function Cart() {
 const Wrapper = styled.section`
   .single-product-info {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  .checkout-btn {
+    background-color: #444444;
+    justify-content: center;
+    padding: 10px 75px;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+
+  .component {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
   }
   .quantity {
     display: flex;
     flex-direction: row;
   }
+  .img-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  h2 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 54px;
+    text-align: right;
+  }
+  h3 {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 54px;
+  }
+
   .icon:hover {
     color: blue;
     cursor: pointer;
   }
   .icon {
-    margin: 5px;
+    margin: 3px;
   }
-  .btn-group {
-    display: flex;
+  img {
+    cursor: pointer;
   }
 `;

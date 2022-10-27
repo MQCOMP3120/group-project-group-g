@@ -63,7 +63,7 @@ export default function Products() {
         </Breadcrumb.Item>
         <Breadcrumb.Item active> Products </Breadcrumb.Item>
       </Breadcrumb>
-      <h2>
+      <h2 className="text">
         {keyword === ""
           ? "All Products"
           : `${sortedProducts.length} results for "${keyword}"`}
@@ -101,6 +101,13 @@ export default function Products() {
 }
 
 const Wrapper = styled.section`
+  .text {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 54px;
+  }
   .products {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

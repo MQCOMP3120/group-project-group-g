@@ -37,7 +37,7 @@ export default function Login() {
     <Wrapper className="center-items section-center">
       <Form noValidate validated={isSignIn} onSubmit={handleSubmit}>
         <Form.Group className="d-flex justify-content-between">
-          <h2 className="welcome-text"> Login </h2>
+          <h2 className="welcome-text"> Welcome </h2>
           <Link to="/register">
             <p className="register-btn">
               Register
