@@ -29,7 +29,6 @@ export default function Cart() {
     } else {
       dispatch(getCart());
     }
-    console.log(userCart[0]);
   }, []);
 
   if (isLoading) {
@@ -39,7 +38,6 @@ export default function Cart() {
   const handleRemoveCartItem = (id) => {
     dispatch(delCartProduct(id));
 
-    console.log(cartProducts.length);
     if (cartProducts.length <= 1) {
       dispatch(delCart());
     }
