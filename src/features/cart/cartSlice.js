@@ -3,8 +3,10 @@ import { cartApi, cartUserApi, productsApi } from "../../util/api";
 import axios from "axios";
 
 const initialState = {
+  carts: [],
   userCart: [],
   cartProducts: [],
+  cartSummary: {},
   isLoading: false,
   emptyCart: false,
   subtotal: 0,
@@ -97,7 +99,6 @@ export const delCart = createAsyncThunk(
       let { user } = auth;
       const { userCart } = cart;
       if (userCart[0]) {
-
         await axios.delete(`${cartApi}${userCart[0].id}`, {
           headers: {
             Authorization: user.jwt,
@@ -162,7 +163,7 @@ export const payCart = createAsyncThunk(
             },
           }
         );
-        console.log(userCart)
+        console.log(userCart);
         console.log(resp);
       } else {
         console.log("user cart doesn't exist");
@@ -228,8 +229,11 @@ const cartSlice = createSlice({
       }
     },
     setSubtotal: (state, action) => {
-      state.subtotal = action.payload
-    }
+      state.subtotal = action.payload;
+    },
+    setCartSummary: (state, action) => {
+      state.cartSummary = action.payload;
+    },
   },
   extraReducers: {
     [getCart.pending]: (state) => {
@@ -254,6 +258,7 @@ export const {
   removeProduct,
   increaseProductQuantity,
   decreaseProductQuantity,
-  setSubtotal
+  setSubtotal,
+  setCartSummary,
 } = cartSlice.actions;
 export default cartSlice.reducer;
