@@ -100,7 +100,7 @@ export default function SingleBrand() {
             name={product.title}
             imgUrl={product.image}
             price={product.price}
-            rating={product.rating}
+            rating={product.rating.toFixed(1)}
             id={product.id}
             description={product.description}
           />

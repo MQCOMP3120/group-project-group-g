@@ -68,11 +68,13 @@ const filterSlice = createSlice({
         return a.rating - b.rating;
       });
     },
+
     sortByRatingHighLow: (state) => {
-      state.singleBrandProducts.sort((a, b) => {
+      state.sortedProducts.sort((a, b) => {
         return b.rating - a.rating;
       });
     },
+
     singleBrandSortByPriceLowHigh: (state) => {
       state.singleBrandProducts.sort((a, b) => {
         return a.price - b.price;

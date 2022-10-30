@@ -48,6 +48,7 @@ export default function Products() {
         break;
       case "Rating: High - Low":
         dispatch(sortByRatingHighLow());
+        break;
       case "All Products":
         dispatch(resetProducts());
         dispatch(resetKeyword());
@@ -104,7 +105,7 @@ export default function Products() {
             name={product.title}
             imgUrl={product.image}
             price={product.price}
-            rating={product.rating}
+            rating={product.rating.toFixed(1)}
             id={product.id}
           />
         ))}

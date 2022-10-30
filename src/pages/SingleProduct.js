@@ -88,7 +88,7 @@ export default function SingleProduct() {
         </div>
         <div className="product-info mt-5 px-3">
           <h3> {title} </h3>
-          <RatingStars rating={rating} />
+          <RatingStars rating={rating.toFixed(1)} />
           <b>{`$ ${price}`}</b>
           <p className="product-description">{description}</p>
           <div className="btn-group my-4">
