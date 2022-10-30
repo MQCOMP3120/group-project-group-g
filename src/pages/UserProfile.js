@@ -55,7 +55,7 @@ export default function UserProfile() {
   const cartHistoryElm = (carts) => {
     return carts.map((cart) => {
       return (
-        <div>
+        <div key={cart.id}>
           <p> Order ID {cart.id} </p>
         </div>
       );
@@ -66,11 +66,17 @@ export default function UserProfile() {
     <Wrapper className="my-5 center-items">
       <div className="container">
         <div className="btn-group">
-          <Button variant="light" onClick={() => setOrderHistoryOpen(false)}>
+          <Button
+            variant={!orderHistoryOpen ? "primary" : "light"}
+            onClick={() => setOrderHistoryOpen(false)}
+          >
             {" "}
             Account{" "}
           </Button>
-          <Button variant="light" onClick={() => setOrderHistoryOpen(true)}>
+          <Button
+            variant={orderHistoryOpen ? "primary" : "light"}
+            onClick={() => setOrderHistoryOpen(true)}
+          >
             {" "}
             Order History{" "}
           </Button>

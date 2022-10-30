@@ -1,5 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { cartApi, cartUserApi, cartHistoryApi } from "../../util/api";
+import {
+  cartApi,
+  cartUserApi,
+  cartHistoryApi,
+  userCartHistoryApi,
+} from "../../util/api";
 import axios from "axios";
 
 const initialState = {
@@ -44,11 +49,12 @@ export const getCartHistory = createAsyncThunk(
     try {
       const { auth } = getState();
       let { user } = auth;
-      const { data } = await axios.get(cartHistoryApi, {
+      const { data } = await axios.get(userCartHistoryApi, {
         headers: {
           Authorization: user.jwt,
         },
       });
+      console.log(data);
       dispatch(setCartHistory(data));
     } catch (err) {
       console.log(err);
@@ -244,6 +250,7 @@ const cartSlice = createSlice({
     resetCart: (state) => {
       state.userCart = [];
       state.cartProducts = [];
+      state.cartsHistory = [];
     },
     removeProduct: (state, action) => {
       const id = action.payload;

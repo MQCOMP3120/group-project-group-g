@@ -8,3 +8,4 @@ export const wishListApi = `${url}/api/wishlists/`;
 export const cartApi = `${url}/api/carts/`;
 export const cartUserApi = `${url}/api/cartsuser/`;
 export const cartHistoryApi = `${url}/api/historycarts`;
+export const userCartHistoryApi = `${url}/api/historycartsuser`;
