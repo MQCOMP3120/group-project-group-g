@@ -55,7 +55,9 @@ export const getCartHistory = createAsyncThunk(
           Authorization: user.jwt,
         },
       });
-      dispatch(setCartHistory(data.reverse()));
+      if (data.length > 0) {
+        dispatch(setCartHistory(data.reverse()));
+      }
     } catch (err) {
       console.log(err);
     }

@@ -20,6 +20,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { setUser, signIn } from "./features/userAuth/authSlice";
 import { getProducts, getBrands } from "./features/products/filterSlice";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import DevHome from "./services/devhomepage";
 import Stage from "./services/stage";
 
@@ -77,6 +80,7 @@ function App() {
         />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+      <ToastContainer />
     </BrowserRouter>
   );
 }

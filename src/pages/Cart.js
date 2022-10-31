@@ -5,7 +5,6 @@ import {
   delCart,
   delCartProduct,
   setCartSummary,
-  payCart,
   increaseProductQuantity,
   decreaseProductQuantity,
   putCart,
@@ -14,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 import styled from "styled-components";
+import { toast } from "react-toastify";
 
 export default function Cart() {
   const dispatch = useDispatch();
@@ -36,11 +36,24 @@ export default function Cart() {
   }
 
   const handleRemoveCartItem = (id) => {
+    const notifyProductRemove = () =>
+      toast.warn("Product removed", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+
     dispatch(delCartProduct(id));
 
     if (cartProducts.length <= 1) {
       dispatch(delCart());
     }
+    notifyProductRemove();
   };
 
   const handleQuantityIncrease = (id) => {

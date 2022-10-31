@@ -14,6 +14,7 @@ import {
 } from "../features/cart/cartSlice";
 
 import { postWishList } from "../features/wishlist/wishlistSlice";
+import { toast } from "react-toastify";
 
 export default function SingleProduct() {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ export default function SingleProduct() {
   const { productId } = useParams();
   const { allProducts, isLoading } = useSelector((state) => state.filter);
   const { user, isSignIn } = useSelector((store) => store.auth);
-  const { userCart, cartProducts } = useSelector((store) => store.cart);
+  const { userCart } = useSelector((store) => store.cart);
   const { productList } = useSelector((state) => state.wish);
 
   const productInfo = allProducts.filter(
@@ -32,11 +33,6 @@ export default function SingleProduct() {
     if (isSignIn && user.jwt) {
       dispatch(getCart());
     }
-
-    // if (!userCart[0]) {
-    //   console.log("empty cart");
-    // }
-    // console.log(userCart);
   }, [isLoading]);
 
   if (isLoading || !productInfo) {
@@ -44,14 +40,28 @@ export default function SingleProduct() {
   }
 
   const handleAddProduct = (productId) => {
+    const notifyAddProduct = () =>
+      toast.success("Product added to the cart", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+
     if (isSignIn) {
       dispatch(addProduct({ productId: productId, quantity: 1 }));
       if (userCart[0]) {
         // if current user cart exist then add product into the cart
         dispatch(putCart());
+        notifyAddProduct();
       } else {
         // otherwise make a new cart for current user
         dispatch(postCart());
+        notifyAddProduct();
       }
     } else {
       navigate("/login");

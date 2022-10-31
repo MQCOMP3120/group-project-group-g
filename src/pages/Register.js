@@ -2,7 +2,6 @@ import { Form } from "react-bootstrap";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineRight } from "react-icons/ai";
-import Home from "./Home";
 import {
   regUser,
   usernameOnChange,
@@ -10,22 +9,24 @@ import {
   emailOnChange,
 } from "../features/userAuth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
 
 export default function Register() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isSignIn, user } = useSelector((state) => state.auth);
 
-  if (isSignIn) {
-    navigate("/");
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // dispatch(signIn());
-    dispatch(regUser());
+    if (
+      user.username.length > 1 &&
+      user.email.includes("@") &&
+      user.password.length > 0
+    ) {
+      dispatch(regUser());
+      if (isSignIn) {
+        navigate("/");
+      }
+    }
   };
 
   return (
@@ -44,6 +45,7 @@ export default function Register() {
           <p>Register an account</p>
           <Form.FloatingLabel controlId="usernameInput" label="Username">
             <Form.Control
+              required
               type="username"
               placeholder="Username"
               onChange={(e) => dispatch(usernameOnChange(e.target.value))}
@@ -53,6 +55,7 @@ export default function Register() {
         <Form.Group className="mb-3">
           <Form.FloatingLabel controlId="emailInput" label="Email Address">
             <Form.Control
+              required
               type="email"
               placeholder="Email Address"
               onChange={(e) => dispatch(emailOnChange(e.target.value))}
@@ -62,6 +65,7 @@ export default function Register() {
         <Form.Group className="mb-4">
           <Form.FloatingLabel controlId="passwordInput" label="Password">
             <Form.Control
+              required
               type="password"
               placeholder="Password"
               onChange={(e) => dispatch(passwordOnChange(e.target.value))}

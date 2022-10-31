@@ -29,8 +29,6 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(authUser());
-    dispatch(signIn());
-    console.log(user);
   };
 
   return (
