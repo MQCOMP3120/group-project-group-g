@@ -14,6 +14,7 @@ import logo from "../assets/logo.jpg";
 import { BiHeart, BiSearch } from "react-icons/bi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsPersonCircle } from "react-icons/bs";
+import CartButton from "./CartButton";
 
 export default function NavBar() {
   const dispatch = useDispatch();
@@ -63,7 +64,7 @@ export default function NavBar() {
                   <BiHeart size={25} />
                 </Nav.Link>
                 <Nav.Link as={Link} to="/cart">
-                  <AiOutlineShoppingCart size={25} />
+                  <CartButton />
                 </Nav.Link>
                 <Nav.Link as={Link} to="/userprofile">
                   <BsPersonCircle size={25} />
