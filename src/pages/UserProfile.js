@@ -2,10 +2,14 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "../features/userAuth/authSlice";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { resetCart } from "../features/cart/cartSlice";
 import { Button } from "react-bootstrap";
-import { getCartHistory } from "../features/cart/cartSlice";
+import {
+  getCartHistory,
+  setCurrentCartHistory,
+} from "../features/cart/cartSlice";
+import Table from "react-bootstrap/Table";
 
 export default function UserProfile() {
   const dispatch = useDispatch();
@@ -14,7 +18,6 @@ export default function UserProfile() {
   const { cartsHistory, isLoading } = useSelector((state) => state.cart);
   const { address, email, phone, username } = user;
   const [orderHistoryOpen, setOrderHistoryOpen] = useState(false);
-  const { allProducts } = useSelector((state) => state.filter);
 
   useEffect(() => {
     if (!isSignIn) {
@@ -25,7 +28,6 @@ export default function UserProfile() {
   useEffect(() => {
     if (isSignIn) {
       dispatch(getCartHistory());
-      console.log(cartsHistory);
     }
   }, []);
 
@@ -38,26 +40,24 @@ export default function UserProfile() {
     dispatch(resetCart());
   };
 
-  const getProduct = (id) => {
-    return allProducts.filter((product) => product.id === id);
-  };
-
-  // const productsElem = (products) => {
-  //   return (
-  //     products.map(product => {
-  //       return <div>
-  //         <p> </p>
-  //       </div>
-  //     })
-  //     )
-  // }
-
   const cartHistoryElm = (carts) => {
-    return carts.map((cart) => {
+    return carts.map((cart, idx) => {
       return (
-        <div key={cart.id}>
-          <p> Order ID {cart.id} </p>
-        </div>
+        <tr key={cart.id}>
+          <td> #{cart.id.slice(-4)} </td>
+          <td> {cart.timestamp.split("T")[0]}</td>
+          <td> ${cart.subtotal.toFixed(2)} </td>
+          <td>
+            {" "}
+            <Link
+              onClick={() => dispatch(setCurrentCartHistory(cart))}
+              to={`/orders/${cart.id}`}
+            >
+              {" "}
+              view{" "}
+            </Link>{" "}
+          </td>
+        </tr>
       );
     });
   };
@@ -84,7 +84,17 @@ export default function UserProfile() {
         {orderHistoryOpen ? (
           <div className="orderhistory-content">
             {cartsHistory && cartsHistory.length > 0 ? (
-              <div> {cartHistoryElm(cartsHistory)} </div>
+              <Table striped>
+                <thead>
+                  <tr>
+                    <th> # </th>
+                    <th> Date </th>
+                    <th> Total </th>
+                    <th> </th>
+                  </tr>
+                </thead>
+                <tbody>{cartHistoryElm(cartsHistory)}</tbody>
+              </Table>
             ) : (
               <p>No purchase history </p>
             )}

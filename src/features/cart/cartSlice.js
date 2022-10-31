@@ -12,6 +12,7 @@ const initialState = {
   userCart: [],
   cartProducts: [],
   cartSummary: {},
+  currentCartHistory: {},
   isLoading: false,
   emptyCart: false,
   subtotal: 0,
@@ -24,10 +25,10 @@ export const postCartHistory = createAsyncThunk(
     try {
       const { auth, cart } = getState();
       let { user } = auth;
-      const { cartProducts } = cart;
+      const { cartSummary } = cart;
       const resp = await axios.post(
         cartHistoryApi,
-        { products: cartProducts },
+        { subtotal: cartSummary.subtotal, products: cartSummary.cartProducts },
         {
           headers: {
             Authorization: user.jwt,
@@ -54,8 +55,7 @@ export const getCartHistory = createAsyncThunk(
           Authorization: user.jwt,
         },
       });
-      console.log(data);
-      dispatch(setCartHistory(data));
+      dispatch(setCartHistory(data.reverse()));
     } catch (err) {
       console.log(err);
     }
@@ -283,6 +283,9 @@ const cartSlice = createSlice({
     setCartHistory: (state, action) => {
       state.cartsHistory = action.payload;
     },
+    setCurrentCartHistory: (state, action) => {
+      state.currentCartHistory = action.payload;
+    },
   },
   extraReducers: {
     [getCart.pending]: (state) => {
@@ -322,5 +325,6 @@ export const {
   setSubtotal,
   setCartSummary,
   setCartHistory,
+  setCurrentCartHistory,
 } = cartSlice.actions;
 export default cartSlice.reducer;

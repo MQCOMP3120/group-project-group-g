@@ -16,8 +16,6 @@ export default function Payment() {
     return allProducts.filter((product) => product.id === id);
   };
 
-  console.log(cartSummary);
-
   const handlePayment = () => {
     dispatch(payCart());
     dispatch(postCartHistory());
