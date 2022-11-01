@@ -8,7 +8,7 @@ export default function SinglePaymentHistory() {
   const navigate = useNavigate();
   const { currentCartHistory } = useSelector((state) => state.cart);
   const { allProducts } = useSelector((state) => state.filter);
-
+  const orderId = useParams().orderId;
   const getProduct = (id) => {
     return allProducts.filter((product) => product.id === id);
   };
@@ -24,7 +24,7 @@ export default function SinglePaymentHistory() {
     currentCartHistory.products.map((product) => {
       const { title, price, id, image } = getProduct(product.productId)[0];
       return (
-        <tr>
+        <tr key={id}>
           <td>{title}</td>
           <td>x {product.quantity}</td>
           <td>${(price * product.quantity).toFixed(2)}</td>
@@ -38,29 +38,32 @@ export default function SinglePaymentHistory() {
         <BsArrowLeft size={20} className="m-3" />
         Back to Purchases
       </Link>
-      <Table striped>
-        <thead>
-          <tr>
-            <td>Product</td>
-            <td>Quantity</td>
-            <td>Price</td>
-          </tr>
-        </thead>
-        <tbody>
-          {summaryElem}
-          <tr>
-            <td>
-              {" "}
-              <h4>Total</h4>{" "}
-            </td>
-            <td></td>
-            <td>
-              {" "}
-              <h4> ${currentCartHistory.subtotal.toFixed(2)} </h4>
-            </td>
-          </tr>
-        </tbody>
-      </Table>
+      <div className="content mt-5">
+        <h3>Order #{orderId}</h3>
+        <Table striped>
+          <thead>
+            <tr>
+              <td>Product</td>
+              <td>Quantity</td>
+              <td>Price</td>
+            </tr>
+          </thead>
+          <tbody>
+            {summaryElem}
+            <tr>
+              <td>
+                {" "}
+                <h4>Total</h4>{" "}
+              </td>
+              <td></td>
+              <td>
+                {" "}
+                <h4> ${currentCartHistory.subtotal.toFixed(2)} </h4>
+              </td>
+            </tr>
+          </tbody>
+        </Table>
+      </div>
     </section>
   );
 }

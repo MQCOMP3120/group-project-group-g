@@ -19,8 +19,9 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { setUser, signIn } from "./features/userAuth/authSlice";
 import { getProducts, getBrands } from "./features/products/filterSlice";
+import { getCart } from "./features/cart/cartSlice";
 
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import DevHome from "./services/devhomepage";
@@ -38,6 +39,7 @@ function App() {
     if (loggedUser) {
       dispatch(setUser(loggedUser));
       dispatch(signIn());
+      dispatch(getCart());
     }
   }, []);
 

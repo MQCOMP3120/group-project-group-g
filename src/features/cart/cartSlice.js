@@ -35,8 +35,6 @@ export const postCartHistory = createAsyncThunk(
           },
         }
       );
-
-      console.log(resp);
     } catch (err) {
       console.log(err);
     }
@@ -115,8 +113,6 @@ export const delCartProduct = createAsyncThunk(
       const { auth, cart } = getState();
       let { user } = auth;
       const { userCart, cartProducts } = cart;
-      // console.log(cart);
-      //   console.log(userCart);
       if (userCart[0]) {
         const resp = await axios.put(
           `${cartApi}${userCart[0].id}`,
@@ -132,9 +128,6 @@ export const delCartProduct = createAsyncThunk(
           }
         );
         dispatch(removeProduct(id));
-        // console.log(resp);
-      } else {
-        console.log("user cart doesn't exist");
       }
     } catch (err) {
       console.log(err);
@@ -184,8 +177,6 @@ export const putCart = createAsyncThunk(
             },
           }
         );
-      } else {
-        console.log("user cart doesn't exist");
       }
     } catch (err) {
       console.log(err);
@@ -212,10 +203,6 @@ export const payCart = createAsyncThunk(
             },
           }
         );
-        console.log(userCart);
-        console.log(resp);
-      } else {
-        console.log("user cart doesn't exist");
       }
     } catch (err) {
       console.log(err);
@@ -234,7 +221,6 @@ const cartSlice = createSlice({
         state.cartProducts = data[0].products;
         // state.emptyCart = false;
       }
-      //   console.log(state.userCart);
     },
     addProduct: (state, action) => {
       let product = action.payload;
@@ -247,7 +233,6 @@ const cartSlice = createSlice({
       } else {
         cartSlice.caseReducers.increaseProductQuantity(state, action);
       }
-      //   console.log(state.cartProducts);
     },
     resetCart: (state) => {
       state.userCart = [];
@@ -268,7 +253,6 @@ const cartSlice = createSlice({
     },
     decreaseProductQuantity: (state, action) => {
       const id = action.payload;
-      //console.log(id);
       const productQuantity = (state.cartProducts.find(
         (item) => item.productId === id
       ).quantity -= 1);

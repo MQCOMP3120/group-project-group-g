@@ -67,7 +67,6 @@ export const authUser = createAsyncThunk(
     try {
       const { auth } = getState();
       let { user } = auth;
-      console.log(user);
       const { data, status } = await axios.post(loginApi, user);
       const notify = () =>
         toast.success("Login Successful!", {
@@ -184,7 +183,7 @@ const authSlice = createSlice({
     },
     [regUser.rejected]: (state) => {
       // when error occurs
-      // state.isLoading = false;
+      state.isLoading = false;
       // window.alert("Invalid login credential");
     },
   },

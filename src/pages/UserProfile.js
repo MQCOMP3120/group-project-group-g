@@ -4,12 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "../features/userAuth/authSlice";
 import { useNavigate, Link } from "react-router-dom";
 import { resetCart } from "../features/cart/cartSlice";
-import { Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import {
   getCartHistory,
   setCurrentCartHistory,
 } from "../features/cart/cartSlice";
 import Table from "react-bootstrap/Table";
+import { AiFillEdit } from "react-icons/ai";
 
 export default function UserProfile() {
   const dispatch = useDispatch();
@@ -18,6 +19,8 @@ export default function UserProfile() {
   const { cartsHistory, isLoading } = useSelector((state) => state.cart);
   const { address, email, phone, username } = user;
   const [orderHistoryOpen, setOrderHistoryOpen] = useState(false);
+
+  console.log(user);
 
   useEffect(() => {
     if (!isSignIn) {
@@ -62,6 +65,31 @@ export default function UserProfile() {
     });
   };
 
+  const userDetails = () => {
+    return (
+      <div className="account-content">
+        <div className="user-info-field">
+          <p> Username: {username} </p>
+          <AiFillEdit className="edit-icon" />
+        </div>
+        <div className="user-info-field">
+          <p> Email: {email}</p>
+        </div>
+        <div className="user-info-field">
+          <p> Address: {address}</p>
+        </div>
+        <div className="user-info-field">
+          <p> Phone Number: {phone}</p>
+        </div>
+
+        <Button variant="outline-danger" onClick={() => handleSignOut()}>
+          {" "}
+          log out{" "}
+        </Button>
+      </div>
+    );
+  };
+
   return (
     <Wrapper className="my-5 center-items">
       <div className="container">
@@ -100,16 +128,7 @@ export default function UserProfile() {
             )}
           </div>
         ) : (
-          <div className="account-content">
-            <p> Username: {username} </p>
-            <p> Email: {email}</p>
-            <p> Address: {address}</p>
-            <p> Phone Number: {phone}</p>
-            <Button variant="outline-danger" onClick={() => handleSignOut()}>
-              {" "}
-              log out{" "}
-            </Button>
-          </div>
+          userDetails()
         )}
       </div>
     </Wrapper>
@@ -117,6 +136,7 @@ export default function UserProfile() {
 }
 
 const Wrapper = styled.section`
+  min-height: 40vh;
   p {
     font-size: larger;
   }
@@ -124,7 +144,6 @@ const Wrapper = styled.section`
     max-width: 40vw;
   }
   .btn-group {
-    background-color: aliceblue;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -138,5 +157,12 @@ const Wrapper = styled.section`
   }
   .orderhistory-content {
     padding: 3rem;
+  }
+  .user-info-field {
+    display: flex;
+    justify-content: space-between;
+  }
+  .edit-icon {
+    cursor: pointer;
   }
 `;
