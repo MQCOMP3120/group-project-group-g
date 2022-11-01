@@ -3,6 +3,7 @@ const auth = require('./controllers/auth')
 const brands = require('./controllers/brands')
 const products = require('./controllers/products')
 const carts = require('./controllers/carts')
+const historyCarts = require('./controllers/historycarts')
 
 const router = express.Router()
  
@@ -51,4 +52,11 @@ router.put('/api/carts/:id', carts.modCart)
 router.delete('/api/carts', carts.deleteCarts)
 router.delete('/api/carts/:id', carts.deleteCart)
 router.patch('/api/carts/:id', carts.payCart)
+
+router.post('/api/historycarts', historyCarts.createHistoryCart)
+router.get('/api/historycarts', historyCarts.getHistoryCarts)
+router.get('/api/historycarts/:id', historyCarts.getHistoryCart)
+router.get('/api/historycartsuser', historyCarts.getHistoryUserCarts)
+router.delete('/api/historycarts', historyCarts.deleteHistoryCarts)
+router.delete('/api/historycarts/:id', historyCarts.deleteHistoryCart)
 module.exports = router 

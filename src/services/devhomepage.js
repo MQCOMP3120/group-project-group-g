@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
-import axioserver from './services/axioserver'
-import logo from './logo.png'
+import axioserver from './axioserver'
+import logo from '../logo.png'
 
 import {
   useNavigate,
 } from "react-router-dom"
 
-function Home({fn, keyWords}) {
+function DevHome({fn, keyWords}) {
     // values for login and register form
     const [user, setUser] = useState({
             "username": "",
@@ -104,7 +104,7 @@ function Home({fn, keyWords}) {
     // navigate to conversation page
     const toStage = (event) => {
         event.preventDefault()
-        navigate('/Stage')
+        navigate('/stage')
     }
     // logout button
     function logOut(){
@@ -113,7 +113,7 @@ function Home({fn, keyWords}) {
             "username": "",
             "jwt": "",
             "userId": "",})
-        navigate('/')
+        navigate('/devhome')
     }
 
 //####################################
@@ -198,6 +198,6 @@ function Home({fn, keyWords}) {
 
 
 }
-export default Home
+export default DevHome
 
 

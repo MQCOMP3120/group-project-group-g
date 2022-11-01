@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { Breadcrumb, Button } from "react-bootstrap";
 import { BiHeart } from "react-icons/bi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import RatingStars from "../components/RatingStars";
 import {
@@ -11,14 +12,18 @@ import {
   getCart,
   postCart,
 } from "../features/cart/cartSlice";
-import { useDispatch, useSelector } from "react-redux";
+
+import { postWishList } from "../features/wishlist/wishlistSlice";
+import { toast } from "react-toastify";
 
 export default function SingleProduct() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { productId } = useParams();
   const { allProducts, isLoading } = useSelector((state) => state.filter);
   const { user, isSignIn } = useSelector((store) => store.auth);
   const { userCart } = useSelector((store) => store.cart);
+  const { productList } = useSelector((state) => state.wish);
 
   const productInfo = allProducts.filter(
     (product) => product.id === productId
@@ -28,9 +33,6 @@ export default function SingleProduct() {
     if (isSignIn && user.jwt) {
       dispatch(getCart());
     }
-    if (!userCart[0]) {
-      console.log("empty cart");
-    }
   }, [isLoading]);
 
   if (isLoading || !productInfo) {
@@ -38,17 +40,47 @@ export default function SingleProduct() {
   }
 
   const handleAddProduct = (productId) => {
-    dispatch(addProduct({ productId: productId, quantity: 1 }));
-    if (userCart[0]) {
-      // if current user cart exist then add product into the cart
-      dispatch(putCart());
+    const notifyAddProduct = () =>
+      toast.success("Product added to the cart", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+
+    if (isSignIn) {
+      dispatch(addProduct({ productId: productId, quantity: 1 }));
+      if (userCart[0]) {
+        // if current user cart exist then add product into the cart
+        dispatch(putCart());
+        notifyAddProduct();
+      } else {
+        // otherwise make a new cart for current user
+        dispatch(postCart());
+        notifyAddProduct();
+      }
     } else {
-      // otherwise make a new cart for current user
-      dispatch(postCart());
+      navigate("/login");
+    }
+  };
+
+  const handleAddToWishList = (id) => {
+    if (isSignIn) {
+      dispatch(postWishList(id));
+    } else {
+      navigate("/wishlist");
     }
   };
 
   const { id, image, title, price, rating, description } = productInfo;
+
+  const productInWishlist = (id) =>
+    productList.find((product) => product.productId === id);
+
   return (
     <Wrapper className="section-center">
       <Breadcrumb className="my-5">
@@ -66,17 +98,22 @@ export default function SingleProduct() {
         </div>
         <div className="product-info mt-5 px-3">
           <h3> {title} </h3>
-          <RatingStars rating={rating} />
+          <RatingStars rating={rating.toFixed(1)} />
           <b>{`$ ${price}`}</b>
           <p className="product-description">{description}</p>
           <div className="btn-group my-4">
             <Button variant="primary" onClick={() => handleAddProduct(id)}>
               <AiOutlineShoppingCart /> Add to Cart
-            </Button>{" "}
-            <Button variant="light">
-              {" "}
-              <BiHeart /> Add to Wish List
-            </Button>{" "}
+            </Button>
+            {productInWishlist(id) ? (
+              <Button variant="light" onClick={() => navigate("/wishlist")}>
+                <BiHeart color="red" /> In Wish List
+              </Button>
+            ) : (
+              <Button variant="light" onClick={() => handleAddToWishList(id)}>
+                <BiHeart /> Add to Wish List
+              </Button>
+            )}
           </div>
         </div>
       </div>

@@ -11,6 +11,7 @@ import {
   singleBrandSortByRatingLowHigh,
 } from "../features/products/filterSlice";
 import ProductCard from "../components/ProductCard";
+import Pagination from "../components/Pagination";
 
 export default function SingleBrand() {
   const { brandId } = useParams();
@@ -20,12 +21,14 @@ export default function SingleBrand() {
   );
 
   const currentBrand = brands.filter((brand) => brand.id === brandId)[0];
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage] = useState(10);
 
   const filterItems = [
-    "Price: low - high",
-    "Price: high - low",
-    "Rating: low - high",
-    "Rating: high - low",
+    "Price: Low - High",
+    "Price: High - Low",
+    "Rating: Low - High",
+    "Rating: High - Low",
   ];
 
   const [selectedFilterItem, setSelectedFilterItem] = useState(filterItems[0]);
@@ -34,16 +37,16 @@ export default function SingleBrand() {
     setSelectedFilterItem(item);
 
     switch (item) {
-      case "Price: low - high":
+      case "Price: Low - High":
         dispatch(singleBrandSortByPriceLowHigh());
         break;
-      case "Price: high - low":
+      case "Price: High - Low":
         dispatch(singleBrandSortByPriceHighLow());
         break;
-      case "Rating: low - high":
+      case "Rating: Low - High":
         dispatch(singleBrandSortByRatingLowHigh());
         break;
-      case "Rating: high - low":
+      case "Rating: High - Low":
         dispatch(singleBrandSortByRatingHighLow());
     }
   };
@@ -56,6 +59,15 @@ export default function SingleBrand() {
     return <h1> Loading ....</h1>;
   }
 
+  const idxOfLastProduct = currentPage * productsPerPage;
+  const idxOfFirstProduct = idxOfLastProduct - productsPerPage;
+  const currentProducts = singleBrandProducts.slice(
+    idxOfFirstProduct,
+    idxOfLastProduct
+  );
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <Wrapper className="section-center">
       <Breadcrumb className="my-5">
@@ -64,7 +76,7 @@ export default function SingleBrand() {
         </Breadcrumb.Item>
         <Breadcrumb.Item active> {currentBrand.title} </Breadcrumb.Item>
       </Breadcrumb>
-      <h3> {currentBrand.title} </h3>
+      <h3 className="text"> {currentBrand.title} </h3>
       <Dropdown className="mt-5">
         <span> Sort by: </span>
         <Dropdown.Toggle variant="secondary-outline">
@@ -82,23 +94,36 @@ export default function SingleBrand() {
       </Dropdown>
       <hr />
       <div className="products">
-        {singleBrandProducts.map((product, idx) => (
+        {currentProducts.map((product, idx) => (
           <ProductCard
             key={idx}
             name={product.title}
             imgUrl={product.image}
             price={product.price}
-            rating={product.rating}
+            rating={product.rating.toFixed(1)}
             id={product.id}
             description={product.description}
           />
         ))}
       </div>
+      <Pagination
+        productsPerpage={productsPerPage}
+        totalProducts={singleBrandProducts.length}
+        paginate={paginate}
+        currentPage={currentPage}
+      />
     </Wrapper>
   );
 }
 
 const Wrapper = styled.section`
+  .text {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 54px;
+  }
   .products {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

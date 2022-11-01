@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { loginApi, registerApi } from "../../util/api";
+import { toast } from "react-toastify";
 import axios from "axios";
 
 const initialState = {
@@ -14,19 +15,48 @@ const initialState = {
     address: "",
     phone: "",
   },
+  validated: false,
 };
 
 export const regUser = createAsyncThunk(
-  "/register",
-  async (arg, { getState }) => {
+  "auth/register",
+  async (arg, { getState, dispatch }) => {
     try {
-      const { auth, dispatch } = getState();
+      const { auth } = getState();
       let { user } = auth;
-      const { data } = await axios.post(registerApi, user);
+      const { data, status } = await axios.post(registerApi, user);
+      const notify = () =>
+        toast.success("Account registered!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
 
-      dispatch(setUser(data));
+      if (status === 200) {
+        dispatch(setValidated());
+        dispatch(setUser(data));
+        dispatch(signIn());
+        notify();
+      }
     } catch (err) {
       console.log(err);
+      const notify = () =>
+        toast.error("Sorry, that username already exist", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      notify();
     }
   }
 );
@@ -37,15 +67,37 @@ export const authUser = createAsyncThunk(
     try {
       const { auth } = getState();
       let { user } = auth;
-      console.log(user);
       const { data, status } = await axios.post(loginApi, user);
+      const notify = () =>
+        toast.success("Login Successful!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
 
-      dispatch(setUser(data));
+      if (status === 200) {
+        dispatch(setUser(data));
+        dispatch(signIn());
+        notify();
+      }
     } catch (err) {
-      const { auth } = getState();
-      let { authErr } = auth;
-      authErr = true;
-      console.log(err);
+      const notify = () =>
+        toast.error("Incorrect username or password", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      notify();
     }
   }
 );
@@ -73,8 +125,6 @@ const authSlice = createSlice({
         ...newUser,
       };
       window.localStorage.setItem("user", JSON.stringify(newUser));
-      // const j = JSON.stringify(newUser);
-      // console.log(JSON.parse(j));
     },
     signIn: (state) => {
       state.isSignIn = true;
@@ -82,6 +132,30 @@ const authSlice = createSlice({
     signOut: (state) => {
       window.localStorage.clear();
       state.isSignIn = false;
+      state.user = {
+        userId: "",
+        username: "",
+        email: "",
+        password: "",
+        address: "",
+        phone: "",
+      };
+      state.validated = false;
+      const notify = () =>
+        toast.success("You have been logged out Successfully", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      notify();
+    },
+    setValidated: (state) => {
+      state.validated = true;
     },
   },
   extraReducers: {
@@ -97,6 +171,21 @@ const authSlice = createSlice({
       // when error occurs
       state.isLoading = false;
     },
+    [regUser.pending]: (state) => {
+      // while the fetching status is pending
+      state.isLoading = true;
+    },
+    [regUser.fulfilled]: (state, action) => {
+      // when data is successfully fecthed
+      state.isLoading = false;
+      // state.authErr = false;
+      // state.isSignIn = true;
+    },
+    [regUser.rejected]: (state) => {
+      // when error occurs
+      state.isLoading = false;
+      // window.alert("Invalid login credential");
+    },
   },
 });
 
@@ -107,5 +196,6 @@ export const {
   emailOnChange,
   passwordOnChange,
   setUser,
+  setValidated,
 } = authSlice.actions;
 export default authSlice.reducer;

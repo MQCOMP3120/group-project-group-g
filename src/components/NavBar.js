@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 import {
   Container,
   Nav,
@@ -13,6 +14,7 @@ import logo from "../assets/logo.jpg";
 import { BiHeart, BiSearch } from "react-icons/bi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsPersonCircle } from "react-icons/bs";
+import CartButton from "./CartButton";
 
 export default function NavBar() {
   const dispatch = useDispatch();
@@ -24,12 +26,7 @@ export default function NavBar() {
 
   // boostrap Nav bar doc: https://react-bootstrap.github.io/components/navbar/
   return (
-    <Navbar
-      className="navbar-expand-md py-4 shadow-sm nav-bar"
-      id="nav-bar"
-      bg="light"
-      expand="xxl"
-    >
+    <Navbar className="py-4" id="nav-bar" variant="dark" bg="dark">
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img src={logo} alt="logo" width={"60px"} height={"60px"} />
@@ -67,7 +64,7 @@ export default function NavBar() {
                   <BiHeart size={25} />
                 </Nav.Link>
                 <Nav.Link as={Link} to="/cart">
-                  <AiOutlineShoppingCart size={25} />
+                  <CartButton />
                 </Nav.Link>
                 <Nav.Link as={Link} to="/userprofile">
                   <BsPersonCircle size={25} />
