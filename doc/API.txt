@@ -1,7 +1,7 @@
 https://www.mongodb.com/atlas/database
 npm run devserver
 
-
+//#########################################################
 User:
     register a new user
         POST /auth/register
@@ -46,7 +46,7 @@ User:
         return success: status(200).{email, username, address, phone, userId}
         return error: status(401).{error: "invalid"}
         
-
+//#########################################################
 Products:
     Get all products
         GET /api/products
@@ -79,7 +79,7 @@ Products:
         DELETE /api/products
         return success: status(200).{status: "OK"}
         return error: status(401).{error: "invalid"}
-
+//#########################################################
 Brands:
     Get all brands
         GET /api/brands
@@ -101,8 +101,7 @@ Brands:
         return success: status(200).{status: "OK"}
         return error: status(401).{error: "invalid"}
 
-
-    
+//#########################################################
 Cart:
 only allow one unpaid cart exist for one user, but multiple paid carts as shopping history.
 it means when you create a new cart, it is default to unpaid, you can't create another cart until you set the cart to paid.
@@ -149,7 +148,35 @@ but you can modify the unpaid cart with PUT command
         DELETE /api/carts
         return success: status(200).{status: "OK"}
         return error: status(401).{error: "invalid"}
+//#########################################################
+HistoryCart
+    Get all carts
+        GET /api/historycarts
+        return success: status(200).[{id, userId, timestamp, paid, subtotal, products:[{productId,quantity},]}, ]
+        return error: status(401).{error: "invalid"}
+    Get a specific cart
+        GET /api/historycarts/id
+        return success: status(200).{id, userId, timestamp, paid, subtotal, products:[{productId,quantity},]}
+        return error: status(401).{error: "invalid"}
+    Get user carts
+        GET /api/historycartsuser
+        return success: status(200).[{id, userId, timestamp, paid, subtotal, products:[{productId,quantity},]}, ]
+        return error: status(401).{error: "invalid"}
+    Add a new cart
+        POST /api/historycarts
+        {products:[{productId,quantity}, ]}
+        return success: status(200).{id, userId, timestamp, paid, subtotal, products[{productId,quantity},]}
+        return error: status(401).{error: "invalid"}
+    Delete a cart
+        DELETE /api/historycarts/id
+        return success: status(200).{status: "OK"}
+        return error: status(401).{error: "invalid"}
+    Del carts   // only for test
+        DELETE /api/historycarts
+        return success: status(200).{status: "OK"}
+        return error: status(401).{error: "invalid"}
 
+//#########################################################
 Wish List:
     Get all wish list products for the current user
         GET /api/wishlists
