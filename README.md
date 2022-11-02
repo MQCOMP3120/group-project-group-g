@@ -8,6 +8,10 @@ The entire project is divided into two parts: front-end and back-end, which exch
 - Because in the development process, the data structure will be continuously adjusted according to the new requirements put forward by customers and the problems found in the development. After each data structure modification, we have to reload the data.
 We have written a development tool for database initialization, loading the JSON file in the front-end. Clearing and loading data to the back-end through the API so that we can test the back-end function and solve the problem that every time data is generated, the object ID of the link between tables will change. During the development process, we can read all the data of MongoDB and compare it with the input without accessing the MongoDB portal.
 - `.env` file for authenticating to the MongoDB database, and working port for the back-end server
+- The front-end uses boostrap and styled-components to make the styling more efficient and organized  
+- The front-end uses Toastify for pop up notifications
+- React router v6 is resiponsible for the front-end page navigations
+- The front-end imports all icons from React-icons library
 
 ## API
 - `doc/API.txt`: API definition and example description.
