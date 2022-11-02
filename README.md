@@ -41,3 +41,7 @@ We have written a development tool for database initialization, loading the JSON
 - `src/util/constants.js`: the initial data before connecting to the database
 - `src/store.js`: the setup of the Redux store.
 - `src/index.css`: global styles.
+
+## Next Step
+- complete Stripe payment form
+- complete google login
