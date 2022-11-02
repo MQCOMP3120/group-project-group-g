@@ -12,6 +12,7 @@ We have written a development tool for database initialization, loading the JSON
 - The front-end uses Toastify for pop up notifications
 - React router v6 is resiponsible for the front-end page navigations
 - The front-end imports all icons from React-icons library
+- Stripe payment form was replaced with a prebuild boostrap form due to tight timefrme. To incoporate with Stripe we will need to modify both the front-end and the back-end including some data structures, and consider that there are other essential tasks to do before the deadline (e.g., delopyment and documentations) we have decided to not include Stripe in our application.   
 
 ## API
 - `doc/API.txt`: API definition and example description.
