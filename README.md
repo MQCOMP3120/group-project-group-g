@@ -33,10 +33,10 @@ We have written a development tool for database initialization, loading the JSON
 
 ## Frontend
 - `src/assets/logo.jpg`: This is the logo of this online shop.
-- `src/components`: They are the components in pages. `CartButton`, `DropDownSearchBar`, `Hero`, `NavBar`, `Pagination`, `PaymentForm`, `ProductCard`, `SerchModal`, `StripeForm`.
+- `src/components`: They are the components in pages. `CartButton`, `DropDownSearchBar`, `Hero`, `NavBar`, `Pagination`, `PaymentForm`, `ProductCard`, `SerchModal`.
 - `src/features`: `cartSlice`, `searchSlice`, `filterSlice`, `authSlice`, `wishlistSlice`. Each file corresponds to a Redux Toolkit slice. They will handle the state of the Redux and Redux network flow.
 - `src/pages`: `Cart`, `Error`, `Home`, `index`, `Login`, `Payment`, `Product`, `Register`, `SingleBrand`, `SingleProduct`, `UserProfile`, `WishList`. Each file corresponds to an HTML page.
 - `src/util/api.js`: API Url address.
 - `src/util/constants.js`: the initial data before connecting to the database
 - `src/store.js`: the setup of the Redux store.
-
+- `src/index.css`: global styles.
