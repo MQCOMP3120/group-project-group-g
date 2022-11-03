@@ -12,7 +12,7 @@ We have written a development tool for database initialization, loading the JSON
 - The front-end uses Toastify for pop up notifications
 - React router v6 is resiponsible for the front-end page navigations
 - The front-end imports all icons from React-icons library
-- Stripe payment form was replaced with a prebuild boostrap form due to tight timefrme. To incoporate with Stripe we will need to modify both the front-end and the back-end including some data structures, and consider there are other essential tasks to do before the deadline (e.g., delopyment and documentations) we have decided to not include Stripe in our application.   
+- We have enabled multiple payment methods on the Stripe checkout page, such as ApplePlay, GooglePlay, Credit Card, Afterpay, and Alipay. Customers can adjust item quantity during checkout. Shipping addresses also will be collected. 
 
 ## API
 - `doc/API.txt`: API definition and example description.
@@ -25,7 +25,7 @@ We have written a development tool for database initialization, loading the JSON
 - `src/services/stage.js`: the front-end page can load `sample.json` to MongoDB via back-end API. Fetch and list all information on the page.
 
 ## Backend
-- `.env` is used to authenticate against the MongoDB database and the working port of the backend server.
+- `.env` is used to authenticate against the MongoDB database, Stripe payment and the working port of the backend server.
 - `server/src/models/index.js`: schema of the data table.
 - `server/src/controllers`: This is where all API routers are controlled and is used to handle specific operations of each API router, such as GET, POST, PUT, DELETE, etc.
 - `server/src/app.js`: set up express, cors, API router, and middleware.
@@ -34,7 +34,7 @@ We have written a development tool for database initialization, loading the JSON
 
 ## Frontend
 - `src/assets/logo.jpg`: This is the logo of this online shop.
-- `src/components`: They are the components in pages. `CartButton`, `DropDownSearchBar`, `Hero`, `NavBar`, `Pagination`, `PaymentForm`, `ProductCard`, `SerchModal`.
+- `src/components`: They are the components in pages. `CartButton`, `DropDownSearchBar`, `Hero`, `NavBar`, `Pagination`, `PaymentForm`, `ProductCard`, `SerchModal`, `Loading`.
 - `src/features`: `cartSlice`, `searchSlice`, `filterSlice`, `authSlice`, `wishlistSlice`. Each file corresponds to a Redux Toolkit slice. They will handle the state of the Redux and Redux network flow.
 - `src/pages`: `Cart`, `Error`, `Home`, `index`, `Login`, `Payment`, `Product`, `Register`, `SingleBrand`, `SingleProduct`, `UserProfile`, `WishList`. Each file corresponds to an HTML page.
 - `src/util/api.js`: API Url address.
@@ -43,5 +43,6 @@ We have written a development tool for database initialization, loading the JSON
 - `src/index.css`: global styles.
 
 ## Next Step
-- complete Stripe payment form
 - complete google login
+
+- Stripe integrates up to 25 payment methods and integrates with a variety of indispensable financial tools in its back-end dashboard. Stripe enables the perfect combination of raw sales data and financial analysis tools. It opens up another door for e-commerce. If we continue to work hard to develop our back-end software to connect with MYOB using stripe, this software will become an e-commerce company's central information system. It will control all finance, stock, all operation of this company. The above will be It will be our next development goal.
