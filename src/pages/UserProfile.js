@@ -4,13 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { signOut } from "../features/userAuth/authSlice";
 import { useNavigate, Link } from "react-router-dom";
 import { resetCart } from "../features/cart/cartSlice";
-import { Button, Form } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import {
   getCartHistory,
   setCurrentCartHistory,
 } from "../features/cart/cartSlice";
 import Table from "react-bootstrap/Table";
 import { AiFillEdit } from "react-icons/ai";
+import Loading from "../components/Loading";
 
 export default function UserProfile() {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ export default function UserProfile() {
   }, []);
 
   if (isLoading) {
-    return <h1> Loading .... </h1>;
+    return <Loading />;
   }
 
   const handleSignOut = () => {

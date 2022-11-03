@@ -11,6 +11,8 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "react-bootstrap";
 import { putCart, postCart, addProduct } from "../features/cart/cartSlice";
+import { toast } from "react-toastify";
+import Loading from "../components/Loading";
 
 export default function WishList() {
   const dispatch = useDispatch();
@@ -29,7 +31,7 @@ export default function WishList() {
   }, []);
 
   if (isLoading) {
-    return <h1> Loading ... </h1>;
+    return <Loading />;
   }
 
   const handleAddProduct = (productId) => {
@@ -77,7 +79,24 @@ export default function WishList() {
                 Remove{" "}
               </Button>
               &emsp;
-              <Button className="add-cart" onClick={() => handleAddProduct(id)}>
+              <Button
+                className="add-cart"
+                onClick={() => {
+                  const notifyAddProduct = () =>
+                    toast.success("Product added to the cart", {
+                      position: "top-right",
+                      autoClose: 1000,
+                      hideProgressBar: false,
+                      closeOnClick: true,
+                      pauseOnHover: true,
+                      draggable: true,
+                      progress: undefined,
+                      theme: "light",
+                    });
+                  notifyAddProduct();
+                  handleAddProduct(id);
+                }}
+              >
                 {" "}
                 Add to cart{" "}
               </Button>

@@ -12,6 +12,7 @@ import {
 } from "../features/products/filterSlice";
 import ProductCard from "../components/ProductCard";
 import Pagination from "../components/Pagination";
+import Loading from "../components/Loading";
 
 export default function SingleBrand() {
   const { brandId } = useParams();
@@ -56,7 +57,7 @@ export default function SingleBrand() {
   }, [brandId, currentBrand]);
 
   if (isLoading || currentBrand === undefined) {
-    return <h1> Loading ....</h1>;
+    return <Loading />;
   }
 
   const idxOfLastProduct = currentPage * productsPerPage;
