@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import Home from './homepage'
 import Stage from './stage'
+import Success from './success'
+
 
 import {
   BrowserRouter as Router,
@@ -48,6 +50,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home fn={modifyKeyWords} keyWords={keyWords}/>} />
                 <Route path="/Stage" element={<Stage fn={modifyKeyWords} keyWords={keyWords}/>} />
+                <Route path="/success" element={<Success fn={modifyKeyWords} keyWords={keyWords}/>} />
             </Routes>
         </Router>
     )

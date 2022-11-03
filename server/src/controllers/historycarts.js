@@ -174,8 +174,8 @@ const stripeCheckout = async (req, res) => {
             // Specify which shipping countries Checkout should provide as options for shipping locations
             allowed_countries: ['AU', 'GB', 'NZ', 'US'],
           },
-          success_url: `${process.env.CORS_CLIENT_DOMAIN}/success.html`,
-          cancel_url: `${process.env.CORS_CLIENT_DOMAIN}/cancel.html`,
+          success_url: `${process.env.CORS_CLIENT_DOMAIN}/success`,
+          cancel_url: `${process.env.CORS_CLIENT_DOMAIN}/cancel`,
         })
         //res.redirect(303, session.url);
         res.json({ url: session.url })
