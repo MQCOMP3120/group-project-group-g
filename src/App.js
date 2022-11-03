@@ -16,6 +16,8 @@ import {
   Payment,
   SingleOrderHistory,
 } from "./pages";
+import Success from './pages/success'
+
 import { useSelector, useDispatch } from "react-redux";
 import { setUser, signIn } from "./features/userAuth/authSlice";
 import { getProducts, getBrands } from "./features/products/filterSlice";
@@ -26,6 +28,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import DevHome from "./services/devhomepage";
 import Stage from "./services/stage";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -72,6 +75,7 @@ function App() {
         <Route path="/brands/:brandId" element={<SingleBrand />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/orders/:orderId" element={<SingleOrderHistory />} />
+        <Route path="/success" element={<Success />} />
         <Route
           path="/devhome"
           element={<DevHome fn={modifyKeyWords} keyWords={keyWords} />}

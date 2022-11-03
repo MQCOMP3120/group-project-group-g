@@ -1,10 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getCart,
-  delCart,
   delCartProduct,
-  setCartSummary,
   increaseProductQuantity,
   decreaseProductQuantity,
   putCart,
@@ -14,6 +12,7 @@ import { Button } from "react-bootstrap";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 import styled from "styled-components";
 import { toast } from "react-toastify";
+import { serverUrl } from "../util/api";
 
 export default function Cart() {
   const dispatch = useDispatch();
@@ -22,7 +21,10 @@ export default function Cart() {
   const { userCart, isLoading, cartProducts } = useSelector(
     (state) => state.cart
   );
+
   const { allProducts } = useSelector((state) => state.filter);
+  let stripeCartSummary = [];
+
   useEffect(() => {
     if (!isSignIn) {
       navigate("/login");
@@ -51,7 +53,7 @@ export default function Cart() {
     dispatch(delCartProduct(id));
 
     if (cartProducts.length <= 1) {
-      dispatch(delCart());
+      // dispatch(delCart());
     }
     notifyProductRemove();
   };
@@ -70,24 +72,24 @@ export default function Cart() {
     return allProducts.filter((product) => product.id === id);
   };
 
-  const calculateSubtotal = () => {
+  const subtotalAndSummary = () => {
     let total = 0;
-    cartProducts.forEach((product) => {
-      const { price } = getProduct(product.productId)[0];
+    stripeCartSummary = [];
+    cartProducts.forEach((product, idx) => {
+      const { price, title } = getProduct(product.productId)[0];
       total += price * product.quantity;
+
+      //cart summary send to stripe
+      stripeCartSummary = stripeCartSummary.concat({
+        id: idx,
+        title: title,
+        price: price,
+        quantity: product.quantity,
+      });
     });
 
     // dispatch(setSubtotal(total))
     return total;
-  };
-
-  const handleCheckout = () => {
-    const cartSummary = {
-      cartProducts: cartProducts,
-      subtotal: calculateSubtotal(),
-    };
-    dispatch(setCartSummary(cartSummary));
-    navigate("/payment");
   };
 
   const emptyCart = <p> Your cart is currently empty </p>;
@@ -139,19 +141,53 @@ export default function Cart() {
           );
         });
 
+  // stripe
+  const stripePay = (e) => {
+    e.preventDefault();
+    // dispatch(payCart());
+    // dispatch(postCartHistory());
+    // dispatch(delCart());
+
+    fetch(`${serverUrl}/create-checkout-session`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // Send along all the information about the items
+      body: JSON.stringify({
+        items: [...stripeCartSummary],
+      }),
+    })
+      .then((res) => {
+        if (res.ok) return res.json();
+        // If there is an error then make sure we catch that
+        return res.json().then((e) => Promise.reject(e));
+      })
+      .then(({ url }) => {
+        // On success redirect the customer to the returned URL
+
+        window.location = url;
+      })
+      .catch((e) => {
+        console.error(e.error);
+      });
+
+    // console.log(cartSummary);
+  };
+
   return (
     <Wrapper className="section-center h-100">
       <h3 className="my-5"> Cart </h3>
       {productElem}
       {userCart[0] && cartProducts.length >= 1 && (
         <>
-          <h2 className="my-2"> Subtotal: ${calculateSubtotal()}</h2>
+          <h2 className="my-2"> Subtotal: ${subtotalAndSummary()}</h2>
           <div className="buttons">
             <Button
               variant="outline-danger"
               size="md"
               className="clear-btn"
-              onClick={() => dispatch(delCart())}
+              // onClick={() => dispatch(delCart())}
             >
               {" "}
               Clear Cart{" "}
@@ -159,7 +195,7 @@ export default function Cart() {
             <Button
               variant="primary"
               className="checkout-btn"
-              onClick={() => handleCheckout()}
+              onClick={stripePay}
             >
               {" "}
               Check Out{" "}

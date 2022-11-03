@@ -20,8 +20,6 @@ export default function UserProfile() {
   const { address, email, phone, username } = user;
   const [orderHistoryOpen, setOrderHistoryOpen] = useState(false);
 
-  console.log(user);
-
   useEffect(() => {
     if (!isSignIn) {
       navigate("/");

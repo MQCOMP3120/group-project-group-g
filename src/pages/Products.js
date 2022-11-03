@@ -14,9 +14,11 @@ import {
   resetKeyword,
 } from "../features/products/filterSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { setHideNavBarFalse } from "../features/navbar/searchSlice";
 
 export default function Products() {
   const dispatch = useDispatch();
+
   const filterItems = [
     "All Products",
     "Price: Low - High",
@@ -54,6 +56,10 @@ export default function Products() {
         dispatch(resetKeyword());
     }
   };
+
+  useEffect(() => {
+    dispatch(setHideNavBarFalse());
+  }, []);
 
   if (isLoading) {
     return <h1> Loading ... </h1>;

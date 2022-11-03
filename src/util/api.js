@@ -1,11 +1,11 @@
-const url = "http://localhost:8102";
+export const serverUrl = "http://localhost:8102";
 
-export const productsApi = `${url}/api/products/`;
-export const brandsApi = `${url}/api/brands/`;
-export const loginApi = `${url}/auth/login/`;
-export const registerApi = `${url}/auth/register`;
-export const wishListApi = `${url}/api/wishlists/`;
-export const cartApi = `${url}/api/carts/`;
-export const cartUserApi = `${url}/api/cartsuser/`;
-export const cartHistoryApi = `${url}/api/historycarts`;
-export const userCartHistoryApi = `${url}/api/historycartsuser`;
+export const productsApi = `${serverUrl}/api/products/`;
+export const brandsApi = `${serverUrl}/api/brands/`;
+export const loginApi = `${serverUrl}/auth/login/`;
+export const registerApi = `${serverUrl}/auth/register`;
+export const wishListApi = `${serverUrl}/api/wishlists/`;
+export const cartApi = `${serverUrl}/api/carts/`;
+export const cartUserApi = `${serverUrl}/api/cartsuser/`;
+export const cartHistoryApi = `${serverUrl}/api/historycarts`;
+export const userCartHistoryApi = `${serverUrl}/api/historycartsuser`;

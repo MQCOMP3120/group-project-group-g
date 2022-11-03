@@ -99,3 +99,7 @@ ul {
     /* display: block; */
     z-index: 1000;
 }
+
+#nav-bar-hide {
+  display: none;
+}
