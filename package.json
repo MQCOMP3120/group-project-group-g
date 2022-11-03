@@ -13,6 +13,7 @@
     "axios": "^0.27.2",
     "bcrypt": "^5.1.0",
     "bootstrap": "^5.2.2",
+    "concurrently": "^7.5.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
@@ -36,6 +37,7 @@
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "react-toastify": "^9.0.8",
+    "stripe": "^10.15.0",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
