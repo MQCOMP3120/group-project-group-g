@@ -192,11 +192,15 @@ function httpGetCarts(){
             items: [
               {
                 id: 1,
+                title: "iphone4",
+                price: 100,
                 quantity: 2,
               },
               {
-                id: 2,
-                quantity: 1,
+                id: 1,
+                title: "iphone5",
+                price: 200,
+                quantity: 2,
               },
             ],
           }),
