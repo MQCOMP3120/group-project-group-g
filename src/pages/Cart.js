@@ -39,7 +39,6 @@ export default function Cart() {
   if (isLoading) {
     return <h1> Loading ... </h1>;
   }
-  console.log(userCart);
 
   const handleRemoveCartItem = (id) => {
     const notifyProductRemove = () =>
@@ -57,7 +56,7 @@ export default function Cart() {
     dispatch(delCartProduct(id));
 
     if (cartProducts.length <= 1) {
-      dispatch(delCart());
+      // dispatch(delCart());
     }
     notifyProductRemove();
   };
@@ -148,9 +147,9 @@ export default function Cart() {
   // stripe
   const stripePay = (e) => {
     e.preventDefault();
-    dispatch(payCart());
-    dispatch(postCartHistory());
-    dispatch(delCart());
+    // dispatch(payCart());
+    // dispatch(postCartHistory());
+    // dispatch(delCart());
 
     fetch(`${serverUrl}/create-checkout-session`, {
       method: "POST",
@@ -191,7 +190,7 @@ export default function Cart() {
               variant="outline-danger"
               size="md"
               className="clear-btn"
-              onClick={() => dispatch(delCart())}
+              // onClick={() => dispatch(delCart())}
             >
               {" "}
               Clear Cart{" "}
