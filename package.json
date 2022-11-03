@@ -48,6 +48,7 @@
     "supertest": "^6.2.4"
   },
   "scripts": {
+    "gtest": "concurrently \"npm run devserver\" \"npm run start\"",
     "start": "cross-env PORT=3000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
