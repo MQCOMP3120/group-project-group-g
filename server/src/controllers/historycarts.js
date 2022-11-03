@@ -132,6 +132,50 @@ const deleteHistoryCarts = async (request, response) => {
     response.status(200).json({status: "OK"})
 }
 
+const stripe = require('stripe')('sk_test_51LzqekJbMHxByvkO7GXgQcyhOe6lQMMUL8Nz6yiFIpL9IoPpbFbBzpnijuspo9wDguSaLUoXjLvW3oxYlDM1qiVD00QLLNA0CO');
+const storeItems = new Map([
+    [1, { priceInCents: 10000, name: "Learn React Today" }],
+    [2, { priceInCents: 15000, name: "Learn CSS Today" }],
+  ])
+
+const stripeCheckout = async (req, res) => {
+    // console.log("stripeCheckout")
+    // response.status(200).json({url: "hi"})
+    try {
+        // Create a checkout session with Stripe
+        const session = await stripe.checkout.sessions.create({
+          payment_method_types: ["card"],
+          // For each item use the id to get it's information
+          // Take that information and convert it to Stripe's format
+          line_items: req.body.items.map(({ id, quantity }) => {
+            const storeItem = storeItems.get(id)
+            return {
+              price_data: {
+                currency: "usd",
+                product_data: {
+                  name: storeItem.name,
+                },
+                unit_amount: storeItem.priceInCents,
+              },
+              quantity: quantity,
+            }
+          }),
+          mode: "payment",
+          // Set a success and cancel URL we will send customers to
+          // These must be full URLs
+          // In the next section we will setup CLIENT_URL
+          success_url: `${process.env.CORS_CLIENT_DOMAIN}/success.html`,
+          cancel_url: `${process.env.CORS_CLIENT_DOMAIN}/cancel.html`,
+        })
+        //res.redirect(303, session.url);
+        res.json({ url: session.url })
+      } catch (e) {
+        // If there is an error send it to the client
+        res.status(500).json({ error: e.message })
+      }
+}
+
+
 module.exports = { 
     createHistoryCart,
     getHistoryCarts,
@@ -139,4 +183,5 @@ module.exports = {
     getHistoryUserCarts,
     deleteHistoryCart,
     deleteHistoryCarts,
+    stripeCheckout,
 }

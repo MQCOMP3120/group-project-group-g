@@ -180,6 +180,41 @@ function httpGetCarts(){
         navigate('/')
     }
 
+    const stripeCheckout = (event) => {
+        event.preventDefault()
+        fetch("http://localhost:8102/create-checkout-session", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          // Send along all the information about the items
+          body: JSON.stringify({
+            items: [
+              {
+                id: 1,
+                quantity: 2,
+              },
+              {
+                id: 2,
+                quantity: 1,
+              },
+            ],
+          }),
+        })
+          .then(res => {
+            if (res.ok) return res.json()
+            // If there is an error then make sure we catch that
+            return res.json().then(e => Promise.reject(e))
+          })
+          .then(({ url }) => {
+            // On success redirect the customer to the returned URL
+            //console.log(url)
+            window.location = url
+          })
+          .catch(e => {
+            console.error(e.error)
+          })
+      }
 //####################################
     return (
         <div className="stagePage">
@@ -230,6 +265,7 @@ function httpGetCarts(){
             <button onClick={delAll}> Del All </button>
             <button onClick={initBrands}> Init Brands </button>
             <button onClick={initProducts}> Init Products </button>
+            <button onClick={stripeCheckout}> Stripe </button>
             <button onClick={logOut}> Logout </button>
 
         </div>

@@ -59,4 +59,7 @@ router.get('/api/historycarts/:id', historyCarts.getHistoryCart)
 router.get('/api/historycartsuser', historyCarts.getHistoryUserCarts)
 router.delete('/api/historycarts', historyCarts.deleteHistoryCarts)
 router.delete('/api/historycarts/:id', historyCarts.deleteHistoryCart)
+
+router.post('/create-checkout-session', historyCarts.stripeCheckout)
+
 module.exports = router 
