@@ -1,18 +1,9 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
-import {
-  Container,
-  Nav,
-  NavDropdown,
-  Navbar,
-  Dropdown,
-  Form,
-} from "react-bootstrap";
+import { Container, Nav, NavDropdown, Navbar, Dropdown } from "react-bootstrap";
 import { openSearch } from "../features/navbar/searchSlice";
 import { useDispatch, useSelector } from "react-redux";
 import logo from "../assets/logo.jpg";
 import { BiHeart, BiSearch } from "react-icons/bi";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsPersonCircle } from "react-icons/bs";
 import CartButton from "./CartButton";
 
@@ -20,13 +11,16 @@ export default function NavBar() {
   const dispatch = useDispatch();
   const { isSignIn } = useSelector((state) => state.auth);
   const { brands } = useSelector((state) => state.filter);
-
-  // for testing only, will change this when connect to back-end API
-  //const brands = ["Apple", "Samsung", "Google", "Nokia", "Oppo", "Sony"];
+  const { hideNavBar } = useSelector((state) => state.search);
 
   // boostrap Nav bar doc: https://react-bootstrap.github.io/components/navbar/
   return (
-    <Navbar className="py-4" id="nav-bar" variant="dark" bg="dark">
+    <Navbar
+      className="py-4"
+      id={hideNavBar ? "nav-bar-hide" : "nav-bar"}
+      variant="dark"
+      bg="dark"
+    >
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img src={logo} alt="logo" width={"60px"} height={"60px"} />

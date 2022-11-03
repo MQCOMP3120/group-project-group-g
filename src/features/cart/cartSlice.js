@@ -21,14 +21,14 @@ const initialState = {
 // post a cart to cart history
 export const postCartHistory = createAsyncThunk(
   "cart/postCartHistory",
-  async (arg, { getState }) => {
+  async (subtotal, { getState }) => {
     try {
       const { auth, cart } = getState();
       let { user } = auth;
-      const { cartSummary } = cart;
-      const resp = await axios.post(
+      const { cartProducts } = cart;
+      await axios.post(
         cartHistoryApi,
-        { subtotal: cartSummary.subtotal, products: cartSummary.cartProducts },
+        { subtotal: subtotal, products: cartProducts },
         {
           headers: {
             Authorization: user.jwt,

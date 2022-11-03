@@ -1,6 +1,4 @@
 import React from "react";
-import styled from "styled-components";
-import { BiSearch } from "react-icons/bi";
 import { Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";

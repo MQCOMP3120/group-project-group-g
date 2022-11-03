@@ -2,13 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getCart,
-  delCart,
   delCartProduct,
   increaseProductQuantity,
   decreaseProductQuantity,
   putCart,
-  payCart,
-  postCartHistory,
 } from "../features/cart/cartSlice";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
