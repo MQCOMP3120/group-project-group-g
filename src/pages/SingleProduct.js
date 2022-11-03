@@ -15,6 +15,7 @@ import {
 
 import { postWishList } from "../features/wishlist/wishlistSlice";
 import { toast } from "react-toastify";
+import Loading from "../components/Loading";
 
 export default function SingleProduct() {
   const dispatch = useDispatch();
@@ -36,14 +37,14 @@ export default function SingleProduct() {
   }, [isLoading]);
 
   if (isLoading || !productInfo) {
-    return <h1> Loading .... </h1>;
+    return <Loading />;
   }
 
   const handleAddProduct = (productId) => {
     const notifyAddProduct = () =>
       toast.success("Product added to the cart", {
         position: "top-right",
-        autoClose: 2000,
+        autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,

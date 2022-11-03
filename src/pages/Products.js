@@ -15,6 +15,7 @@ import {
 } from "../features/products/filterSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { setHideNavBarFalse } from "../features/navbar/searchSlice";
+import Loading from "../components/Loading";
 
 export default function Products() {
   const dispatch = useDispatch();
@@ -62,7 +63,7 @@ export default function Products() {
   }, []);
 
   if (isLoading) {
-    return <h1> Loading ... </h1>;
+    return <Loading />;
   }
 
   const idxOfLastProduct = currentPage * productsPerPage;

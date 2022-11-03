@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   getCart,
+  delCart,
   delCartProduct,
   increaseProductQuantity,
   decreaseProductQuantity,
@@ -13,6 +14,7 @@ import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 import styled from "styled-components";
 import { toast } from "react-toastify";
 import { serverUrl } from "../util/api";
+import Loading from "../components/Loading";
 
 export default function Cart() {
   const dispatch = useDispatch();
@@ -34,14 +36,14 @@ export default function Cart() {
   }, []);
 
   if (isLoading) {
-    return <h1> Loading ... </h1>;
+    return <Loading />;
   }
 
   const handleRemoveCartItem = (id) => {
     const notifyProductRemove = () =>
       toast.warn("Product removed", {
         position: "top-right",
-        autoClose: 5000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -53,7 +55,7 @@ export default function Cart() {
     dispatch(delCartProduct(id));
 
     if (cartProducts.length <= 1) {
-      // dispatch(delCart());
+      dispatch(delCart());
     }
     notifyProductRemove();
   };
@@ -144,9 +146,6 @@ export default function Cart() {
   // stripe
   const stripePay = (e) => {
     e.preventDefault();
-    // dispatch(payCart());
-    // dispatch(postCartHistory());
-    // dispatch(delCart());
 
     fetch(`${serverUrl}/create-checkout-session`, {
       method: "POST",
@@ -187,7 +186,7 @@ export default function Cart() {
               variant="outline-danger"
               size="md"
               className="clear-btn"
-              // onClick={() => dispatch(delCart())}
+              onClick={() => dispatch(delCart())}
             >
               {" "}
               Clear Cart{" "}
