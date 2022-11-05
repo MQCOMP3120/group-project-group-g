@@ -47,5 +47,4 @@ We have written a development tool for database initialization, loading the JSON
 
 - Stripe integrates up to 25 payment methods and integrates with a variety of indispensable financial tools in its back-end dashboard. Stripe enables the perfect combination of raw sales data and financial analysis tools. It opens up another door for e-commerce. If we continue to work hard to develop our back-end software to connect with MYOB using stripe, this software will become an e-commerce company's central information system. It will control all finance, stock, all operation of this company. The above will be It will be our next development goal.
 
-![image](https://user-images.githubusercontent.com/69196018/200113773-5bc658df-0850-4825-b030-44651966c989.png)
 
