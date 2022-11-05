@@ -1,4 +1,47 @@
-# Project Breakdown
+# G Technology-phone sell
+
+## Project Members
+Weibin Chen 46427333
+Braydon Chi
+Mitchell Hrnjak
+Ruike Xu 46271481
+
+Weibin and Ruike mainly responsible for front-end development, Braydon and Mitchell mainly responsible for back-end development.
+
+## Way of Communication
+  During the operation of this project, we often use trello to determine the weekly project progress, and we often ask each other for programming suggestions and goals through DIscode.
+
+
+## Project Introduction
+Our goal is to customize and write the website for customers, so the example used this time is a website related to mobile phone sales, and we hope to show the performance and price of each mobile phone more clearly through the website, as well as the core competitiveness of our website.
+
+## Website outline
+
+### What we want reached for but had no time:
+- Google Authentication Login (nearly completed)
+- Product Feedback
+- Downloadable PDF Invoices
+- Stripe Payment SystemS
+
+## Target Users
+- ur aim: Any business or company that needs help designing a website
+- website target: any people who want get a phone
+
+## MVP
+- More than fifty different types of phone models and details
+- Wish List and Cart
+- search bar and Brand pick
+- sort by method, price:high-low/low-high, rating:high-low/low-high
+- order history and check the history detail
+- stripe payment method
+
+## Next Step
+- complete google login
+
+- Stripe integrates up to 25 payment methods and integrates with a variety of indispensable financial tools in its back-end dashboard. Stripe enables the perfect combination of raw sales data and financial analysis tools. It opens up another door for e-commerce. If we continue to work hard to develop our back-end software to connect with MYOB using stripe, this software will become an e-commerce company's central information system. It will control all finance, stock, all operation of this company. The above will be It will be our next development goal.
+
+
+## Project Breakdown
 
 The entire project is divided into two parts: front-end and back-end, which exchange data through API communication, and CORS components to achieve cross-domain resource sharing.
 - The back-end uses the Express framework, which processes and transforms the data received from the front-end, and queries and writes to MongoDB. The results are then returned to the front-end.
@@ -42,7 +85,27 @@ We have written a development tool for database initialization, loading the JSON
 - `src/store.js`: the setup of the Redux store.
 - `src/index.css`: global styles.
 
-## Next Step
-- complete google login
-
-- Stripe integrates up to 25 payment methods and integrates with a variety of indispensable financial tools in its back-end dashboard. Stripe enables the perfect combination of raw sales data and financial analysis tools. It opens up another door for e-commerce. If we continue to work hard to develop our back-end software to connect with MYOB using stripe, this software will become an e-commerce company's central information system. It will control all finance, stock, all operation of this company. The above will be It will be our next development goal.
+## SCREENSHOTS
+AddCartReminding.PNG
+AfterUseBrandSearch.PNG
+CartPage.png
+HighToLow.PNG
+homepage.PNG
+LowToHigh.PNG
+ManyBrand.PNG
+OrderHistory.PNG
+PasswordWarningPage.PNG
+PaymentInfo.PNG
+PaymentPage.PNG
+PaymentSuccess.PNG
+PhoneType.PNG
+ProductsIntroPage.PNG
+ProductsPage.PNG
+RatingHighToLow.PNG
+RatingLowToHigh.PNG
+RegisterPage.PNG
+SearchMethod.PNG
+SelectMethod.PNG
+SignInPage.PNG
+UserInfo.PNG
+VIewHistoryPage.PNG
