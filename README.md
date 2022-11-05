@@ -1,10 +1,10 @@
 # G Technology-phone sell
 
 ## Project Members
-Weibin Chen 46427333
-Braydon Chi
-Mitchell Hrnjak
-Ruike Xu 46271481
+- Weibin Chen 46427333
+- Braydon Chi
+- Mitchell Hrnjak
+- Ruike Xu 46271481
 
 Weibin and Ruike mainly responsible for front-end development, Braydon and Mitchell mainly responsible for back-end development.
 
