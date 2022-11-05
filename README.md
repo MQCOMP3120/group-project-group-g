@@ -24,7 +24,7 @@ Our goal is to customize and write the website for customers, so the example use
 - Stripe Payment SystemS
 
 ## Target Users
-- ur aim: Any business or company that needs help designing a website
+- our aim: Any business or company that needs help designing a website
 - website target: any people who want get a phone
 
 ## MVP
