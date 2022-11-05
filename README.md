@@ -2,7 +2,7 @@
 
 ## Project Members
 - Weibin Chen 46427333
-- Braydon Chi 
+- Braydon Chi 46564616
 - Mitchell Hrnjak 45902178
 - Ruike Xu 46271481
 
