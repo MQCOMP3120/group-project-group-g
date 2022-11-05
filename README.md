@@ -33,7 +33,7 @@ Our goal is to customize and write the website for customers, so the example use
 - search bar and Brand pick
 - sort by method, price:high-low/low-high, rating:high-low/low-high
 - order history and check the history detail
-- stripe payment method
+- stripe payment Page
 
 ## Next Step
 - complete google login
