@@ -86,30 +86,27 @@ We have written a development tool for database initialization, loading the JSON
 - `src/index.css`: global styles.
 
 ## SCREENSHOTS
-AddCartReminding.PNG
-AfterUseBrandSearch.PNG
-CartPage.png
-HighToLow.PNG
-homepage.PNG
-LowToHigh.PNG
-ManyBrand.PNG
-OrderHistory.PNG
-PasswordWarningPage.PNG
-PaymentInfo.PNG
-PaymentPage.PNG
-PaymentSuccess.PNG
-PhoneType.PNG
-ProductsIntroPage.PNG
-ProductsPage.PNG
-RatingHighToLow.PNG
-RatingLowToHigh.PNG
-RegisterPage.PNG
-SearchMethod.PNG
-SelectMethod.PNG
-SignInPage.PNG
-UserInfo.PNG
-VIewHistoryPage.PNG
 
-![image](https://user-images.githubusercontent.com/69196018/200114055-d1133e5d-384e-4c99-b3bb-d66788c7553e.png)
-
-
+![AddCartReminding](https://user-images.githubusercontent.com/100172814/200114402-55464ea2-ca9b-4646-9675-ce8538b023eb.PNG)
+![AfterUseBrandSearch](https://user-images.githubusercontent.com/100172814/200114403-60bcce35-2c31-4e95-be3c-2ecb71749f8a.PNG)
+![CartPage](https://user-images.githubusercontent.com/100172814/200114405-d02bb6d4-1a0a-448d-bf6a-f9c858e7c3ac.png)
+![HighToLow](https://user-images.githubusercontent.com/100172814/200114406-df429616-7e23-4dea-a87d-7e5cd27db229.PNG)
+![homepage](https://user-images.githubusercontent.com/100172814/200114407-10bcc1cd-2969-43d9-a501-7ae3dd9a358b.PNG)
+![LowToHigh](https://user-images.githubusercontent.com/100172814/200114409-39e73c38-8693-4817-a661-a62143a6d8a1.PNG)
+![ManyBrand](https://user-images.githubusercontent.com/100172814/200114410-a1bc10fa-8708-41f4-abed-cb2885c3fd40.PNG)
+![OrderHistory](https://user-images.githubusercontent.com/100172814/200114411-0034b8d2-b529-460f-a2d7-b64067a25ffa.PNG)
+![PasswordWarningPage](https://user-images.githubusercontent.com/100172814/200114413-567862ec-232a-4711-b06a-d40dc1a9fee4.PNG)
+![PaymentInfo](https://user-images.githubusercontent.com/100172814/200114415-7d2c8139-97a2-4eb2-8ff2-48b0830063f8.PNG)
+![PaymentPage](https://user-images.githubusercontent.com/100172814/200114416-0ff37334-1ac7-423f-991f-90c9d68f0493.PNG)
+![PaymentSuccess](https://user-images.githubusercontent.com/100172814/200114418-c45f4723-ef5b-4356-9490-f57008869ff8.PNG)
+![PhoneType](https://user-images.githubusercontent.com/100172814/200114419-65d1e3f6-e9a5-4c98-b379-627aafedeb15.PNG)
+![ProductsIntroPage](https://user-images.githubusercontent.com/100172814/200114420-ebd68ff0-c8a8-4e93-b0ed-3456d67a5d07.PNG)
+![ProductsPage](https://user-images.githubusercontent.com/100172814/200114422-3e0c029f-ffce-42bb-9a83-3ee77af33565.PNG)
+![RatingHighToLow](https://user-images.githubusercontent.com/100172814/200114423-fefccb41-0ff0-4e79-95ff-18794d845b9e.PNG)
+![RatingLowToHigh](https://user-images.githubusercontent.com/100172814/200114424-cb876fe2-1e85-4518-9b1e-f881c26ffe10.PNG)
+![RegisterPage](https://user-images.githubusercontent.com/100172814/200114426-fb7e3709-a5e8-474a-be4e-50cdd087e9a5.PNG)
+![SearchMethod](https://user-images.githubusercontent.com/100172814/200114428-a592922d-3471-446e-823e-d0ba56879341.PNG)
+![SelectMethod](https://user-images.githubusercontent.com/100172814/200114432-1157820c-e3ad-4178-91a8-2d4ae6de0545.PNG)
+![SignInPage](https://user-images.githubusercontent.com/100172814/200114434-4e3286a5-857f-4b02-ac5c-599b0f84e624.PNG)
+![UserInfo](https://user-images.githubusercontent.com/100172814/200114437-1673a69b-2a31-4f37-966f-ff0e3da4020c.PNG)
+![VIewHistoryPage](https://user-images.githubusercontent.com/100172814/200114439-d306c584-3b69-43d7-91ca-38a38d6ffa00.PNG)
