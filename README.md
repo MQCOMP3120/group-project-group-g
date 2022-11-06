@@ -6,7 +6,7 @@
 - Mitchell Hrnjak 45902178
 - Ruike Xu 46271481
 
-Weibin and Ruike mainly responsible for front-end development, Braydon and Mitchell mainly responsible for back-end development.
+Braydon and Mitchell mainly responsible for front-end development, Weibin and Ruike mainly responsible for back-end development.
 
 ## Way of Communication
   During the operation of this project, we often use trello to determine the weekly project progress, and we often ask each other for programming suggestions and goals through DIscode.
@@ -21,7 +21,7 @@ Our goal is to customize and write the website for customers, so the example use
 - Google Authentication Login (nearly completed)
 - Product Feedback
 - Downloadable PDF Invoices
-- Stripe Payment SystemS
+
 
 ## Target Users
 - our aim: Any business or company that needs help designing a website
@@ -38,7 +38,9 @@ Our goal is to customize and write the website for customers, so the example use
 ## Next Step
 - complete google login
 
-- Stripe integrates up to 25 payment methods and integrates with a variety of indispensable financial tools in its back-end dashboard. Stripe enables the perfect combination of raw sales data and financial analysis tools. It opens up another door for e-commerce. If we continue to work hard to develop our back-end software to connect with MYOB using stripe, this software will become an e-commerce company's central information system. It will control all finance, stock, all operation of this company. The above will be It will be our next development goal.
+- Stripe Payment SystemS
+
+Stripe integrates up to 25 payment methods and integrates with a variety of indispensable financial tools in its back-end dashboard. Stripe enables the perfect combination of raw sales data and financial analysis tools. It opens up another door for e-commerce. If we continue to work hard to develop our back-end software to connect with MYOB using stripe, this software will become an e-commerce company's central information system. It will control all finance, stock, all operation of this company. The above will be It will be our next development goal.
 
 
 ## Project Breakdown
@@ -96,7 +98,6 @@ We have written a development tool for database initialization, loading the JSON
 ![ManyBrand](https://user-images.githubusercontent.com/100172814/200114410-a1bc10fa-8708-41f4-abed-cb2885c3fd40.PNG)
 ![OrderHistory](https://user-images.githubusercontent.com/100172814/200114411-0034b8d2-b529-460f-a2d7-b64067a25ffa.PNG)
 ![PasswordWarningPage](https://user-images.githubusercontent.com/100172814/200114413-567862ec-232a-4711-b06a-d40dc1a9fee4.PNG)
-![PaymentInfo](https://user-images.githubusercontent.com/100172814/200114415-7d2c8139-97a2-4eb2-8ff2-48b0830063f8.PNG)
 ![PaymentPage](https://user-images.githubusercontent.com/100172814/200114416-0ff37334-1ac7-423f-991f-90c9d68f0493.PNG)
 ![PaymentSuccess](https://user-images.githubusercontent.com/100172814/200114418-c45f4723-ef5b-4356-9490-f57008869ff8.PNG)
 ![PhoneType](https://user-images.githubusercontent.com/100172814/200114419-65d1e3f6-e9a5-4c98-b379-627aafedeb15.PNG)
