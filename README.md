@@ -99,6 +99,7 @@ We have written a development tool for database initialization, loading the JSON
 ![OrderHistory](https://user-images.githubusercontent.com/100172814/200114411-0034b8d2-b529-460f-a2d7-b64067a25ffa.PNG)
 ![PasswordWarningPage](https://user-images.githubusercontent.com/100172814/200114413-567862ec-232a-4711-b06a-d40dc1a9fee4.PNG)
 ![PaymentPage](https://user-images.githubusercontent.com/100172814/200114416-0ff37334-1ac7-423f-991f-90c9d68f0493.PNG)
+![PaymentPage1](https://user-images.githubusercontent.com/71865878/200156131-14f90384-def7-423c-a104-ddf47ae8708c.png)
 ![PaymentSuccess](https://user-images.githubusercontent.com/100172814/200114418-c45f4723-ef5b-4356-9490-f57008869ff8.PNG)
 ![PhoneType](https://user-images.githubusercontent.com/100172814/200114419-65d1e3f6-e9a5-4c98-b379-627aafedeb15.PNG)
 ![ProductsIntroPage](https://user-images.githubusercontent.com/100172814/200114420-ebd68ff0-c8a8-4e93-b0ed-3456d67a5d07.PNG)
