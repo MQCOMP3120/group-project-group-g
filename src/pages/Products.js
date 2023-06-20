@@ -35,7 +35,6 @@ export default function Products() {
   const { sortedProducts, isLoading, keyword } = useSelector(
     (state) => state.filter
   );
-
   const filterProducts = (item) => {
     setSelectedFilterItem(item);
 

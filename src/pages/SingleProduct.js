@@ -23,7 +23,7 @@ export default function SingleProduct() {
   const { productId } = useParams();
   const { allProducts, isLoading } = useSelector((state) => state.filter);
   const { user, isSignIn } = useSelector((store) => store.auth);
-  const { userCart } = useSelector((store) => store.cart);
+  const { userCart, cartProducts } = useSelector((store) => store.cart);
   const { productList } = useSelector((state) => state.wish);
 
   const productInfo = allProducts.filter(
@@ -58,6 +58,8 @@ export default function SingleProduct() {
       if (userCart[0]) {
         // if current user cart exist then add product into the cart
         dispatch(putCart());
+        console.log(userCart);
+        console.log(cartProducts);
         notifyAddProduct();
       } else {
         // otherwise make a new cart for current user

@@ -439,24 +439,6 @@
       "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/601383-Product-2-I-638007125840520984_1280x.jpg?v=1665076261",
       "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/601383-Product-9-I-638007125840520984_1280x.jpg?v=1665076261"
     },
-
-    {
-      "title": "Google Pixel 6a 5G 128GB (Sage)",
-      "price": "749",
-      "brand": "GOOGLE",
-      "rating": "4.0",
-      "size": "Full-screen 6.1 inch (156 mm)13 display",
-      "resolution": "FHD+ (1080 x 2400) OLED at 429 ppi",
-      "refreshrate": "60Hz",
-      "processor": "Google Tensor",
-      "gpu": "Mali-G78 MP20",
-      "ram": "6GB LPDDR5 RAM",
-      "description": "Meet Pixel 6a, the more affordable Google phone that adapts to you.1 Powered by Google Tensor, it's super fast and secure, with an amazing battery and camera",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/593602-Product-0-I-637920187982339582_5d3b15e5-e983-4fbb-b8f1-d770000117f9_1280x.jpg?v=1658293315",
-      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/593602-Product-2-I-637920187977249252_ed7d3167-aaaa-43d8-8d58-bd558f7f3215_1280x.jpg?v=1658293315",
-      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/593602-Product-10-I-637920188582004034_d88e6c61-5f10-45d8-8c09-47e1dee481b3_1280x.jpg?v=1658293315"
-    },
-
     {
       "title": "Google Pixel 7 5G 256GB (Obsidian)",
       "price": "1129",
@@ -526,23 +508,6 @@
     },
 
     {
-      "title": "Samsung Galaxy A23 128GB (Peach)",
-      "price": "349",
-      "brand": "SAMSUNG",
-      "rating": "0.0",
-      "size": "6.6 Infinity-V Full HD",
-      "resolution": "1080 x 2408 pixels, 20:9 ratio (~400 ppi density)",
-      "refreshrate": "90Hz",
-      "processor": "Octa-core(EXYNOS)",
-      "gpu": "Adreno 610 ",
-      "ram": "4GB LPDDR5 RAM",
-      "description": "6.6 Infinity-V Full HD+, 90Hz refresh rate display, 128GB Storage with 4GB RAM50MP (Wide) + 2MP (Depth) + 5MP (UltraWide) + 2MP (Macro) rear cameras",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/586033-Product-0-I-637841531577454252_1280x.jpg?v=1662002651",
-      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/586033-Product-2-I-637841531577141715_1280x.jpg?v=1662002651",
-      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/586033-Product-5-I-637841531577297985_1280x.jpg?v=1662002651"
-    },
-
-    {
       "title": "Samsung Galaxy S22 5G 128GB (Phantom Black)",
       "price": "1049",
       "brand": "SAMSUNG",
@@ -557,23 +522,6 @@
       "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580945-Product-0-I-637782961358871995_1280x.jpg?v=1662345313",
       "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580945-Product-2-I-637782961358871995_1280x.jpg?v=1662345313",
       "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/580945-Product-5-I-637782961359028241_1280x.jpg?v=1662345314"
-    },
-
-    {
-      "title": "Samsung Galaxy S21+ 5G 128GB (Violet)",
-      "price": "1549",
-      "brand": "SAMSUNG",
-      "rating": "3.0",
-      "size": "6.7 Infinity-O display",
-      "resolution": "1080 x 2400 pixels, 20:9 ratio (~394 ppi density)",
-      "refreshrate": "120Hz",
-      "processor": "Qualcomm SM8350 Snapdragon 888 5G (5 nm) - USA/China",
-      "gpu": "Adreno 660 - USA/China",
-      "ram": "8GB LPDDR5 RAM",
-      "description": "Miss nothing, with Galaxy S21+ 5G. A camera so good, everyone’s a pro. When capturing your best moments, you no longer have to choose between photo and video. Galaxy S21 captures both, simultaneously, so you’ll never miss a moment. Capture big screen quality videos in stunning 8K resolution* and zoom in with less pixilation with 3x Optical Zoom.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/506518-Product-0-I-637474453937101007_11ee33cb-9905-4b4e-b093-14b0654be7f9_1280x.jpg?v=1662001662",
-      "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/506518-Product-2-I-637474453965244704_342fbfec-8c44-4ec2-a120-36ba1f4efc64_1280x.jpg?v=1662001662",
-      "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/506518-Product-6-I-637474453975557487_13d2db54-6a8d-4521-8eec-9bd57ac8f064_1280x.jpg?v=1662001662"
     },
 
     {
@@ -605,7 +553,7 @@
       "gpu": "Adreno 660 - Version",
       "ram": "6/8GB LPDDR5 RAM",
       "description": "Say hello to the newest edition to the Galaxy S21 family. Galaxy S21 FE 5G - Fan Edition. Jammed packed full of state-of-the-art flagship features without the price tag. Capture photos in stunning clarity with three lenses, ultra-wide, wide and telephoto and experience night photography to the fullest, making lo-lights the highlight of every feed. Get ready for dual video recording, a two-sided camera feature that lets you shoot the moment in one take, simultaneously. Design wise, the contour slim cut camera blends beautifully with the back of the phone - comes in Lavender, White, Graphite and Olive, an array of colours you’ll want to get your hands on. And, have the power to last with an impressive display, fast processor and powerful battery.",
-      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/578711-Product-0-I-637753269158691425_1280x.jpg?v=1662001653",
+      "image": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/578714-Product-2-I-637770572558861993_1280x.jpg?v=1662001665",
       "image2": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/578714-Product-2-I-637770572558861993_1280x.jpg?v=1662001665",
       "image3": "https://cdn.shopify.com/s/files/1/0024/9803/5810/products/578714-Product-5-I-637770572559330784_1280x.jpg?v=1662001665"
     },
